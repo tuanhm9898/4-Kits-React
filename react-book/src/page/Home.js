@@ -13,7 +13,7 @@ import {AddCart} from "../action";
 import MenuItem from "../bookComponents/MenuItem";
 import FlashSale from "../bookComponents/flashSale";
 import TopBook from "../bookComponents/TopBook";
-import Contact from "../bookComponents/contact";
+import Contact from "../bookComponents/Contact";
 
 const Home = () => {
     const [data, setData] = useState([]);
@@ -94,9 +94,11 @@ const Home = () => {
 
     );
 };
+
 function mapDispatchToProps(dispatch) {
     return {
         AddCart: (item) => dispatch(AddCart(item)),
     };
 }
+
 export default Home;

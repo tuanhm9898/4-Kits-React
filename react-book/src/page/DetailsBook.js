@@ -101,7 +101,7 @@ const DetailBook = () => {
                     </div>
                 </div>
             ) : (
-                'loading....    '
+                'loading details book ....    '
             )}
         </>
     );
