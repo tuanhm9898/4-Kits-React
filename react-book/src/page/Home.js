@@ -10,6 +10,10 @@ import {Button, Nav, Navbar} from 'react-bootstrap';
 import Cart from '../bookComponents/CartTask';
 import Carousel_Slideshow from "../bookComponents/Carousel_Slideshow";
 import {AddCart} from "../action";
+import MenuItem from "../bookComponents/MenuItem";
+import FlashSale from "../bookComponents/flashSale";
+import TopBook from "../bookComponents/TopBook";
+import Contact from "../bookComponents/contact";
 
 const Home = () => {
     const [data, setData] = useState([]);
@@ -35,10 +39,12 @@ const Home = () => {
     };
     return (
         <div>
+
             <Container>
                 <Carousel_Slideshow/>
-
                 <h1 className="text-center m-3">Shop</h1>
+                <MenuItem/>
+                <FlashSale/>
                 <Row>
                     <Col xs={12} md={9}>
                         <Row>
@@ -78,6 +84,11 @@ const Home = () => {
                         </div>
                     </Col>
                 </Row>
+            </Container>
+
+            <Container>
+                <TopBook/>
+                <Contact/>
             </Container>
         </div>
 
