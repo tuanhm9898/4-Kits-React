@@ -38,12 +38,12 @@ const Admin = () => {
                     <td>{item.details}</td>
                     <td>{item.productRating}%</td>
                     <td>{item.amount}</td>
-                    <td><Button variant="outline-success">
-                        <Link to={'/book/' + item.id}>Details</Link>
-                    </Button></td>
-                    <td><Button variant="outline-warning">
-                        <Link to={'/edit/' + item.id}>Edit</Link>
-                    </Button></td>
+                    <td><Link to={'/book/' + item.id}><Button variant="outline-success">
+                        Details
+                    </Button></Link></td>
+                    <td><Link to={'/edit/' + item.id}><Button variant="outline-warning">
+                        Edit
+                    </Button></Link></td>
                     <td><Button variant="outline-danger" onClick={() => deleteUser(item.id)}>Delete</Button></td>
                 </tr>
             )
@@ -99,9 +99,9 @@ const Admin = () => {
                 {/*</Col>*/}
 
                 <Col xs={12} md={6}>
-                    <Button variant="outline-info" className="mb-5">
-                        <Link to={'/edit/new'}>Add new</Link>
-                    </Button>
+                <Link to='/edit/new'><Button variant="outline-info" className="mb-5">
+                        Add new
+                    </Button></Link>
                 </Col>
             </Row>
 

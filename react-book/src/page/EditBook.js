@@ -10,14 +10,16 @@ const ProductEdit = () => {
 
     let navigate = useNavigate();
     useEffect(() => {
-        if (params.id != 'new') {
+        if (params.id != null && params.id != 'new') {
             let product_url =
-                'https://62baa4fb573ca8f832881fa9.mockapi.io/book' + params.id;
+                'https://62baa4fb573ca8f832881fa9.mockapi.io/book/' + params.id;
 
-            fetch(product_url)
-                .then((response) => response.json())
+                fetch(product_url)
+                .then((res) => res.json())
                 .then((data) => {
-                    setProduct(data);
+                  var date = new Date(data.publishingYear);
+                  data.publishingYear = date.toISOString().slice(0, 10);
+                  setProduct(data);
                 });
         } else {
             let initData = {};
@@ -191,6 +193,49 @@ const ProductEdit = () => {
                                                   </textarea>
                                             </td>
                                         </tr>
+
+                                        <tr>
+                                            <td>
+                                                <strong>PublishingYear</strong>
+                                            </td>
+                                            <td>
+                                                <input
+                                                    type="date"
+                                                    className="form-control"
+                                                    value={product.publishingYear}
+                                                    name="publishingYear"
+                                                    onChange={(e) => handleChange(e)}
+                                                ></input>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Author</strong>
+                                            </td>
+                                            <td>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    value={product.author}
+                                                    name="author"
+                                                    onChange={(e) => handleChange(e)}
+                                                ></input>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Number Page</strong>
+                                            </td>
+                                            <td>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    value={product.numberPage}
+                                                    name="numberPage"
+                                                    onChange={(e) => handleChange(e)}
+                                                ></input>
+                                            </td>
+                                        </tr>
                                         <tr>
                                             <td>
                                                 <strong>Amount</strong>
@@ -220,36 +265,36 @@ const ProductEdit = () => {
                                                 ></input>
                                             </td>
                                         </tr>
-
                                         <tr>
                                             <td>
-                                                <strong>Number Page</strong>
+                                                <strong>Status</strong>
                                             </td>
                                             <td>
-                                                <input
-                                                    type="text"
-                                                    className="form-control"
-                                                    value={product.numberPage}
-                                                    name="numberPage"
-                                                    onChange={(e) => handleChange(e)}
-                                                ></input>
+                                                <Form>
+                                                    {['radio'].map((type) => (
+                                                        <div key={`inline-${type}`} className="mb-3">
+                                                            <Form.Check
+                                                                inline
+                                                                label="sold"
+                                                                name="group1"
+                                                                type={type}
+                                                                id={`inline-${type}-1`}
+                                                            />
+                                                            <Form.Check
+                                                                inline
+                                                                label="New"
+                                                                name="group1"
+                                                                type={type}
+                                                                id={`inline-${type}-2`}
+                                                            />
+                                                        </div>
+                                                    ))}
+                                                </Form>
                                             </td>
                                         </tr>
+                                        
 
-                                        <tr>
-                                            <td>
-                                                <strong>Author</strong>
-                                            </td>
-                                            <td>
-                                                <input
-                                                    type="text"
-                                                    className="form-control"
-                                                    value={product.author}
-                                                    name="author"
-                                                    onChange={(e) => handleChange(e)}
-                                                ></input>
-                                            </td>
-                                        </tr>
+                                        
                                         <tr>
                                             <td>
                                                 <strong>Chapter</strong>
@@ -296,33 +341,7 @@ const ProductEdit = () => {
                                             </td>
                                         </tr>
 
-                                        <tr>
-                                            <td>
-                                                <strong>Status</strong>
-                                            </td>
-                                            <td>
-                                                <Form>
-                                                    {['radio'].map((type) => (
-                                                        <div key={`inline-${type}`} className="mb-3">
-                                                            <Form.Check
-                                                                inline
-                                                                label="sold"
-                                                                name="group1"
-                                                                type={type}
-                                                                id={`inline-${type}-1`}
-                                                            />
-                                                            <Form.Check
-                                                                inline
-                                                                label="New"
-                                                                name="group1"
-                                                                type={type}
-                                                                id={`inline-${type}-2`}
-                                                            />
-                                                        </div>
-                                                    ))}
-                                                </Form>
-                                            </td>
-                                        </tr>
+                                      
                                         </tbody>
                                     </table>
                                     <div className="m-3">
