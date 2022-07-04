@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Button, Table} from "react-bootstrap";
 import Row from "react-bootstrap/Row";
-import InputGroup from "react-bootstrap/InputGroup";
-import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import {Link} from "react-router-dom";
 import {AiOutlineArrowDown} from "react-icons/ai";
