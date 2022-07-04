@@ -7,6 +7,7 @@ const ProductEdit = () => {
     const [product, setProduct] = useState(null);
     const [category, setCategory] = useState(null);
     const [countries, setCountries] = useState(null);
+    const [data, setData] = useState()
 
     let navigate = useNavigate();
     useEffect(() => {
@@ -44,7 +45,7 @@ const ProductEdit = () => {
                 console.log('conuntry api ');
                 setCountries(data);
             });
-    }, []);
+    }, [data]);
 
     const saveProduct = () => {
         console.log(product);
@@ -96,7 +97,7 @@ const ProductEdit = () => {
                                         <tr>
                                             {product.id ? (
                                                 <td>
-                                                    <strong> ID</strong>
+                                                    <strong>ID</strong>
                                                 </td>
                                             ) : null}
                                             <td className="text-primary">{product.id}</td>
@@ -174,7 +175,7 @@ const ProductEdit = () => {
                                                       type="text"
                                                       name="details_short"
                                                       className="form-control"
-                                                      value={product.details_short}
+                                                      value={product.details_shorts}
                                                       onChange={(e) => handleChange(e)}>
                                                   </textarea>
                                             </td>

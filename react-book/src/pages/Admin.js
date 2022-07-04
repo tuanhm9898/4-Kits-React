@@ -30,14 +30,16 @@ const Admin = () => {
                 <tr key={item.id}>
                     <td>{item.id}</td>
                     <td>{item.name}</td>
+                    <td>{item.price}</td>
+                    <td>{item.category}</td>
+                    <td>{item.details}</td>
+                    <td>{item.details_shorts}</td>
                     <td>
                         <img src={item.image} style={{height: "40px"}}/>
                     </td>
-                    <td>{item.price}</td>
-
-                    <td>{item.details}</td>
+                    <td>{item.publishingYear}</td>
                     <td>{item.productRating}%</td>
-                    <td>{item.amount}</td>
+                   
                     <td><Link to={'/book/' + item.id}><Button variant="outline-success">
                         Details
                     </Button></Link></td>
@@ -108,19 +110,17 @@ const Admin = () => {
             <Table striped bordered hover>
                 <thead>
                 <tr>
-                    <th>#</th>
+                    <th>ID</th>
                     <th onClick={sortPriceAsc}>Name <AiOutlineArrowDown/>
-                        {/*<AiOutlineArrowDown onClick={sortPriceAsc}/> <AiOutlineArrowUp onClick={sortPriceDesc}/>*/}
                     </th>
+                    <th onClick={sortNameAsc}>Price</th>
+                    <th onClick={sortNameAsc}>Category</th>
+                    <th>Details</th>
+                    <th>Details_S</th>
                     <th>Image</th>
-                    <th onClick={sortNameAsc}>price<AiOutlineArrowDown/>
-                        {/*<AiOutlineArrowDown onClick={sortNameAsc}/> <AiOutlineArrowUp onClick={sortNameDesc}/>*/}
-                    </th>
-                    <th>details</th>
-                    <th>product rating</th>
-                    <th>amount</th>
-                    <th></th>
-                    <th colSpan="2"></th>
+                    <th>Date</th>
+                    <th>Product rating</th>
+                    <th colSpan="3">More</th>
                 </tr>
                 </thead>
                 <tbody>
