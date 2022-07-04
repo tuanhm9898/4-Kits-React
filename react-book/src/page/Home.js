@@ -17,7 +17,7 @@ const Home = () => {
 
     useEffect(() => {
         console.log('effect data book home page');
-        let url = 'https://62baa4fb573ca8f832881fa9.mockapi.io/category/1/book';
+        let url = 'https://62baa4fb573ca8f832881fa9.mockapi.io/category/5/book';
         if (searchBook.length > 0) {
             url = url + '?search=' + searchBook;
         }
