@@ -9,7 +9,7 @@ import Col from 'react-bootstrap/Col';
 import {Button, Nav, Navbar} from 'react-bootstrap';
 import Cart from '../bookComponents/CartTask';
 import Carousel_Slideshow from "../bookComponents/Carousel_Slideshow";
-import {AddCart} from "../action";
+import {AddCart} from "../actions";
 import MenuItem from "../bookComponents/MenuItem";
 import FlashSale from "../bookComponents/flashSale";
 import TopBook from "../bookComponents/TopBook";
@@ -69,7 +69,7 @@ const Home = () => {
                         <div className="text-start mt-5">
                             <Button onClick={sort_price} variant="outline-info">
                                 Sort Price
-                            </Button>{' '}
+                            </Button>
                             <br/> <br/>
                             {/*<Link as={Cart}>*/}
                             {/*    <Button variant="outline-info">Cart</Button>*/}

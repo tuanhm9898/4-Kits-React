@@ -6,7 +6,7 @@ import {
     DECREASE_QUANTITY,
     INCREASE_QUANTITY,
     DELETE_CART,
-} from '../action/index';
+} from '../actions';
 
 const initProduct = {
     numberCart: 0,
@@ -26,7 +26,7 @@ function todoProduct(state = initProduct, action) {
                 ...state,
             };
         case ADD_CART:
-            if (state.numberCart == 0) {
+            if (state.numberCart === 0) {
                 let cart = {
                     id: action.payload.id,
                     quantity: 1,
@@ -46,7 +46,7 @@ function todoProduct(state = initProduct, action) {
                 });
                 */
                 for (var i = 0; i < state.Carts.length; i++) {
-                    if (state.Carts[i].id == action.payload.id) {
+                    if (state.Carts[i].id === action.payload.id) {
                         state.Carts[i].quantity++;
                         check = true;
                         break;

@@ -3,6 +3,7 @@ import {Nav} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import logo from './logo-removebg.jpg'
 
 const NavBarsBook = (props) => {
     const mapStateToProps = (state) => {
@@ -23,7 +24,9 @@ const NavBarsBook = (props) => {
         <div>
             <Navbar bg="light" expand="lg">
                 <Container>
-                    <Navbar.Brand><Link to="/" className="nav-link">Shop</Link></Navbar.Brand>
+                    <Navbar.Brand><Link to="/" className="nav-link">
+                        <img src={logo} height="65" />
+                    </Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">

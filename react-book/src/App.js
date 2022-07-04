@@ -1,13 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import './App.css'
 
-import Home from "./page/Home";
-import CartDetails from "./page/CartDetails";
-import Admin from "./page/Admin";
+import Home from "./pages/Home";
+import CartDetails from "./pages/CartDetails";
+import Admin from "./pages/Admin";
 import NavBarsBook from "./bookComponents/NavBarsBook";
 import FooterBook from "./bookComponents/FooterBook";
-import DetailBook from "./page/DetailsBook";
-import EditBook from "./page/EditBook";
+import DetailBook from "./pages/DetailsBook";
+import EditBook from "./pages/EditBook";
 
 function App() {
     return (

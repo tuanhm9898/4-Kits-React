@@ -5,7 +5,7 @@ import ThemeProvider from 'react-bootstrap/ThemeProvider';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-import {AddCart} from '../action/index';
+import {AddCart} from '../actions';
 
 const RenderBook = (props) => {
     const [data, setData] = useState(null);
