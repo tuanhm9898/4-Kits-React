@@ -48,7 +48,7 @@ const RenderBook = (props) => {
                                 <Card.Title>{item.name}</Card.Title>
                             </Link>
                             <Card.Text>
-                                {item.details}
+                                {item.details_shorts}
                                 <Card.Text>
                                     <div className="row">
                                         <div className="col-sm-6">
