@@ -12,7 +12,7 @@ const ProductEdit = () => {
     useEffect(() => {
         if (params.id != 'new') {
             let product_url =
-                'https://62baa4fb573ca8f832881fa9.mockapi.io/book/' + params.id;
+                'https://62baa4fb573ca8f832881fa9.mockapi.io/book' + params.id;
 
             fetch(product_url)
                 .then((response) => response.json())
@@ -115,6 +115,20 @@ const ProductEdit = () => {
                                         </tr>
                                         <tr>
                                             <td>
+                                                <strong>Price</strong>
+                                            </td>
+                                            <td>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    value={product.price}
+                                                    name="price"
+                                                    onChange={(e) => handleChange(e)}
+                                                ></input>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
                                                 <strong>Category</strong>
                                             </td>
                                             <td>
@@ -135,22 +149,48 @@ const ProductEdit = () => {
                                                 </select>
                                             </td>
                                         </tr>
-
                                         <tr>
                                             <td>
-                                                <strong>Price</strong>
+                                                <strong>Details</strong>
                                             </td>
                                             <td>
-                                                <input
-                                                    type="text"
-                                                    className="form-control"
-                                                    value={product.price}
-                                                    name="price"
-                                                    onChange={(e) => handleChange(e)}
-                                                ></input>
+                                                  <textarea
+                                                      type="text"
+                                                      name="description"
+                                                      className="form-control"
+                                                      value={product.details}
+                                                      onChange={(e) => handleChange(e)}>
+                                                  </textarea>
                                             </td>
                                         </tr>
-
+                                        <tr>
+                                            <td>
+                                                <strong>Details_Short</strong>
+                                            </td>
+                                            <td>
+                                                  <textarea
+                                                      type="text"
+                                                      name="details_short"
+                                                      className="form-control"
+                                                      value={product.details_short}
+                                                      onChange={(e) => handleChange(e)}>
+                                                  </textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Image</strong>
+                                            </td>
+                                            <td>
+                                                  <textarea
+                                                      type="text"
+                                                      name="image"
+                                                      className="form-control"
+                                                      value={product.image}
+                                                      onChange={(e) => handleChange(e)}>
+                                                  </textarea>
+                                            </td>
+                                        </tr>
                                         <tr>
                                             <td>
                                                 <strong>Amount</strong>
@@ -160,7 +200,7 @@ const ProductEdit = () => {
                                                     type="text"
                                                     className="form-control"
                                                     value={product.amount}
-                                                    name="price"
+                                                    name="amount"
                                                     onChange={(e) => handleChange(e)}
                                                 ></input>
                                             </td>
@@ -175,7 +215,7 @@ const ProductEdit = () => {
                                                     type="text"
                                                     className="form-control"
                                                     value={product.productRating}
-                                                    name="price"
+                                                    name="productRating"
                                                     onChange={(e) => handleChange(e)}
                                                 ></input>
                                             </td>
@@ -190,7 +230,7 @@ const ProductEdit = () => {
                                                     type="text"
                                                     className="form-control"
                                                     value={product.numberPage}
-                                                    name="price"
+                                                    name="numberPage"
                                                     onChange={(e) => handleChange(e)}
                                                 ></input>
                                             </td>
@@ -205,32 +245,23 @@ const ProductEdit = () => {
                                                     type="text"
                                                     className="form-control"
                                                     value={product.author}
-                                                    name="price"
+                                                    name="author"
                                                     onChange={(e) => handleChange(e)}
                                                 ></input>
                                             </td>
                                         </tr>
-
                                         <tr>
                                             <td>
-                                                <strong>Picture</strong>
-                                            </td>
-                                            <td class="text-primary">
-                                                <img src={product.image} className="img-circle"/>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <strong>Details</strong>
+                                                <strong>Chapter</strong>
                                             </td>
                                             <td>
-                                                  <textarea
-                                                      type="text"
-                                                      name="description"
-                                                      className="form-control"
-                                                      value={product.details}
-                                                      onChange={(e) => handleChange(e)}>
-                                                  </textarea>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    value={product.chapter}
+                                                    name="chapter"
+                                                    onChange={(e) => handleChange(e)}
+                                                ></input>
                                             </td>
                                         </tr>
                                         <tr>
