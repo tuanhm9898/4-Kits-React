@@ -6,7 +6,6 @@ import {FiMail} from "react-icons/fi"
 const Contact = () => {
     return (
         <div>
-            <h1>Contact</h1>
             <section class="mb-4">
 
                 <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
