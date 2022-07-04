@@ -82,7 +82,7 @@ const DetailBook = () => {
                                             <td>
                                                 <strong>Title</strong>
                                             </td>
-                                            <td className="text-primary">{student.details}</td>
+                                            <td className="text-primary">{student.details_shorts}</td>
                                         </tr>
 
                                         <tr>
