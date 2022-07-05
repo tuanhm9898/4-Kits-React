@@ -100,9 +100,9 @@ const Cart = (props) => {
                     <div class="text-center">
                         <Link to="/Order"><button class="btn btn-success m-1" type="button">
                             Checkout</button></Link>
-                        <button class="btn btn-danger m-1" onClick={() => navigate(-1)}>
+                        <Link to="/"><button class="btn btn-danger m-1">
                             Continue Shopping
-                        </button>
+                        </button></Link>
                     </div>
                 </div>
             </div>
