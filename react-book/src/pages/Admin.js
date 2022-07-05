@@ -8,29 +8,32 @@ import {AiOutlineArrowDown} from "react-icons/ai";
 
 const Admin = () => {
 
-    const [data, setData] = useState([]);
+
     const [searchBook, setSearchBook] = useState('');
+    const [products, setProducts] = useState(null);
+  const [direction, setDirection] = useState(1);
 
     useEffect(() => {
-        let url = 'https://62baa4fb573ca8f832881fa9.mockapi.io/book';
-        if (searchBook.length > 0) {
-            url = url + '?search=' + searchBook;
-        }
+        let url = 'https://62baa4fb573ca8f832881fa9.mockapi.io/book/';
+        // if (searchBook.length > 0) {
+        //     url = url + '?search=' + searchBook;
+        // }
         fetch(url)
-            .then((response) => response.json())
+            .then((res) => res.json())
             .then((data) => {
-                setData(data);
+                data.publishingYear = new Date(data.publishingYear);
+                setProducts(data);
             });
     }, []);
 
     let listBook = []
-    if (data != null) {
-        data.map((item, id) => {
+    if (products != null) {
+        products.map((item, id) => {
             return listBook.push(
                 <tr key={item.id}>
                     <td>{item.id}</td>
                     <td>{item.name}</td>
-                    <td>{item.price}</td>
+                    <td>{item.price}k</td>
                     <td>{item.category}</td>
                     <td>{item.details}</td>
                     <td>{item.details_shorts}</td>
@@ -56,29 +59,25 @@ const Admin = () => {
             method: 'DELETE',
         }).then(() => {
             console.log('delete successful!!');
-            let result = [...data];
+            let result = [...products];
             result = result.filter((item) => {
                 return item.id != id;
             });
-            setData(result);
+            setProducts(result);
         });
     };
-    // const sortPriceDesc = () => {
-    //     setData([...data].sort((o1, o2) => o1.price - o2.price));
-    // }
+    
+    const sortColumn = (field, type) => {
+        const sortData = [...products];
+        if (type == 'string') {
+          sortData.sort((a, b) => direction * a[field].localeCompare(b[field]));
+        } else if (type == 'number') {
+          sortData.sort((a, b) => direction * (a[field] - b[field]));
+        }
+        setDirection(direction * -1);
+        setProducts(sortData);
+      };
 
-    const sortPriceAsc = () => {
-        setData([...data].sort((o1, o2) => o2.price - o1.price));
-
-    }
-    // const sortNameDesc = () => {
-    //     setData([...data].sort((o1, o2) => o2.name.localeCompare(o1.name)));
-    //
-    // }
-    const sortNameAsc = () => {
-        setData([...data].sort((o1, o2) => o2.name.localeCompare(o1.name)));
-
-    }
     return (
         <div className="container">
             <h1 className="text-center"> Admin </h1>
@@ -110,16 +109,16 @@ const Admin = () => {
             <Table striped bordered hover>
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th onClick={sortPriceAsc}>Name <AiOutlineArrowDown/>
+                    <th onClick={() => sortColumn('id', 'number')}>ID</th>
+                    <th onClick={() => sortColumn('name', 'string')}>Name <AiOutlineArrowDown/>
                     </th>
-                    <th onClick={sortNameAsc}>Price</th>
-                    <th onClick={sortNameAsc}>Category</th>
+                    <th onClick={() => sortColumn('price', 'number')}>Price</th>
+                    <th onClick={() => sortColumn('category', 'string')}>Category</th>
                     <th>Details</th>
                     <th>Details_S</th>
                     <th>Image</th>
                     <th>Date</th>
-                    <th>Product rating</th>
+                    <th onClick={() => sortColumn('productRating', 'number')}>Product rating</th>
                     <th colSpan="3">More</th>
                 </tr>
                 </thead>

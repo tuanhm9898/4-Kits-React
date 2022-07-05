@@ -7,9 +7,9 @@ const ProductEdit = () => {
     const [product, setProduct] = useState(null);
     const [category, setCategory] = useState(null);
     const [countries, setCountries] = useState(null);
-    const [data, setData] = useState()
-
+    // const [data, setData] = useState()
     let navigate = useNavigate();
+
     useEffect(() => {
         if (params.id != null && params.id != 'new') {
             let product_url =
@@ -42,10 +42,10 @@ const ProductEdit = () => {
         fetch(countries_url)
             .then((response) => response.json())
             .then((data) => {
-                console.log('conuntry api ');
+                console.log('country api ');
                 setCountries(data);
             });
-    }, [data]);
+    }, []);
 
     const saveProduct = () => {
         console.log(product);
@@ -159,7 +159,7 @@ const ProductEdit = () => {
                                             <td>
                                                   <textarea
                                                       type="text"
-                                                      name="description"
+                                                      name="details"
                                                       className="form-control"
                                                       value={product.details}
                                                       onChange={(e) => handleChange(e)}>
@@ -168,12 +168,12 @@ const ProductEdit = () => {
                                         </tr>
                                         <tr>
                                             <td>
-                                                <strong>Details_Short</strong>
+                                                <strong>Details_Shorts</strong>
                                             </td>
                                             <td>
                                                   <textarea
                                                       type="text"
-                                                      name="details_short"
+                                                      name="details_shorts"
                                                       className="form-control"
                                                       value={product.details_shorts}
                                                       onChange={(e) => handleChange(e)}>

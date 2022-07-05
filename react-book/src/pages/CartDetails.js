@@ -46,8 +46,8 @@ const Cart = (props) => {
                     </button>
                 </td>
                 <td>{item.name}</td>
-                <td class="text-right">${item.price}</td>
-                <td class="text-right">${item.price * item.quantity}</td>
+                <td class="text-right">{item.price}.000 đ</td>
+                <td class="text-right">{item.price * item.quantity}.000 đ</td>
                 <td class="text-center">
                     <button
                         class="btn btn-sm btn-danger"
@@ -91,7 +91,7 @@ const Cart = (props) => {
                             <td colspan="3" class="text-right">
                                 Total:
                             </td>
-                            <td class="text-right">${getTotal()}</td>
+                            <td class="text-right">{getTotal()}.000 đ</td>
                         </tr>
                         </tfoot>
                     </table>

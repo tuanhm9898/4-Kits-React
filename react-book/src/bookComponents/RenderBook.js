@@ -58,7 +58,7 @@ const RenderBook = (props) => {
                                         <div className="col-sm-6">
                                             <ThemeProvider prefixes={{ btn: 'my-btn' }}>
                                                 <Button className="mt-2" variant="primary">
-                                                    {item.price}
+                                                    {item.price}.000 đ
                                                 </Button>
                                             </ThemeProvider>
                                         </div>
