@@ -10,6 +10,8 @@ import DetailBook from "./pages/DetailsBook";
 import EditBook from "./pages/EditBook";
 import Test from "./bookComponents/Test";
 import Order from "./bookComponents/testCartOrder";
+import HomeAdmin from "./bookComponents/Admin/HomeAdmin";
+
 function App() {
     return (
         <div>
@@ -17,16 +19,17 @@ function App() {
                 <NavBarsBook/>
             </div>
             <div>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="cart" element={<CartDetails />} />
-                    <Route path="admin" element={<Admin />} />
-                    <Route path="/book/:id" element={<DetailBook />} />
-                    <Route path="edit/:id" element={<EditBook />} />
-                    <Route path="edit/new" element={<EditBook />} />
-                    <Route path="/test" element={<Test />} />
-                    <Route path="/order" element={<Order />} />
+                <Routes path="/" element={<Home/>}>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="cart" element={<CartDetails/>}/>
+                    <Route path="admin" element={<Admin/>}/>
+                    <Route path="/book/:id" element={<DetailBook/>}/>
+                    <Route path="edit/:id" element={<EditBook/>}/>
+                    <Route path="edit/new" element={<EditBook/>}/>
+                    <Route path="/test" element={<Test/>}/>
+                    <Route path="/order" element={<Order/>}/>
                 </Routes>
+                <Routes path="/homeAdmin" element={<HomeAdmin/>}/>
             </div>
             <div>
                 <FooterBook/>
