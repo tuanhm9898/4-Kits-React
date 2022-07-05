@@ -41,6 +41,7 @@ const Admin = () => {
                         <img src={item.image} style={{height: "40px"}}/>
                     </td>
                     <td>{item.publishingYear}</td>
+                    <td>{item.chapter}</td>
                     <td>{item.productRating}%</td>
                    
                     <td><Link to={'/book/' + item.id}><Button variant="outline-success">
@@ -118,6 +119,7 @@ const Admin = () => {
                     <th>Details_S</th>
                     <th>Image</th>
                     <th>Date</th>
+                    <th onClick={() => sortColumn('chapter', 'number')}>Sales</th>
                     <th onClick={() => sortColumn('productRating', 'number')}>Product rating</th>
                     <th colSpan="3">More</th>
                 </tr>

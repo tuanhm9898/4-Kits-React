@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
-import { useNavigate } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { IncreaseQuantity, DecreaseQuantity, DeleteCart } from '../actions';
 
@@ -66,33 +64,33 @@ const Cart = (props) => {
                     <h2 class="text-center">Your Cart</h2>
                     <table class="table table-bordered table-striped p-2">
                         <thead>
-                        <tr>
-                            <th>STT</th>
-                            <th>Quantity</th>
-                            <th>Product</th>
-                            <th class="text-right">Price</th>
-                            <th class="text-right">Subtotal</th>
-                        </tr>
+                            <tr>
+                                <th>STT</th>
+                                <th>Quantity</th>
+                                <th>Product</th>
+                                <th class="text-right">Price</th>
+                                <th class="text-right">Subtotal</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        {cartItems.length == 0 ? (
-                            <tr>
-                                <td colSpan="4" className="text-center">
-                                    Your cart is empty
-                                </td>
-                            </tr>
-                        ) : (
-                            ''
-                        )}
-                        {carts_jsx}
+                            {cartItems.length == 0 ? (
+                                <tr>
+                                    <td colSpan="4" className="text-center">
+                                        Your cart is empty
+                                    </td>
+                                </tr>
+                            ) : (
+                                ''
+                            )}
+                            {carts_jsx}
                         </tbody>
                         <tfoot>
-                        <tr>
-                            <td colspan="3" class="text-right">
-                                Total:
-                            </td>
-                            <td class="text-right">{getTotal()}.000 đ</td>
-                        </tr>
+                            <tr>
+                                <td colspan="3" class="text-right">
+                                    Total:
+                                </td>
+                                <td class="text-right">{getTotal()}.000 đ</td>
+                            </tr>
                         </tfoot>
                     </table>
                 </div>
@@ -100,11 +98,10 @@ const Cart = (props) => {
             <div class="row">
                 <div class="col">
                     <div class="text-center">
-                        <button class="btn btn-primary m-1" onClick={() => navigate(-1)}>
+                        <Link to="/Order"><button class="btn btn-success m-1" type="button">
+                            Checkout</button></Link>
+                        <button class="btn btn-danger m-1" onClick={() => navigate(-1)}>
                             Continue Shopping
-                        </button>
-                        <button class="btn btn-danger m-1" type="button">
-                            Checkout
                         </button>
                     </div>
                 </div>

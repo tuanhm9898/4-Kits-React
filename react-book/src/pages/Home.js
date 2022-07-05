@@ -39,8 +39,7 @@ const Home = () => {
         setData([...data].sort((o1, o2) => o1.price - o2.price));
     };
     return (
-        <div>
-
+        <div className="mt-5 pt-5">
             <Container>
                 <Carousel_Slideshow/>
                 <br></br>
@@ -95,7 +94,6 @@ const Home = () => {
                 <Contact/>
             </Container>
         </div>
-
     );
 };
 

@@ -10,6 +10,7 @@ import FooterBook from "./bookComponents/menu/FooterBook";
 import DetailBook from "./pages/DetailsBook";
 import EditBook from "./pages/EditBook";
 import Test from "./bookComponents/test";
+import Order from "./bookComponents/testCartOrder";
 
 function App() {
     return (
@@ -26,6 +27,7 @@ function App() {
                     <Route path="edit/:id" element={<EditBook />} />
                     <Route path="edit/new" element={<EditBook />} />
                     <Route path="/test" element={<Test />} />
+                    <Route path="/order" element={<Order />} />
                 </Routes>
             </div>
             <div>

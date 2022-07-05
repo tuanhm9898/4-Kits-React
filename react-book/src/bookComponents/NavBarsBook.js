@@ -14,7 +14,7 @@ const NavBarsBook = (props) => {
         console.log('props.numberCart', props.numberCart);
         setNumberCart(props.numberCart);
     }, [props.numberCart]);
-
+//Nav bar fixed="top"
     return (
         <div>
             <Navbar bg="light" expand="lg">
@@ -26,21 +26,11 @@ const NavBarsBook = (props) => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link><Link to="/" className="nav-link">Home</Link></Nav.Link>
-                            <Nav.Link><Link to="cart" className="nav-link">Cart
-                                <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                                <span className="badge badge-warning" id="lblCartCount">
-                                    {numberCart}
-                                </span>
-                            </Link></Nav.Link>
-
-                            <Nav.Link><Link to="cart">
-                                <button type="button" class="btn btn-light">
+                            <Nav.Link><Link to="/admin" className="nav-link">Admin</Link></Nav.Link>
+                            <Nav.Link><Link to="cart" className="nav-link">
                                     <i className="fa fa-shopping-cart" aria-hidden="true"></i>{' '}
                                     <span class="badge bg-danger">{numberCart}</span>
-                                </button>
                             </Link></Nav.Link>
-
-                            <Nav.Link><Link to="/admin" className="nav-link">Admin</Link></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -51,8 +41,8 @@ const NavBarsBook = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-      numberCart: state._todoProduct.numberCart,
+        numberCart: state._todoProduct.numberCart,
     };
-  };
+};
 
 export default connect(mapStateToProps, null)(NavBarsBook);
