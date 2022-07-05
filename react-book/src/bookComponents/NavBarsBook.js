@@ -5,6 +5,8 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from './logo-removebg.jpg'
 import { connect } from 'react-redux';
+import {BsFillCartCheckFill} from "react-icons/bs";
+
 
 const NavBarsBook = (props) => {
 
@@ -17,7 +19,7 @@ const NavBarsBook = (props) => {
 
     return (
         <div>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light" expand="lg" id="banner_style">
                 <Container>
                     <Navbar.Brand><Link to="/" className="nav-link">
                         <img src={logo} height="65" />
@@ -26,16 +28,9 @@ const NavBarsBook = (props) => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link><Link to="/" className="nav-link">Home</Link></Nav.Link>
-                            <Nav.Link><Link to="cart" className="nav-link">Cart
-                                <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                                <span className="badge badge-warning" id="lblCartCount">
-                                    {numberCart}
-                                </span>
-                            </Link></Nav.Link>
-
                             <Nav.Link><Link to="cart">
                                 <button type="button" class="btn btn-light">
-                                    <i className="fa fa-shopping-cart" aria-hidden="true"></i>{' '}
+                                    <BsFillCartCheckFill/>
                                     <span class="badge bg-danger">{numberCart}</span>
                                 </button>
                             </Link></Nav.Link>
