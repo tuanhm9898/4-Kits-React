@@ -1,7 +1,6 @@
 import React from "react";
 import {Route, Routes} from "react-router-dom";
 import './App.css'
-
 import Home from "./pages/Home";
 import CartDetails from "./pages/CartDetails";
 import Admin from "./pages/Admin";
@@ -11,7 +10,6 @@ import DetailBook from "./pages/DetailsBook";
 import EditBook from "./pages/EditBook";
 import Test from "./bookComponents/test";
 import Order from "./bookComponents/testCartOrder";
-
 function App() {
     return (
         <div>

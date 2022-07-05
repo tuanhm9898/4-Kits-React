@@ -28,15 +28,9 @@ const NavBarsBook = (props) => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link><Link to="/" className="nav-link">Home</Link></Nav.Link>
-<<<<<<< HEAD
                             <Nav.Link><Link to="/admin" className="nav-link">Admin</Link></Nav.Link>
                             <Nav.Link><Link to="cart" className="nav-link">
                                     <i className="fa fa-shopping-cart" aria-hidden="true"></i>{' '}
-=======
-                            <Nav.Link><Link to="cart">
-                                <button type="button" class="btn btn-light">
-                                    <BsFillCartCheckFill/>
->>>>>>> a98df8c41ff981dd2f8ca80ea9b5cc89a81d8aed
                                     <span class="badge bg-danger">{numberCart}</span>
                             </Link></Nav.Link>
                         </Nav>

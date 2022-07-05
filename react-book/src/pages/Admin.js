@@ -9,9 +9,9 @@ import ReactPaginate from "react-paginate";
 
 const Admin = () => {
 
-    const [data, setData] = useState();
-    // const [searchBook, setSearchBook] = useState('');
-
+    const [products, setProducts] = useState(null);
+    const [direction, setDirection] = useState(1);
+  
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
     const [page, setPage] = useState(-1);
@@ -24,26 +24,26 @@ const Admin = () => {
         fetch(url)
             .then((response) => response.json())
             .then((data) => {
-                setData(data);
+                setProducts(data);
             });
 
-        if (data != null) {
+        if (products != null) {
             setPage(0);
             console.log('set page');
         }
-    }, [data]);
+    }, [products]);
 
     useEffect(() => {
-        if (data != null) {
+        if (products != null) {
             // Fetch items from another resources.
             let itemsPerPage = 8;
             const starOffset = page * itemsPerPage;
             let endOffset = (page + 1) * itemsPerPage;
-            if (endOffset > data.length) {
-                endOffset = data.length;
+            if (endOffset > products.length) {
+                endOffset = products.length;
             }
-            setCurrentItems(data.slice(starOffset, endOffset));
-            setPageCount(Math.ceil(data.length / itemsPerPage));
+            setCurrentItems(products.slice(starOffset, endOffset));
+            setPageCount(Math.ceil(products.length / itemsPerPage));
         }
     }, [page]);
 
@@ -84,24 +84,24 @@ const Admin = () => {
             method: 'DELETE',
         }).then(() => {
             console.log('delete successful!!');
-            let result = [...data];
+            let result = [...products];
             result = result.filter((item) => {
                 return item.id != id;
             });
-            setData(result);
+            setProducts(result);
         });
     };
 
-    const sortPriceAsc = () => {
-        setData([...data].sort((o1, o2) => o2.price - o1.price));
-
-    };
-
-    const sortNameAsc = () => {
-        setData([...data].sort((o1, o2) => o2.name.localeCompare(o1.name)));
-
-    };
-
+    const sortColumn = (field, type) => {
+        const sortData = [...products];
+        if (type == 'string') {
+          sortData.sort((a, b) => direction * a[field].localeCompare(b[field]));
+        } else if (type == 'number') {
+          sortData.sort((a, b) => direction * (a[field] - b[field]));
+        }
+        setDirection(direction * -1);
+        setProducts(sortData);
+      };
     return (
         <div className="container">
             <h1 className="text-center"> Admin </h1>
@@ -154,11 +154,10 @@ const Admin = () => {
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th onClick={sortPriceAsc}>Name <AiOutlineArrowDown/>
+                    <th onClick={() => sortColumn('name', 'string')}>Name <AiOutlineArrowDown/>
                     </th>
-                    <th onClick={sortNameAsc}>Price</th>
-                    <th onClick={sortNameAsc}>Category</th>
-                    <th>Details</th>
+                    <th onClick={() => sortColumn('price', 'number')}>Price</th>
+                    <th onClick={() => sortColumn('category', 'string')}>Category</th>
                     <th>Details_S</th>
                     <th>Image</th>
                     <th>Date</th>
