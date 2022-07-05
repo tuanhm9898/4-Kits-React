@@ -9,6 +9,7 @@ import NavBarsBook from "./bookComponents/NavBarsBook";
 import FooterBook from "./bookComponents/FooterBook";
 import DetailBook from "./pages/DetailsBook";
 import EditBook from "./pages/EditBook";
+import Test from "./bookComponents/test";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                     <Route path="/book/:id" element={<DetailBook />} />
                     <Route path="edit/:id" element={<EditBook />} />
                     <Route path="edit/new" element={<EditBook />} />
+                    <Route path="/test" element={<Test />} />
                 </Routes>
             </div>
             <div>
