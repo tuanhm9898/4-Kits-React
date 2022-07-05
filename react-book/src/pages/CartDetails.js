@@ -1,6 +1,5 @@
-import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 
 import { connect } from 'react-redux';
@@ -47,8 +46,8 @@ const Cart = (props) => {
                     </button>
                 </td>
                 <td>{item.name}</td>
-                <td class="text-right">${item.price}</td>
-                <td class="text-right">${item.price * item.quantity}</td>
+                <td class="text-right">{item.price}.000 đ</td>
+                <td class="text-right">{item.price * item.quantity}.000 đ</td>
                 <td class="text-center">
                     <button
                         class="btn btn-sm btn-danger"
@@ -76,7 +75,7 @@ const Cart = (props) => {
                         </tr>
                         </thead>
                         <tbody>
-                        {cartItems.length === 0 ? (
+                        {cartItems.length == 0 ? (
                             <tr>
                                 <td colSpan="4" className="text-center">
                                     Your cart is empty
@@ -89,11 +88,10 @@ const Cart = (props) => {
                         </tbody>
                         <tfoot>
                         <tr>
-                            <td></td>
                             <td colspan="3" class="text-right">
                                 Total:
                             </td>
-                            <td class="text-right">${getTotal()}</td>
+                            <td class="text-right">{getTotal()}.000 đ</td>
                         </tr>
                         </tfoot>
                     </table>
