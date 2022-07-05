@@ -8,42 +8,42 @@ import ReactPaginate from "react-paginate";
 
 
 const Admin = () => {
-
-    const [products, setProducts] = useState(null);
+    const [data, setData] = useState();
     const [direction, setDirection] = useState(1);
-  
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
     const [page, setPage] = useState(-1);
 
     useEffect(() => {
-        let url = 'https://62baa4fb573ca8f832881fa9.mockapi.io/book';
+        let url = 'https://62baa4fb573ca8f832881fa9.mockapi.io/book/';
+        console.log(url, "url")
         // if (searchBook.length > 0) {
         //     url = url + '?search=' + searchBook;
         // }
         fetch(url)
-            .then((response) => response.json())
+            .then((res) => res.json())
             .then((data) => {
-                setProducts(data);
+                setData(data);
+                console.log(data, 'set data');
             });
 
-        if (products != null) {
+        if (data != null) {
             setPage(0);
-            console.log('set page');
-        }
-    }, [products]);
+            console.log(page, 'set page');
+        };
+    },[data]);
 
     useEffect(() => {
-        if (products != null) {
+        if (data != null) {
             // Fetch items from another resources.
             let itemsPerPage = 8;
             const starOffset = page * itemsPerPage;
             let endOffset = (page + 1) * itemsPerPage;
-            if (endOffset > products.length) {
-                endOffset = products.length;
+            if (endOffset > data.length) {
+                endOffset = data.length;
             }
-            setCurrentItems(products.slice(starOffset, endOffset));
-            setPageCount(Math.ceil(products.length / itemsPerPage));
+            setCurrentItems(data.slice(starOffset, endOffset));
+            setPageCount(Math.ceil(data.length / itemsPerPage));
         }
     }, [page]);
 
@@ -57,7 +57,7 @@ const Admin = () => {
                 <tr key={item.id}>
                     <td>{item.id}</td>
                     <td>{item.name}</td>
-                    <td>{item.price}</td>
+                    <td>{item.price}.000</td>
                     <td>{item.category}</td>
                     <td>{item.details_shorts}</td>
                     <td>
@@ -84,23 +84,23 @@ const Admin = () => {
             method: 'DELETE',
         }).then(() => {
             console.log('delete successful!!');
-            let result = [...products];
+            let result = [...data];
             result = result.filter((item) => {
                 return item.id != id;
             });
-            setProducts(result);
+            setData(result);
         });
     };
 
     const sortColumn = (field, type) => {
-        const sortData = [...products];
+        const sortData = [...data];
         if (type == 'string') {
           sortData.sort((a, b) => direction * a[field].localeCompare(b[field]));
         } else if (type == 'number') {
           sortData.sort((a, b) => direction * (a[field] - b[field]));
         }
         setDirection(direction * -1);
-        setProducts(sortData);
+        setData(sortData);
       };
     return (
         <div className="container">
@@ -133,9 +133,8 @@ const Admin = () => {
             <Table striped bordered hover>
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th onClick={() => sortColumn('name', 'string')}>Name <AiOutlineArrowDown/>
-                    </th>
+                    <th onClick={() => sortColumn('id', 'number')}>ID</th>
+                    <th onClick={() => sortColumn('name', 'string')}>Name</th>
                     <th onClick={() => sortColumn('price', 'number')}>Price</th>
                     <th onClick={() => sortColumn('category', 'string')}>Category</th>
                     <th>Details_S</th>
