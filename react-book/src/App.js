@@ -8,7 +8,7 @@ import NavBarsBook from "./bookComponents/NavBarsBook";
 import FooterBook from "./bookComponents/menu/FooterBook";
 import DetailBook from "./pages/DetailsBook";
 import EditBook from "./pages/EditBook";
-import Test from "./bookComponents/test";
+import Test from "./bookComponents/Test";
 import Order from "./bookComponents/testCartOrder";
 function App() {
     return (
