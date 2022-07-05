@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {Button, Nav, Navbar} from 'react-bootstrap';
-import Cart from '../bookComponents/CartTask';
+import CartTask from '../bookComponents/CartTask';
 import Carousel_Slideshow from "../bookComponents/Carousel_Slideshow";
 import Card_Slideshow from "../bookComponents/Card_Slideshow";
 import {AddCart} from "../actions";
@@ -20,9 +20,11 @@ const Home = () => {
     const [data, setData] = useState([]);
     const [searchBook, setSearchBook] = useState('');
 
+    const [likeBook, setLikeBook] = useState()
     useEffect(() => {
-        console.log('effect data book home page');
+        console.log('data home page');
         let url = 'https://62baa4fb573ca8f832881fa9.mockapi.io/book';
+        let likeBook = 'https://62baa4fb573ca8f832881fa9.mockapi.io/cart'
         if (searchBook.length > 0) {
             url = url + '?search=' + searchBook;
         }
@@ -30,8 +32,14 @@ const Home = () => {
             .then((response) => response.json())
             .then((data) => {
                 setData(data);
-                console.log("get data", data);
             });
+
+        console.log("data task home page")
+        fetch(likeBook)
+            .then((reponse) => reponse.json())
+            .then((data) => {
+                setLikeBook(data)
+            })
     }, [searchBook]);
 
     const sort_price = () => {
@@ -74,14 +82,9 @@ const Home = () => {
                                 Sort Price
                             </Button>
                             <br/> <br/>
-                            {/*<Link as={Cart}>*/}
-                            {/*    <Button variant="outline-info">Cart</Button>*/}
-                            {/*</Link>*/}
                             <Navbar>
                                 <Nav>
-                                    <Nav.Link as={Cart} to="/cart" exact>
-                                        <Button variant="outline-info">Cart</Button>
-                                    </Nav.Link>
+                                    <CartTask data={likeBook}/>
                                 </Nav>
                             </Navbar>
                         </div>

@@ -9,6 +9,7 @@ import ReactPaginate from 'react-paginate';
 import { connect } from 'react-redux';
 import { AddCart } from '../actions';
 import data from "bootstrap/js/src/dom/data";
+import axios from "axios";
 
 const RenderBook = (props) => {
     const [data, setData] = useState(null);
@@ -18,18 +19,32 @@ const RenderBook = (props) => {
         setData(data.filter((a) => a.category === category));
     };
 
-    // const add_cart = async (id, name, image) => {
-    //     try {
-    //         const res = await axios.post('https://62baa4fb573ca8f832881fa9.mockapi.io/cart', {
-    //             "name": name,
-    //             "image": image,
-    //             "amount": 1,
-    //             "id": id
-    //         })
-    //     } catch (e) {
-    //         console.log("error axios")
-    //     }
-    // }
+    const bookLove = async ( id,name, chapter,image) => {
+
+        const requestOptions = {
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data),
+        };
+
+        // fetch(
+        //     'https://62baa4fb573ca8f832881fa9.mockapi.io/cart' ,
+        //     requestOptions
+        // ) .then((response) => response.json())
+        //     .then((data) => {
+        //         console.log("book like ");
+        //     });
+
+        try {
+            const res = await axios.post('https://62baa4fb573ca8f832881fa9.mockapi.io/cart', {
+                "name": name,
+                "chapter" : chapter,
+                "image": image,
+            })
+        } catch (e) {
+            console.log("error axios")
+        }
+    }
 
     useEffect(() => {
         console.log('render book : ')
@@ -66,12 +81,11 @@ const RenderBook = (props) => {
                                 </Card.Text>
                             </Card.Text>
                             <Card.Text className="text-center">
-                                <Button>
-                                    Yêu thích
+                                <Button onClick={() =>bookLove(item.id,item.name,item.chapter,item.image)}>
+                                    Like
                                 </Button>
                                 <span> </span>
                                 <Button
-                                    // onClick={() => add_cart(item.id, item.name, item.image)}
                                     class="btn btn-danger"
                                     onClick={() => props.AddCart(item)}
                                     variant="info"
