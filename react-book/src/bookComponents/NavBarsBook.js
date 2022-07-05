@@ -16,7 +16,7 @@ const NavBarsBook = (props) => {
     const [numberCart, setNumberCart] = useState(null);
 
     useEffect(() => {
-        console.log('props.numberCart', props.numberCart);
+        // console.log('props.numberCart', props.numberCart);
         setNumberCart(props.numberCart);
     }, [props.numberCart]);
 
