@@ -121,34 +121,14 @@ const Admin = () => {
                     {/*    </InputGroup>*/}
                     {/*</div>*/}
                 </Col>
-
-                <Col xs={12} md={6}>
-                <Link to='/edit/new'><Button variant="outline-info" className="mb-5">
-                        Add new
-                    </Button></Link>
-                </Col>
             </Row>
-
-            <ReactPaginate
-                previousLabel="Previous"
-                nextLabel="Next"
-                pageClassName="page-item"
-                pageLinkClassName="page-link"
-                previousClassName="page-item"
-                previousLinkClassName="page-link"
-                nextClassName="page-item"
-                nextLinkClassName="page-link"
-                breakLabel="..."
-                breakClassName="page-item"
-                breakLinkClassName="page-link"
-                pageCount={pageCount}
-                marginPagesDisplayed={2}
-                pageRangeDisplayed={5}
-                onPageChange={handlePageClick}
-                containerClassName="pagination"
-                activeClassName="active"
-                forcePage={10}
-            />
+            <Col xs={10} md={6}>
+                <Link to='/edit/new'>
+                    <Button variant="outline-info" className="mb-5">
+                        Add new
+                    </Button>
+                </Link>
+            </Col>
             <Table striped bordered hover>
                 <thead>
                 <tr>
@@ -169,6 +149,26 @@ const Admin = () => {
                 {listBook}
                 </tbody>
             </Table>
+            <ReactPaginate
+                previousLabel="Previous"
+                nextLabel="Next"
+                pageClassName="page-item"
+                pageLinkClassName="page-link"
+                previousClassName="page-item"
+                previousLinkClassName="page-link"
+                nextClassName="page-item"
+                nextLinkClassName="page-link"
+                breakLabel="..."
+                breakClassName="page-item"
+                breakLinkClassName="page-link"
+                pageCount={pageCount}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={5}
+                onPageChange={handlePageClick}
+                containerClassName="pagination"
+                activeClassName="active"
+                forcePage={10}
+            />
         </div>
     );
 };
