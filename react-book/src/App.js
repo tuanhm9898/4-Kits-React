@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import CartDetails from "./pages/CartDetails";
 import Admin from "./pages/Admin";
 import NavBarsBook from "./bookComponents/NavBarsBook";
-import FooterBook from "./bookComponents/FooterBook";
+import FooterBook from "./bookComponents/menu/FooterBook";
 import DetailBook from "./pages/DetailsBook";
 import EditBook from "./pages/EditBook";
 import Test from "./bookComponents/Test";
