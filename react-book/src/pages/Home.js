@@ -95,10 +95,5 @@ const Home = () => {
     );
 };
 
-function mapDispatchToProps(dispatch) {
-    return {
-        AddCart: (item) => dispatch(AddCart(item)),
-    };
-}
 
 export default Home;
