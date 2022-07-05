@@ -89,46 +89,24 @@ const FooterBook = () => {
                     </div>
                     <div class="col-sm-6 col-md-4 col-sms-6 col-smb-12">
                       <div class="footer-static-title">
-                        <h3>T&agrave;i khoản của t&ocirc;i</h3>
+                        <h3>Li&ecirc;n hệ</h3>
                       </div>
-                      <div class="footer-static-content">
+                      <div class="footer-static-content ">
                         <tr>
-                      
+            
                             <p>
-                              Đăng nhập/Tạo mới t&agrave;i khoản
-                            </p>
-                   
-                            <p>
-                              Thay đổi địa chỉ kh&aacute;ch h&agrave;ng
+                              36 Hoàng Cầu, Q.Đống Đa, Hà Nội
                             </p>
                      
                             <p>
-                              Chi tiết t&agrave;i khoản
+                              bookstore@gmail.com.vn
                             </p>
-                  
+                 
                             <p>
-                              Lịch sử mua h&agrave;ng
+                              1900151820
                             </p>
-                     
                         </tr>
                       </div>
-                    </div>
-                  </div>
-                  <div class="footer-static-title">
-                    <h3>Li&ecirc;n hệ</h3>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <em class="fa fa-map-marker">&nbsp;</em>
-                      36 Hoàng Cầu, Q.Đống Đa, Hà Nội
-                    </div>
-                    <div class="col-md-4">
-                      <em class="fa fa-envelope">&nbsp;</em>
-                      bookstore@gmail.com.vn
-                    </div>
-                    <div class="col-md-4">
-                      <em class="fa fa-phone">&nbsp;</em>
-                      1900151820
                     </div>
                   </div>
                 </div>

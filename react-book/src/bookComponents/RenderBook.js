@@ -62,24 +62,23 @@ const RenderBook = (props) => {
                                                 </Button>
                                             </ThemeProvider>
                                         </div>
-                                        <div className="col-sm-6">
-                                            <Button
-                                                onClick={() => categorySelect(item.category)}
-                                                variant="outline-primary"
-                                            >
-                                                {item.category}
-                                            </Button>
-                                        </div>
                                     </div>
                                 </Card.Text>
                             </Card.Text>
-                            <Button
-                                // onClick={() => add_cart(item.id, item.name, item.image)}
-                                onClick={() => props.AddCart(item)}
-                                variant="info"
-                            >
-                                Add Cart
-                            </Button>
+                            <Card.Text className="text-center">
+                                <Button>
+                                    Yêu thích
+                                </Button>
+                                <span> </span>
+                                <Button
+                                    // onClick={() => add_cart(item.id, item.name, item.image)}
+                                    class="btn btn-danger"
+                                    onClick={() => props.AddCart(item)}
+                                    variant="info"
+                                >
+                                    Add Cart
+                                </Button>
+                            </Card.Text>
                         </Card.Body>
                     </Card>
                 </div>
