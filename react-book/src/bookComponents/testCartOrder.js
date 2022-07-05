@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import {Button} from "react-bootstrap";
 const Order = () => {
     let navigate = useNavigate();
     const SaveInfo = () => {
@@ -53,7 +54,7 @@ const Order = () => {
               <div class="form-floating mt-3 mb-3">
                 <input
                   type="number"
-                  class="form-control"
+                  class="form-control ms-1"
                   id="phone"
                   placeholder="Enter phone number"
                   name="phone"
@@ -78,7 +79,7 @@ const Order = () => {
           </tr>
           <tr colspan="2">
             <td>
-              <div class="form-floating">
+              <div class="form-floating mb-3">
                 <textarea
                   class="form-control"
                   id="note"
@@ -89,17 +90,20 @@ const Order = () => {
               </div>
             </td>
           </tr>
-          <button
-              type="button" 
-              class="btn btn-success"
+          <Button
+              className="me-3"
+              type="button"
+              variant="outline-info"
               onClick={() => SaveInfo()}
             >
-              Save
-            </button>
+              Buy
+            </Button>
           <Link to="/cart">
-              <button type="button" class="btn btn-secondary">
+              <Button
+                      variant="outline-warning"
+                      >
                 Cancel
-              </button>
+              </Button>
             </Link>
         </table>
       </div>
