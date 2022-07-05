@@ -9,8 +9,9 @@ import Col from 'react-bootstrap/Col';
 import {Button, Nav, Navbar} from 'react-bootstrap';
 import Cart from '../bookComponents/CartTask';
 import Carousel_Slideshow from "../bookComponents/Carousel_Slideshow";
+import Card_Slideshow from "../bookComponents/Card_Slideshow";
 import {AddCart} from "../actions";
-import MenuItem from "../bookComponents/MenuItem";
+import MenuItem from ".././bookComponents/menu/MenuItem";
 import FlashSale from "../bookComponents/flashSale";
 import TopBook from "../bookComponents/TopBook";
 import Contact from "../bookComponents/Contact";
@@ -42,8 +43,11 @@ const Home = () => {
 
             <Container>
                 <Carousel_Slideshow/>
-                <h1 className="text-center m-3">Shop</h1>
+                <br></br>
+                <Card_Slideshow/>
+                <br></br>
                 <MenuItem/>
+                <br></br>
                 <FlashSale/>
                 <Row>
                     <Col xs={12} md={9}>
