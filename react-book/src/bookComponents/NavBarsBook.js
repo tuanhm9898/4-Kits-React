@@ -5,19 +5,21 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from './logo-removebg.jpg'
 import { connect } from 'react-redux';
+import {BsFillCartCheckFill} from "react-icons/bs";
+
 
 const NavBarsBook = (props) => {
 
     const [numberCart, setNumberCart] = useState(null);
 
     useEffect(() => {
-        console.log('props.numberCart', props.numberCart);
+        // console.log('props.numberCart', props.numberCart);
         setNumberCart(props.numberCart);
     }, [props.numberCart]);
 //Nav bar fixed="top"
     return (
         <div>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light" expand="lg" id="banner_style">
                 <Container>
                     <Navbar.Brand><Link to="/" className="nav-link">
                         <img src={logo} height="65" />
@@ -26,9 +28,15 @@ const NavBarsBook = (props) => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link><Link to="/" className="nav-link">Home</Link></Nav.Link>
+<<<<<<< HEAD
                             <Nav.Link><Link to="/admin" className="nav-link">Admin</Link></Nav.Link>
                             <Nav.Link><Link to="cart" className="nav-link">
                                     <i className="fa fa-shopping-cart" aria-hidden="true"></i>{' '}
+=======
+                            <Nav.Link><Link to="cart">
+                                <button type="button" class="btn btn-light">
+                                    <BsFillCartCheckFill/>
+>>>>>>> a98df8c41ff981dd2f8ca80ea9b5cc89a81d8aed
                                     <span class="badge bg-danger">{numberCart}</span>
                             </Link></Nav.Link>
                         </Nav>

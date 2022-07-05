@@ -4,3 +4,12 @@
 body{
   font-family: 'Space Grotesk', sans-serif;
 }
+@media only screen and (min-width: 1000px) {
+  #banner_style{
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 70px;
+  }
+}
+

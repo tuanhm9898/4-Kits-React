@@ -7,7 +7,7 @@ import {AiOutlineArrowDown} from "react-icons/ai";
 import ReactPaginate from "react-paginate";
 
 
-const Admin = () => {
+const Test = () => {
 
     const [data, setData] = useState();
     // const [searchBook, setSearchBook] = useState('');
@@ -64,7 +64,6 @@ const Admin = () => {
                         <img src={item.image} style={{height: "40px"}}/>
                     </td>
                     <td>{item.publishingYear}</td>
-                    <td>{item.chapter}</td>
                     <td>{item.productRating}%</td>
 
                     <td><Link to={'/book/' + item.id}><Button variant="outline-success">
@@ -124,7 +123,7 @@ const Admin = () => {
                 </Col>
 
                 <Col xs={12} md={6}>
-                <Link to='/edit/new'><Button variant="outline-info" className="mb-5">
+                    <Link to='/edit/new'><Button variant="outline-info" className="mb-5">
                         Add new
                     </Button></Link>
                 </Col>
@@ -162,8 +161,7 @@ const Admin = () => {
                     <th>Details_S</th>
                     <th>Image</th>
                     <th>Date</th>
-                    <th onClick={() => sortColumn('chapter', 'number')}>Sales</th>
-                    <th onClick={() => sortColumn('productRating', 'number')}>Product rating</th>
+                    <th>Product rating</th>
                     <th colSpan="3">More</th>
                 </tr>
                 </thead>
@@ -175,4 +173,4 @@ const Admin = () => {
     );
 };
 
-export default Admin;
+export default Test;
