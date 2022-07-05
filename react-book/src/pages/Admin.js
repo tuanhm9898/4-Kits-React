@@ -8,7 +8,7 @@ import ReactPaginate from "react-paginate";
 
 
 const Admin = () => {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState();
     const [direction, setDirection] = useState(1);
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
@@ -57,7 +57,7 @@ const Admin = () => {
                 <tr key={item.id}>
                     <td>{item.id}</td>
                     <td>{item.name}</td>
-                    <td>{item.price}</td>
+                    <td>{item.price}.000</td>
                     <td>{item.category}</td>
                     <td>{item.details_shorts}</td>
                     <td>
@@ -133,9 +133,8 @@ const Admin = () => {
             <Table striped bordered hover>
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th onClick={() => sortColumn('name', 'string')}>Name <AiOutlineArrowDown/>
-                    </th>
+                    <th onClick={() => sortColumn('id', 'number')}>ID</th>
+                    <th onClick={() => sortColumn('name', 'string')}>Name</th>
                     <th onClick={() => sortColumn('price', 'number')}>Price</th>
                     <th onClick={() => sortColumn('category', 'string')}>Category</th>
                     <th>Details_S</th>
