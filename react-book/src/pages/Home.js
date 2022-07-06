@@ -55,7 +55,6 @@ const Home = () => {
                 <br></br>
                 <MenuItem/>
                 <br></br>
-                <FlashSale/>
                 <Row>
                     <Col xs={12} md={9}>
                         <Row>
@@ -93,7 +92,6 @@ const Home = () => {
             </Container>
 
             <Container>
-                <TopBook/>
                 <Contact/>
             </Container>
         </div>
