@@ -27,7 +27,7 @@ const MenuItem = () => {
       <div class="row cms-icon-menu">
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="#">
+            <a href="/flashSale">
               <img
                 src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_FlashSale_Hot_1.png"
                 class="center"
@@ -40,20 +40,20 @@ const MenuItem = () => {
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="#">
+            <Link to="/coupon">
               <img
                 src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_MaGiamGia_Hot_1.png"
                 class="center"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
-          <div class="cms-icon-menu-item-name">Mã Giảm Giá</div>
+          <div class="cms-icon-menu-item-name">Coupon</div>
         </div>
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="#">
+            <a href="/trending">
               <img
                 src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_Trending_Moi_1.png"
                 class="center"
@@ -66,7 +66,7 @@ const MenuItem = () => {
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="#">
+            <a href="/marketBook">
               <img
                 src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_PhienChoCu_Hot.png"
                 class="center"
@@ -82,7 +82,7 @@ const MenuItem = () => {
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="#">
+            <a href="newBook">
               <img
                 src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_SanPhamMoi_1.png"
                 class="center"
@@ -98,7 +98,7 @@ const MenuItem = () => {
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="#">
+            <a href="/bestSeller">
               <img
                 src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/DoChoi/Thang5/Icon_DoChoi_Hot.png"
                 class="center"
@@ -107,14 +107,14 @@ const MenuItem = () => {
             </a>
           </div>
           <div class="cms-icon-menu-item-name">
-            Đồ Chơi <br />
-            Giáo Dục
+           Sach  <br />
+           ban chay
           </div>
         </div>
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="#">
+            <a href="/reviewBook">
               <img
                 src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_VanPhongPham_Hot_1.png"
                 class="center"
@@ -123,13 +123,13 @@ const MenuItem = () => {
             </a>
           </div>
           <div class="cms-icon-menu-item-name">
-            Văn Phòng Phẩm
+            Review Book
           </div>
         </div>
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="#">
+            <a href="/bestSeller">
               <img
                 src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_ThieuNhi_Moi_1.png"
                 class="center"
@@ -137,12 +137,12 @@ const MenuItem = () => {
               />
             </a>
           </div>
-          <div class="cms-icon-menu-item-name">Thiếu Nhi</div>
+          <div class="cms-icon-menu-item-name">Best Seller Book</div>
         </div>
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="#">
+            <a href="/manga">
               <img
                 src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_MangaCommic.png"
                 class="center"
@@ -157,7 +157,7 @@ const MenuItem = () => {
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="#">
+            <a href="/about">
               <img
                 src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_KinhTe.png"
                 class="center"
@@ -165,7 +165,7 @@ const MenuItem = () => {
               />
             </a>
           </div>
-          <div class="cms-icon-menu-item-name">Kinh Tế</div>
+          <div class="cms-icon-menu-item-name">about</div>
         </div>
       </div>
     );

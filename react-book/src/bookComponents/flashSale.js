@@ -4,6 +4,8 @@ const FlashSale = () => {
     return (
         <div>
             <h1>FlashSale</h1>
+            <h1>FlashSale</h1>
+            <h1>FlashSale</h1>
         </div>
     );
 };
