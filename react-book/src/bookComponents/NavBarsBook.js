@@ -36,7 +36,6 @@ const NavBarsBook = (props) => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-
         </div>
     );
 };
