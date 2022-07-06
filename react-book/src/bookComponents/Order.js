@@ -30,9 +30,8 @@ const Order = (props) => {
     if (cartItems.length > 0) {
         carts_jsx = cartItems.map((item, key) => (
             <tr>
-                <td>{key + 1}</td>
                 <td>{item.name}</td>
-                <td class="text-right">{item.price}.000 đ</td>
+                <td>{item.quantity}</td>
                 <td class="text-right">{item.price * item.quantity}.000 đ</td>
                 <td class="text-center">
                     <button
@@ -66,21 +65,20 @@ const Order = (props) => {
         };
         fetch('https://62baa4fb573ca8f832881fa9.mockapi.io/info/', requestOptions)
             .then(response => response.json())
-            .then(data => setOrder({ postId: order.id }));
+            .then(data => setOrder(data));
     }
     return (
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col mt-2">
-                    <h2 class="text-center">Your Cart</h2>
+                <div class="col mt-5">
+                    <h2 class="text-center mt-5">Your Cart</h2>
                     <table class="table table-bordered table-striped p-2">
                         <thead>
                             <tr>
-                                <th>STT</th>
+                                <th>Product(s)</th>
                                 <th>Quantity</th>
-                                <th>Product</th>
                                 <th class="text-right">Price</th>
-                                <th class="text-right">Subtotal</th>
+                                <th class="text-right"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -97,7 +95,7 @@ const Order = (props) => {
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="3" class="text-right">
+                                <td colspan="2" class="text-right">
                                     Total:
                                 </td>
                                 <td class="text-right">{getTotal()}.000 đ</td>
@@ -118,10 +116,8 @@ const Order = (props) => {
                                 <input
                                     type="text"
                                     class="form-control"
-
                                     placeholder="Enter Fullname"
                                     name="name"
-
                                     onChange={(e) => handleChange(e)}
                                 />
                                 <label for="name">Name</label>
@@ -132,7 +128,7 @@ const Order = (props) => {
                                 <input
                                     type="number"
                                     class="form-control"
-
+                                    placeholder="Enter Phone Number"
                                     onChange={(e) => handleChange(e)}
                                     name="phone"
                                 />
@@ -140,7 +136,7 @@ const Order = (props) => {
                             </div>
                         </td>
                     </tr>
-                    {/* <tr colspan="2">
+                    <tr colspan="2">
                         <td>
                             <div class="form-floating mt-3 mb-3">
                                 <input
@@ -148,7 +144,6 @@ const Order = (props) => {
                                     class="form-control"
                                     placeholder="Enter Address"
                                     name="address"
-                                    value=""
                                     onChange={(e) => handleChange(e)}
                                 />
                                 <label for="address">Address</label>
@@ -160,14 +155,13 @@ const Order = (props) => {
                             <div class="form-floating">
                                 <textarea
                                     class="form-control"
-                                    name="text"
+                                    name="notes"
                                     placeholder="Note goes here"
-                                    value=""
                                     onChange={(e) => handleChange(e)}
                                 ></textarea>
-                                <label for="note">Notes</label>
+                                <label for="notes">Notes</label>
                             </div>
-                        </td></tr> */}
+                        </td></tr>
                 </table>
 
 
