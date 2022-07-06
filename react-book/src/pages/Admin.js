@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {Button, InputGroup, Table} from "react-bootstrap";
+import {Button, Table} from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {Link} from "react-router-dom";
-import {AiOutlineArrowDown} from "react-icons/ai";
 import ReactPaginate from "react-paginate";
+import ReChart from "../bookComponents/Admin/ReChart"
 
 
 const Admin = () => {
@@ -30,8 +30,9 @@ const Admin = () => {
         if (data != null) {
             setPage(0);
             console.log(page, 'set page');
-        };
-    },[data]);
+        }
+        ;
+    }, [data]);
 
     useEffect(() => {
         if (data != null) {
@@ -53,7 +54,7 @@ const Admin = () => {
 
     let listBook = []
     if (currentItems != null) {
-        listBook =  currentItems.map((item, id) => (
+        listBook = currentItems.map((item, id) => (
                 <tr key={item.id}>
                     <td>{item.id}</td>
                     <td>{item.name}</td>
@@ -77,7 +78,8 @@ const Admin = () => {
                 </tr>
             )
         )
-    };
+    }
+    ;
 
     const deleteUser = (id) => {
         fetch('https://62baa4fb573ca8f832881fa9.mockapi.io/book/' + id, {
@@ -95,34 +97,21 @@ const Admin = () => {
     const sortColumn = (field, type) => {
         const sortData = [...data];
         if (type == 'string') {
-          sortData.sort((a, b) => direction * a[field].localeCompare(b[field]));
+            sortData.sort((a, b) => direction * a[field].localeCompare(b[field]));
         } else if (type == 'number') {
-          sortData.sort((a, b) => direction * (a[field] - b[field]));
+            sortData.sort((a, b) => direction * (a[field] - b[field]));
         }
         setDirection(direction * -1);
         setData(sortData);
-      };
+    };
     return (
         <div className="container">
-            <h1 className="text-center"> Admin </h1>
+            <ReChart/>
+            <hr/>
             <Row>
                 <Col xs={12} md={6}>
-                    {/*<div className="col-sm-6">*/}
-                    {/*    <InputGroup className="mb-3">*/}
-                    {/*        <Form.Controlx*/}
-                    {/*            placeholder="Search Book Store"*/}
-                    {/*            aria-label="Recipient's username"*/}
-                    {/*            aria-describedby="basic-addon2"*/}
-                    {/*            value={searchBook}*/}
-                    {/*            onChange={(e) => setSearchBook(e.target.value)}*/}
-                    {/*        />*/}
-                    {/*        <InputGroup.Text id="basic-addon2">*/}
-                    {/*            <Button active="btn-infor">search</Button>*/}
-                    {/*        </InputGroup.Text>*/}
-                    {/*    </InputGroup>*/}
-                    {/*</div>*/}
+                    <h1>SEARCH</h1>
                 </Col>
-            </Row>
             <Col xs={10} md={6}>
                 <Link to='/edit/new'>
                     <Button variant="outline-info" className="mb-5">
@@ -130,6 +119,8 @@ const Admin = () => {
                     </Button>
                 </Link>
             </Col>
+            </Row>
+
             <Table striped bordered hover>
                 <thead>
                 <tr>

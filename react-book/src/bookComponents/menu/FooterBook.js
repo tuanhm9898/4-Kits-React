@@ -4,6 +4,7 @@ import "./style.css";
 const FooterBook = () => {
   return (
     <section>
+        <hr/>
       <div class="ma-footer-static mt-4">
         <div class="footer-static">
           <div class="container">
