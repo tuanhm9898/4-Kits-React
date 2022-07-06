@@ -2,6 +2,13 @@ import React, {useEffect, useState} from 'react';
 import {Nav, Navbar} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import "./style.css";
+import {FcFlashOn} from "react-icons/fc";
+import {RiCoupon3Line} from "react-icons/ri";
+import {BiTrendingUp,BiHomeAlt,BiBook} from "react-icons/bi";
+import {MdOutlineNewLabel} from "react-icons/md";
+import {AiTwotoneBook,AiFillStar} from "react-icons/ai";
+import {BsBookHalf} from "react-icons/bs";
+import {IoMdContact} from "react-icons/io";
 
 
 
@@ -28,11 +35,7 @@ const MenuItem = () => {
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
             <a href="/flashSale">
-              <img
-                src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_FlashSale_Hot_1.png"
-                class="center"
-                alt=""
-              />
+                  <FcFlashOn class="icon-menu-item"/>
             </a>
           </div>
           <div class="cms-icon-menu-item-name">Flash Sale</div>
@@ -41,11 +44,7 @@ const MenuItem = () => {
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
             <Link to="/coupon">
-              <img
-                src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_MaGiamGia_Hot_1.png"
-                class="center"
-                alt=""
-              />
+                <RiCoupon3Line class="icon-menu-item"/>
             </Link>
           </div>
           <div class="cms-icon-menu-item-name">Coupon</div>
@@ -54,11 +53,7 @@ const MenuItem = () => {
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
             <a href="/trending">
-              <img
-                src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_Trending_Moi_1.png"
-                class="center"
-                alt=""
-              />
+                <BiTrendingUp class="icon-menu-item"/>
             </a>
           </div>
           <div class="cms-icon-menu-item-name">Xu Hướng</div>
@@ -67,11 +62,7 @@ const MenuItem = () => {
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
             <a href="/marketBook">
-              <img
-                src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_PhienChoCu_Hot.png"
-                class="center"
-                alt=""
-              />
+                <BiHomeAlt class="icon-menu-item"/>
             </a>
           </div>
           <div class="cms-icon-menu-item-name">
@@ -83,11 +74,7 @@ const MenuItem = () => {
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
             <a href="newBook">
-              <img
-                src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_SanPhamMoi_1.png"
-                class="center"
-                alt=""
-              />
+                <MdOutlineNewLabel class="icon-menu-item"/>
             </a>
           </div>
           <div class="cms-icon-menu-item-name">
@@ -99,11 +86,7 @@ const MenuItem = () => {
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
             <a href="/bestSeller">
-              <img
-                src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/DoChoi/Thang5/Icon_DoChoi_Hot.png"
-                class="center"
-                alt=""
-              />
+                <AiTwotoneBook class="icon-menu-item"/>
             </a>
           </div>
           <div class="cms-icon-menu-item-name">
@@ -115,11 +98,7 @@ const MenuItem = () => {
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
             <a href="/reviewBook">
-              <img
-                src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_VanPhongPham_Hot_1.png"
-                class="center"
-                alt=""
-              />
+                <BsBookHalf class="icon-menu-item"/>
             </a>
           </div>
           <div class="cms-icon-menu-item-name">
@@ -130,11 +109,7 @@ const MenuItem = () => {
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
             <a href="/bestSeller">
-              <img
-                src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_ThieuNhi_Moi_1.png"
-                class="center"
-                alt=""
-              />
+                <AiFillStar class="icon-menu-item"/>
             </a>
           </div>
           <div class="cms-icon-menu-item-name">Best Seller Book</div>
@@ -143,11 +118,7 @@ const MenuItem = () => {
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
             <a href="/manga">
-              <img
-                src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_MangaCommic.png"
-                class="center"
-                alt=""
-              />
+                <BiBook class="icon-menu-item"/>
             </a>
           </div>
           <div class="cms-icon-menu-item-name">
@@ -158,11 +129,7 @@ const MenuItem = () => {
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
             <a href="/about">
-              <img
-                src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_KinhTe.png"
-                class="center"
-                alt=""
-              />
+                <IoMdContact class="icon-menu-item"/>
             </a>
           </div>
           <div class="cms-icon-menu-item-name">about</div>

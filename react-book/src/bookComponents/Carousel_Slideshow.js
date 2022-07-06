@@ -7,37 +7,45 @@ import img4 from '../image/banner4.jpg'
 function CarouselSlideshow() {
     return (
         <Carousel>
-            <Carousel.Item interval={2000}>
-                <img
-                    className="d-block w-100"
-                    src={img1}
-                    alt="First slide"
-                    height="350px"
-                />
-            </Carousel.Item>
-            <Carousel.Item interval={2000}>
+            <Carousel.Item>
                 <img
                     className="d-block w-100"
                     src={img2}
                     alt="First slide"
-                    height="350px"
+                    height="400"
                 />
+                <Carousel.Caption>
+                    <h1>Store Book </h1>
+                    <h3>Hè về săn ưu đãi cực chất</h3>
+                </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item interval={2000}>
+            <Carousel.Item>
                 <img
                     className="d-block w-100"
                     src={img3}
-                    alt="First slide"
-                    height="350px"
+                    alt="Second slide"
+                    height="400"
                 />
+
+                <Carousel.Caption>
+                    <h1>Free Ship</h1>
+                    <h3>cho hóa đơn từ 200k</h3>
+                </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item interval={2000}>
+            <Carousel.Item>
                 <img
                     className="d-block w-100"
                     src={img4}
-                    alt="First slide"
-                    height="350px"
+                    alt="Third slide"
+                    height="400"
                 />
+
+                <Carousel.Caption>
+                    <h1>Thanh toán Shoppe Pay</h1>
+                    <h3>
+                        Giảm 20% mỗi hóa đơn
+                    </h3>
+                </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
     );

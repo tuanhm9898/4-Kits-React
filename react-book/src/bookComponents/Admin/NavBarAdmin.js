@@ -27,7 +27,8 @@ const NavBarAdmin = (props) => {
                         <Nav className="me-auto">
                             <Nav.Link><Link to="/" className="nav-link">Home</Link></Nav.Link>
                             <Nav.Link><Link to="/admin" className="nav-link">Product</Link></Nav.Link>
-                            <Nav.Link><Link to="/customer" className="nav-link">Customer</Link></Nav.Link>
+                            <Nav.Link><Link to="/customer" className="nav-link">Customer Contact</Link></Nav.Link>
+                            <Nav.Link><Link to="/historyOrder" className="nav-link">History Order</Link></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
