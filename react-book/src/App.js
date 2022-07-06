@@ -19,6 +19,7 @@ import BestSellerBook from "./bookComponents/menu/menuItem2/bestSellerBook";
 import ReviewBook from "./bookComponents/menu/menuItem2/reviewBook";
 import Manga from "./bookComponents/menu/menuItem2/manga";
 import About from "./bookComponents/menu/menuItem2/about";
+import HistoryOrder from "./bookComponents/Admin/HistoryOrder";
 
 function App() {
     return (
@@ -45,6 +46,7 @@ function App() {
                     <Route path="/reviewBook" element={<ReviewBook/>}/>
                     <Route path="/manga" element={<Manga/>}/>
                     <Route path="/about" element={<About/>}/>
+                    <Route path="/historyOrder" element={<HistoryOrder/>}/>
 
                 </Routes>
             </div>

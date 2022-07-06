@@ -141,6 +141,7 @@ const Admin = () => {
                 </tbody>
             </Table>
             <ReactPaginate
+                variant="outlined" color="secondary"
                 previousLabel="Previous"
                 nextLabel="Next"
                 pageClassName="page-item"
