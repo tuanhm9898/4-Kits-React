@@ -1,116 +1,137 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Box from '@mui/material/Box';
+import Collapse from '@mui/material/Collapse';
+import IconButton from '@mui/material/IconButton';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Typography from '@mui/material/Typography';
+import Paper from '@mui/material/Paper';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import {useEffect, useState} from "react";
 
 const Test = () => {
+    const [infoData,setInfo] = useState()
+
+    useEffect(() => {
+        let url = 'https://62baa4fb573ca8f832881fa9.mockapi.io/info/';
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => {
+                setInfo(data);
+                console.log (' info set data');
+            });
+
+    },[])
+
+    const [open, setOpen] = React.useState(false);
+
+    const row = []
+    if(infoData != null) {
+        infoData.map((row) =>{
+            row.push(
+            <TableRow sx={{ '& > *': { borderBottom: 'unset' } }} >
+                <TableCell>
+                    <IconButton
+                        aria-label="expand row"
+                        size="small"
+                        onClick={() => setOpen(!open)}
+                    >
+                        {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                    </IconButton>
+                </TableCell>
+                <TableCell component="th" scope="row">
+                    {row.name}
+                </TableCell>
+                <TableCell align="right">{row.phone}</TableCell>
+                <TableCell align="right">{row.address}</TableCell>
+                <TableCell align="right">{row.notes}</TableCell>
+                <TableCell align="right">{row.date}</TableCell>
+            </TableRow>
+            )
+        })
+        console.log(row)
+
+        console.log(row.name)
+    }
+const rows = []
+    if(infoData != null) {
+        infoData.map((cartRow) => {
+            rows.push(
+                <Table size="small" aria-label="purchases">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell><b>Name Book</b></TableCell>
+                            <TableCell><b>Price</b></TableCell>
+                            <TableCell align="right"><b>Amount</b></TableCell>
+                            <TableCell align="right"><b>Total price ($)</b></TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+
+                            <TableRow key={cartRow.id}>
+                                <TableCell component="th" scope="row">
+                                    {cartRow.name}
+                                </TableCell>
+                                <TableCell>{cartRow.price}</TableCell>
+                                <TableCell align="right">{cartRow.amount}</TableCell>
+                                <TableCell align="right">
+                                    {Math.round(cartRow.amount * cartRow.price )}
+                                </TableCell>
+                            </TableRow>
+
+                    </TableBody>
+                </Table>
+            )
+        })
+    }
+    function Row() {
+        const [open, setOpen] = React.useState(false);
+
+        return (
+            <React.Fragment >
+                {row}
+                <TableRow>
+                    <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+                        <Collapse in={open} timeout="auto" unmountOnExit>
+                            <Box sx={{ margin: 1 }}>
+                                <Typography variant="h6" gutterBottom component="div">
+                                    Book
+                                </Typography>
+                                {rows}
+                            </Box>
+                        </Collapse>
+                    </TableCell>
+                </TableRow>
+            </React.Fragment>
+        );
+    }
+
     return (
-
-        <footer class="text-center text-lg-start bg-light text-muted mt-5">
-            <section
-                class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-            >
-                <div class="me-5 d-none d-lg-block">
-                    <span>Get connected with us on social networks:</span>
-                </div>
-
-                <div>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-google"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </section>
-
-            <section class="">
-                <div class="container text-center text-md-start mt-5">
-                    <div class="row mt-3">
-                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                <i class="fas fa-gem me-3"></i>Book Store
-                            </h6>
-                            <p>
-                                Bookstore.com nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ trợ đặt mua và
-                                nhận hàng trực tiếp tại văn phòng cũng như tất cả Hệ Thống Bookstore trên toàn quốc.
-                            </p>
-                        </div>
-
-                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                DỊCH VỤ
-                            </h6>
-                            <p>
-                                <a href="#!" class="text-reset">
-
-                                    Phương thức thanh toán </a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Hệ thống trung tâm - nhà sách</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">
-                                    Chính sách bảo mật thanh toán
-
-                                </a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">
-                                    Giới thiệu Bookstore
-
-                                </a>
-                            </p>
-                        </div>
-
-                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                Hỗ trợ
-                            </h6>
-                            <p>
-                                <a href="#!" class="text-reset">Phương thức thanh toán và xuất HĐ</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Phương thức vận chuyển</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Chính sách đổi - trả - hoàn tiền</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Chính sách khách sỉ</a>
-                            </p>
-                        </div>
-
-                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                Liên hệ
-                            </h6>
-                            <p><i class="fas fa-home me-3"></i> 36 Hoàng Cầu, Q.Đống Đa, Hà Nội</p>
-                            <p>
-                                <i class="fas fa-envelope me-3"></i>
-                                bookstore@gmail.com.vn
-                            </p>
-                            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="text-center p-4">
-                © Book Store
-            </div>
-        </footer>
-
+        <TableContainer component={Paper} >
+            <Table aria-label="collapsible table" style={{marginTop:"100px"}}>
+                <TableHead>
+                    <TableRow>
+                        <TableCell />
+                        <TableCell><b>Name</b></TableCell>
+                        <TableCell align="right"><b>phone</b></TableCell>
+                        <TableCell align="right"><b>address</b></TableCell>
+                        <TableCell align="right"><b>notes</b></TableCell>
+                        <TableCell align="right"><b>Date</b></TableCell>
+                    </TableRow>
+                </TableHead>
+                {/*<TableBody>*/}
+                {/*    {row.map((row) => (*/}
+                {/*        <Row key={row.name} row={row} />*/}
+                {/*    ))}*/}
+                {/*</TableBody>*/}
+            </Table>
+        </TableContainer>
     );
 };
 

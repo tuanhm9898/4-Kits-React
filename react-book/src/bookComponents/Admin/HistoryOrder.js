@@ -15,24 +15,28 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import {useEffect, useState} from "react";
 
-function createData(name, calories, fat, carbs, protein, price) {
+
+function createData(name, phone, address, notes, price,date) {
+
     return {
         name,
-        calories,
-        fat,
-        carbs,
-        protein,
+        phone,
+        address,
+        notes,
         price,
-        history: [
+        date,
+        cart: [
             {
-                date: '2020-01-05',
-                customerId: '11091700',
+                id: '2',
+                name: '11091700',
                 amount: 3,
+                price : 10
             },
             {
-                date: '2020-01-02',
-                customerId: 'Anonymous',
-                amount: 1,
+                id: '25',
+                name: 'name2',
+                amount: 3,
+                price : 10
             },
         ],
     };
@@ -42,18 +46,7 @@ function Row(props) {
     const { row } = props;
     const [open, setOpen] = React.useState(false);
 
-    const [infoData,setInfo] = useState()
 
-    useEffect(() => {
-        let url = 'https://62baa4fb573ca8f832881fa9.mockapi.io/info/';
-        fetch(url)
-            .then((res) => res.json())
-            .then((data) => {
-                setInfo(data);
-                console.log (' info set data');
-            });
-
-    },[infoData])
 
     return (
         <React.Fragment >
@@ -70,10 +63,10 @@ function Row(props) {
                 <TableCell component="th" scope="row">
                     {row.name}
                 </TableCell>
-                <TableCell align="right">{row.calories}</TableCell>
-                <TableCell align="right">{row.fat}</TableCell>
-                <TableCell align="right">{row.carbs}</TableCell>
-                <TableCell align="right">{row.protein}</TableCell>
+                <TableCell align="right">{row.phone}</TableCell>
+                <TableCell align="right">{row.address}</TableCell>
+                <TableCell align="right">{row.notes}</TableCell>
+                <TableCell align="right">{row.date}</TableCell>
             </TableRow>
             <TableRow>
                 <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -85,22 +78,22 @@ function Row(props) {
                             <Table size="small" aria-label="purchases">
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>Date</TableCell>
-                                        <TableCell>Customer</TableCell>
-                                        <TableCell align="right">Amount</TableCell>
-                                        <TableCell align="right">Total price ($)</TableCell>
+                                        <TableCell><b>Name Book</b></TableCell>
+                                        <TableCell><b>Price</b></TableCell>
+                                        <TableCell align="right"><b>Amount</b></TableCell>
+                                        <TableCell align="right"><b>Total price ($)</b></TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                    {row.history.map((historyRow) => (
-                                        <TableRow key={historyRow.date}>
+                                    {row.cart.map((cartRow) => (
+                                        <TableRow key={cartRow.id}>
                                             <TableCell component="th" scope="row">
-                                                {historyRow.date}
+                                                {cartRow.name}
                                             </TableCell>
-                                            <TableCell>{historyRow.customerId}</TableCell>
-                                            <TableCell align="right">{historyRow.amount}</TableCell>
+                                            <TableCell>{cartRow.price}</TableCell>
+                                            <TableCell align="right">{cartRow.amount}</TableCell>
                                             <TableCell align="right">
-                                                {Math.round(historyRow.amount * row.price * 100) / 100}
+                                                {Math.round(cartRow.amount * cartRow.price )}
                                             </TableCell>
                                         </TableRow>
                                     ))}
@@ -116,10 +109,10 @@ function Row(props) {
 
 Row.propTypes = {
     row: PropTypes.shape({
-        calories: PropTypes.number.isRequired,
-        carbs: PropTypes.number.isRequired,
-        fat: PropTypes.number.isRequired,
-        history: PropTypes.arrayOf(
+        phone: PropTypes.number.isRequired,
+        notes: PropTypes.number.isRequired,
+        address: PropTypes.number.isRequired,
+        cart: PropTypes.arrayOf(
             PropTypes.shape({
                 amount: PropTypes.number.isRequired,
                 customerId: PropTypes.string.isRequired,
@@ -148,11 +141,11 @@ export default function CollapsibleTable() {
                 <TableHead>
                     <TableRow>
                         <TableCell />
-                        <TableCell><b>Dessert (100g serving)</b></TableCell>
-                        <TableCell align="right"><b>Calories</b></TableCell>
-                        <TableCell align="right"><b>Fat&nbsp;(g)</b></TableCell>
-                        <TableCell align="right"><b>Carbs&nbsp;(g)</b></TableCell>
-                        <TableCell align="right"><b>Protein&nbsp;(g)</b></TableCell>
+                        <TableCell><b>Name</b></TableCell>
+                        <TableCell align="right"><b>phone</b></TableCell>
+                        <TableCell align="right"><b>address</b></TableCell>
+                        <TableCell align="right"><b>notes</b></TableCell>
+                        <TableCell align="right"><b>Date</b></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>

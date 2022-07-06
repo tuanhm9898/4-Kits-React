@@ -75,13 +75,18 @@ const RenderBook = (props) => {
                                                 {item.price}.000 đ
                                             </ThemeProvider>
                                         </div>
+                                        <p onClick={() =>categorySelect()}>
+                                            {item.category}
+                                        </p>
                                     </div>
                                 </Card.Text>
                             </Card.Text>
                             <Card.Text className="text-center">
+
                                 <Button variant="outline-danger" onClick={() =>bookLove(item.id,item.name,item.chapter,item.image)}>
-                                    Like
+                                    <AiFillHeart/>
                                 </Button>
+
                                 <span> </span>
                                 <Button
                                     variant="outline-info"
