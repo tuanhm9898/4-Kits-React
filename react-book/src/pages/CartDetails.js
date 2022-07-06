@@ -58,7 +58,7 @@ const Cart = (props) => {
         ));
     }
     return (
-        <div class="container-fluid">
+        <div class="container-fluid ">
             <div class="row">
                 <div class="col mt-2">
                     <h2 class="text-center">Your Cart</h2>
@@ -100,7 +100,7 @@ const Cart = (props) => {
                     <div class="text-center">
                         <Link to="/order"><button class="btn btn-success m-1" type="button">
                             Checkout</button></Link>
-                        <Link to="/"><button class="btn btn-danger m-1">
+                        <Link to="/"><button class="btn btn-outline-danger m-1">
                             Continue Shopping
                         </button></Link>
                     </div>

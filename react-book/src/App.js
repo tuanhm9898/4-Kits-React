@@ -28,7 +28,7 @@ function App() {
                 <NavBarsBook/>
             </div>
             <div>
-                <Routes >
+                <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="cart" element={<CartDetails/>}/>
                     <Route path="admin" element={<Admin/>}/>
