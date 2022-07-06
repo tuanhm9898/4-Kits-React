@@ -77,7 +77,7 @@ const Home = () => {
 
                     <Col xs={6} md={3}>
                         <div className="text-start mt-5">
-                            <Button onClick={sort_price} variant="outline-info">
+                            <Button onClick={sort_price} variant="outline-success">
                                 Sort Price
                             </Button>
                             <br/> <br/>
@@ -89,10 +89,6 @@ const Home = () => {
                         </div>
                     </Col>
                 </Row>
-            </Container>
-
-            <Container>
-                <Contact/>
             </Container>
         </div>
     );

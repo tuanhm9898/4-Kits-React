@@ -81,14 +81,13 @@ const RenderBook = (props) => {
                                 </Card.Text>
                             </Card.Text>
                             <Card.Text className="text-center">
-                                <Button onClick={() =>bookLove(item.id,item.name,item.chapter,item.image)}>
+                                <Button variant="outline-danger" onClick={() =>bookLove(item.id,item.name,item.chapter,item.image)}>
                                     Like
                                 </Button>
                                 <span> </span>
                                 <Button
-                                    class="btn btn-danger"
+                                    variant="outline-info"
                                     onClick={() => props.AddCart(item)}
-                                    variant="info"
                                 >
                                     Add Cart
                                 </Button>

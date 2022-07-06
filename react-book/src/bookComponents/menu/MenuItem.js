@@ -107,8 +107,8 @@ const MenuItem = () => {
             </a>
           </div>
           <div class="cms-icon-menu-item-name">
-           Sach  <br />
-           ban chay
+           Sách <br />
+           bán chạy
           </div>
         </div>
         &emsp;&ensp;
@@ -165,7 +165,7 @@ const MenuItem = () => {
               />
             </a>
           </div>
-          <div class="cms-icon-menu-item-name">about</div>
+          <div class="cms-icon-menu-item-name">About</div>
         </div>
       </div>
     );
