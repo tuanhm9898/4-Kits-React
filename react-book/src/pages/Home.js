@@ -10,7 +10,10 @@ import {Button, Nav, Navbar} from 'react-bootstrap';
 import CartTask from '../bookComponents/CartTask';
 import Carousel_Slideshow from "../bookComponents/Carousel_Slideshow";
 import Card_Slideshow from "../bookComponents/Card_Slideshow";
+import {AddCart} from "../actions";
 import MenuItem from ".././bookComponents/menu/MenuItem";
+import FlashSale from "../bookComponents/flashSale";
+import TopBook from "../bookComponents/TopBook";
 import Contact from "../bookComponents/Contact";
 
 const Home = () => {

@@ -67,7 +67,7 @@ const RenderBook = (props) => {
                                 {item.details_shorts}
                                 <Card.Text>
                                     <div className="row">
-                                        <div className="col-sm-6" style={{
+                                        <div className="col-sm-9" style={{
                                             fontSize: "x-large",
                                             color: "#856a91"
                                         }}>

@@ -52,24 +52,24 @@ const FooterBook = () => {
                               DỊCH VỤ
                           </h6>
                           <p>
-                              <a href="#!" className="text-reset">
+                              <p href="#!" className="text-reset">
 
-                                  Phương thức thanh toán </a>
+                                  Phương thức thanh toán </p>
                           </p>
                           <p>
-                              <a href="#!" className="text-reset">Hệ thống trung tâm - nhà sách</a>
+                              <p href="#!" className="text-reset">Hệ thống trung tâm - nhà sách</p>
                           </p>
                           <p>
-                              <a href="#!" className="text-reset">
+                              <p href="#!" className="text-reset">
                                   Chính sách bảo mật thanh toán
 
-                              </a>
+                              </p>
                           </p>
                           <p>
-                              <a href="#!" className="text-reset">
+                              <p href="#!" className="text-reset">
                                   Giới thiệu Bookstore
 
-                              </a>
+                              </p>
                           </p>
                       </div>
 
@@ -78,16 +78,16 @@ const FooterBook = () => {
                               Hỗ trợ
                           </h6>
                           <p>
-                              <a href="#!" className="text-reset">Phương thức thanh toán và xuất HĐ</a>
+                              <p href="#!" className="text-reset">Phương thức thanh toán và xuất HĐ</p>
                           </p>
                           <p>
-                              <a href="#!" className="text-reset">Phương thức vận chuyển</a>
+                              <p href="#!" className="text-reset">Phương thức vận chuyển</p>
                           </p>
                           <p>
-                              <a href="#!" className="text-reset">Chính sách đổi - trả - hoàn tiền</a>
+                              <p href="#!" className="text-reset">Chính sách đổi - trả - hoàn tiền</p>
                           </p>
                           <p>
-                              <a href="#!" className="text-reset">Chính sách khách sỉ</a>
+                              <p href="#!" className="text-reset">Chính sách khách sỉ</p>
                           </p>
                       </div>
 
