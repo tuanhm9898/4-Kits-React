@@ -44,6 +44,8 @@ const CartTask = (props) => {
 
     return (
         <div>
+            <h3>Sách yêu thích</h3>
+
             {list_cart}
         </div>
     );

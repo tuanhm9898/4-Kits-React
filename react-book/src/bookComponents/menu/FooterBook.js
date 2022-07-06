@@ -3,125 +3,114 @@ import "./style.css";
 
 const FooterBook = () => {
   return (
-    <section>
-        <hr/>
-      <div class="ma-footer-static mt-4">
-        <div class="footer-static">
-          <div class="container">
-            <div class="container-inner">
-              <div class="row hidden-xs">
-                <div class="col-md-4">
-                  <div>
-                    <div>
-                      <div class="col-sm-12 col-md-12 col-xs-12 address-footer">
-                        Lầu 5, 36 Hoàng Cầu, Q.Đống Đa, Hà Nội
-                      </div>
-                      <div class="col-sm-12 col-md-12 col-xs-12 address-footer">
-                        Công Ty Cổ Phần Phát Hành Sách TP Hà Nội - Bookstore
-                      </div>
-                      <div class="col-sm-12 col-md-12 col-xs-12 address-footer">
-                        36 Hoàng Cầu, Q.Đống Đa, Hà Nội, Việt Nam
-                      </div>
-                      <div class="col-sm-12 col-md-12 col-xs-12 address-footer1">
-                        Bookstore.com nhận đặt hàng trực tuyến và giao hàng tận
-                        nơi. KHÔNG hỗ trợ đặt mua và nhận hàng trực tiếp tại văn
-                        phòng cũng như tất cả Hệ Thống Bookstore trên toàn quốc.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-8">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-4 col-sms-6 col-smb-12">
-                      <div class="footer-static-title">
-                        <h3>DỊCH VỤ</h3>
-                      </div>
-                      <div class="footer-static-content">
-                        <tr>
+      <footer className="text-center text-lg-start bg-light text-muted mt-5">
+          <hr/>
+          <section
+              className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+          >
+              <div className="me-5 d-none d-lg-block">
+                  <span>Get connected with us on social networks:</span>
+              </div>
 
-                            <p>
-                              Điều khoản sử dụng
-                            </p>
-  
-                            <p>
-                              Ch&iacute;nh s&aacute;ch bảo mật
-                            </p>
-     
-                            <p>
-                              Ch&iacute;nh s&aacute;ch bảo mật thanh toán
-                            </p>
-             
-                            <p>
-                              Giới thiệu Bookstore
-                            </p>
-      
-                            <p>
-                              Hệ thống trung t&acirc;m - nh&agrave; s&aacute;ch
-                            </p>
+              <div>
+                  <a href="" className="me-4 text-reset">
+                      <i className="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="" className="me-4 text-reset">
+                      <i className="fab fa-twitter"></i>
+                  </a>
+                  <a href="" className="me-4 text-reset">
+                      <i className="fab fa-google"></i>
+                  </a>
+                  <a href="" className="me-4 text-reset">
+                      <i className="fab fa-instagram"></i>
+                  </a>
+                  <a href="" className="me-4 text-reset">
+                      <i className="fab fa-linkedin"></i>
+                  </a>
+                  <a href="" className="me-4 text-reset">
+                      <i className="fab fa-github"></i>
+                  </a>
+              </div>
+          </section>
 
-                        </tr>
+          <section className="">
+              <div className="container text-center text-md-start mt-5">
+                  <div className="row mt-3">
+                      <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                          <h6 className="text-uppercase fw-bold mb-4">
+                              <i className="fas fa-gem me-3"></i>Book Store
+                          </h6>
+                          <p>
+                              Bookstore.com nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ trợ đặt mua và
+                              nhận hàng trực tiếp tại văn phòng cũng như tất cả Hệ Thống Bookstore trên toàn quốc.
+                          </p>
                       </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-sms-6 col-smb-12">
-                      <div class="footer-static-title">
-                        <h3>Hỗ trợ</h3>
+
+                      <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                          <h6 className="text-uppercase fw-bold mb-4">
+                              DỊCH VỤ
+                          </h6>
+                          <p>
+                              <a href="#!" className="text-reset">
+
+                                  Phương thức thanh toán </a>
+                          </p>
+                          <p>
+                              <a href="#!" className="text-reset">Hệ thống trung tâm - nhà sách</a>
+                          </p>
+                          <p>
+                              <a href="#!" className="text-reset">
+                                  Chính sách bảo mật thanh toán
+
+                              </a>
+                          </p>
+                          <p>
+                              <a href="#!" className="text-reset">
+                                  Giới thiệu Bookstore
+
+                              </a>
+                          </p>
                       </div>
-                      <div class="footer-static-content ">
-                        <tr>
-            
-                            <p>
-                              Chính sách đổi - trả - hoàn tiền
-                            </p>
-                     
-                            <p>
-                              Chính sách khách sỉ
-                            </p>
-                 
-                            <p>
-                              Phương thức vận chuyển
-                            </p>
-              
-                            <p>
-                              Phương thức thanh to&aacute;n và xuất HĐ
-                            </p>
-                       
-                        </tr>
+
+                      <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                          <h6 className="text-uppercase fw-bold mb-4">
+                              Hỗ trợ
+                          </h6>
+                          <p>
+                              <a href="#!" className="text-reset">Phương thức thanh toán và xuất HĐ</a>
+                          </p>
+                          <p>
+                              <a href="#!" className="text-reset">Phương thức vận chuyển</a>
+                          </p>
+                          <p>
+                              <a href="#!" className="text-reset">Chính sách đổi - trả - hoàn tiền</a>
+                          </p>
+                          <p>
+                              <a href="#!" className="text-reset">Chính sách khách sỉ</a>
+                          </p>
                       </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-sms-6 col-smb-12">
-                      <div class="footer-static-title">
-                        <h3>Li&ecirc;n hệ</h3>
-                      </div>
-                      <div class="footer-static-content ">
-                        <tr>
-            
-                            <p>
-                              36 Hoàng Cầu, Q.Đống Đa, Hà Nội
-                            </p>
-                     
-                            <p>
+
+                      <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                          <h6 className="text-uppercase fw-bold mb-4">
+                              Liên hệ
+                          </h6>
+                          <p><i className="fas fa-home me-3"></i> 36 Hoàng Cầu, Q.Đống Đa, Hà Nội</p>
+                          <p>
+                              <i className="fas fa-envelope me-3"></i>
                               bookstore@gmail.com.vn
-                            </p>
-                 
-                            <p>
-                              1900151820
-                            </p>
-                        </tr>
+                          </p>
+                          <p><i className="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                          <p><i className="fas fa-print me-3"></i> + 01 234 567 89</p>
                       </div>
-                    </div>
                   </div>
-                </div>
               </div>
-            </div>
-            <div class="ma-footer">
-              <div class="footer">
-                <div id="back-top" class="hidden-xs"></div>
-              </div>
-            </div>
+          </section>
+
+          <div className="text-center p-4">
+              © Book Store
           </div>
-        </div>
-      </div>
-    </section>
+      </footer>
   );
 };
 

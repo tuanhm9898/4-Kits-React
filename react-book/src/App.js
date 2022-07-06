@@ -10,7 +10,6 @@ import DetailBook from "./pages/DetailsBook";
 import EditBook from "./pages/EditBook";
 import Test from "./bookComponents/Test";
 import Order from "./bookComponents/testCartOrder";
-import HomeAdmin from "./bookComponents/Admin/HomeAdmin";
 import FlashSale from "./bookComponents/flashSale";
 import Coupon from "./bookComponents/menu/menuItem1/coupon";
 import Trending from "./bookComponents/menu/menuItem1/trending";
@@ -28,7 +27,7 @@ function App() {
                 <NavBarsBook/>
             </div>
             <div>
-                <Routes >
+                <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="cart" element={<CartDetails/>}/>
                     <Route path="admin" element={<Admin/>}/>

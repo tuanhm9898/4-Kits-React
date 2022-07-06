@@ -148,7 +148,7 @@ const ProductEdit = () => {
                                                                 {item.category}
                                                             </option>
                                                         ))
-                                                        : 'loading'}
+                                                        : <div><h1>'loading'</h1></div>}
                                                 </select>
                                             </td>
                                         </tr>
@@ -333,10 +333,10 @@ const ProductEdit = () => {
                                                                         {item.country}
                                                                     </option>
                                                                 ))
-                                                                : 'loading'}
+                                                                : <div><h1>'loading'</h1></div>}
                                                         </select>
                                                     ) : (
-                                                        ''
+                                                        <div><h1>'loading'</h1></div>
                                                     )}
                                                 </div>
                                             </td>
@@ -365,7 +365,7 @@ const ProductEdit = () => {
                     </div>
                 </div>
             ) : (
-                'loading'
+                <div><h1>'loading'</h1></div>
             )}
         </>
     );

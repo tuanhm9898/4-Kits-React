@@ -1,15 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useEffect, useState } from 'react';
-import { Button, Card, Pagination } from 'react-bootstrap';
+import React, {useEffect, useState} from 'react';
+import {Button, Card} from 'react-bootstrap';
 import ThemeProvider from 'react-bootstrap/ThemeProvider';
-import { Link } from 'react-router-dom';
-import ReactDOM from 'react-dom';
-import ReactPaginate from 'react-paginate';
+import {Link} from 'react-router-dom';
 
-import { connect } from 'react-redux';
-import { AddCart } from '../actions';
-import data from "bootstrap/js/src/dom/data";
+import {connect} from 'react-redux';
+import {AddCart} from '../actions';
 import axios from "axios";
+import {AiFillHeart} from "react-icons/ai";
 
 const RenderBook = (props) => {
     const [data, setData] = useState(null);
@@ -19,7 +17,7 @@ const RenderBook = (props) => {
         setData(data.filter((a) => a.category === category));
     };
 
-    const bookLove = async ( id,name, chapter,image) => {
+    const bookLove = async (id, name, chapter, image) => {
 
         const requestOptions = {
             method: 'PUT',
@@ -38,7 +36,7 @@ const RenderBook = (props) => {
         try {
             const res = await axios.post('https://62baa4fb573ca8f832881fa9.mockapi.io/cart', {
                 "name": name,
-                "chapter" : chapter,
+                "chapter": chapter,
                 "image": image,
             })
         } catch (e) {
@@ -58,10 +56,9 @@ const RenderBook = (props) => {
     if (data != null) {
         data.map((item, id) => {
             return listBook.push(
-
                 <div className="col-md-4 col-sm-6 mt-4">
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={item.image} />
+                    <Card style={{width: '18rem'}}>
+                        <Card.Img variant="top" src={item.image}/>
                         <Card.Body>
                             <Link to={'/book/' + item.id}>
                                 <Card.Title>{item.name}</Card.Title>
@@ -70,11 +67,12 @@ const RenderBook = (props) => {
                                 {item.details_shorts}
                                 <Card.Text>
                                     <div className="row">
-                                        <div className="col-sm-6">
-                                            <ThemeProvider prefixes={{ btn: 'my-btn' }}>
-                                                <Button className="mt-2" variant="primary">
-                                                    {item.price}.000 đ
-                                                </Button>
+                                        <div className="col-sm-6" style={{
+                                            fontSize: "x-large",
+                                            color: "#856a91"
+                                        }}>
+                                            <ThemeProvider prefixes={{btn: 'my-btn'}}>
+                                                {item.price}.000 đ
                                             </ThemeProvider>
                                         </div>
                                     </div>
@@ -99,7 +97,9 @@ const RenderBook = (props) => {
         });
     }
     return (
-        <div><div className="row">{listBook}</div></div>
+        <div>
+            <div className="row">{listBook}</div>
+        </div>
     );
 
 };
@@ -109,4 +109,5 @@ function mapDispatchToProps(dispatch) {
         AddCart: (item) => dispatch(AddCart(item)),
     };
 }
+
 export default connect(null, mapDispatchToProps)(RenderBook);
