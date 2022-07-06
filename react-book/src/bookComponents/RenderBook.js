@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {Button, Card} from 'react-bootstrap';
 import ThemeProvider from 'react-bootstrap/ThemeProvider';
 import {Link} from 'react-router-dom';
-
+// import CurrencyFormat from 'react-currency-format';
 import {connect} from 'react-redux';
 import {AddCart} from '../actions';
 import axios from "axios";
@@ -72,7 +72,8 @@ const RenderBook = (props) => {
                                             color: "#856a91"
                                         }}>
                                             <ThemeProvider prefixes={{btn: 'my-btn'}}>
-                                                {item.price}.000 đ
+                                                {item.price}
+                                                {/* <CurrencyFormat value={item.price} displayType={'text'} format="#### #### #### ####" /> */}
                                             </ThemeProvider>
                                         </div>
                                     </div>
