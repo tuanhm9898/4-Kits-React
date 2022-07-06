@@ -61,7 +61,7 @@ const Contact = () => {
                         </form>
 
                         <div class="text-center text-md-left">
-                            <a class="btn btn-primary m-3"  variant="outline-info" onclick="document.getElementById('contact-form').submit();">Send</a>
+                            <a class="btn btn-outline-primary m-3"  variant="outline-info" onclick="document.getElementById('contact-form').submit();">Send</a>
                         </div>
                         <div class="status"></div>
                     </div>

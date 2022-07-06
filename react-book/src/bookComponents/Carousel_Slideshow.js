@@ -3,6 +3,11 @@ import img1 from '../image/banner1.jpg'
 import img2 from '../image/banner2.jpg'
 import img3 from '../image/banner3.jpg'
 import img4 from '../image/banner4.jpg'
+import img5 from '../image/banner5.jpg'
+import img6 from '../image/banner6.jpg'
+import img7 from '../image/banner7.jpg'
+import img8 from '../image/banner8.jpg'
+import img9 from '../image/banner9.jpg'
 
 function CarouselSlideshow() {
     return (
@@ -46,6 +51,46 @@ function CarouselSlideshow() {
                         Giảm 20% mỗi hóa đơn
                     </h3>
                 </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src={img5}
+                    alt="Third slide"
+                    height="400"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src={img6}
+                    alt="Third slide"
+                    height="400"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src={img7}
+                    alt="Third slide"
+                    height="400"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src={img8}
+                    alt="Third slide"
+                    height="400"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src={img9}
+                    alt="Third slide"
+                    height="400"
+                />
             </Carousel.Item>
         </Carousel>
     );

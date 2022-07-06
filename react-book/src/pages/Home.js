@@ -10,7 +10,10 @@ import {Button, Nav, Navbar} from 'react-bootstrap';
 import CartTask from '../bookComponents/CartTask';
 import Carousel_Slideshow from "../bookComponents/Carousel_Slideshow";
 import Card_Slideshow from "../bookComponents/Card_Slideshow";
+import {AddCart} from "../actions";
 import MenuItem from ".././bookComponents/menu/MenuItem";
+import FlashSale from "../bookComponents/flashSale";
+import TopBook from "../bookComponents/TopBook";
 import Contact from "../bookComponents/Contact";
 
 const Home = () => {
@@ -74,7 +77,7 @@ const Home = () => {
 
                     <Col xs={6} md={3}>
                         <div className="text-start mt-5">
-                            <Button onClick={sort_price} variant="outline-info">
+                            <Button onClick={sort_price} variant="outline-success">
                                 Sort Price
                             </Button>
                             <br/> <br/>
@@ -86,10 +89,6 @@ const Home = () => {
                         </div>
                     </Col>
                 </Row>
-            </Container>
-
-            <Container>
-                <Contact/>
             </Container>
         </div>
     );

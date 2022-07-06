@@ -67,7 +67,7 @@ const RenderBook = (props) => {
                                 {item.details_shorts}
                                 <Card.Text>
                                     <div className="row">
-                                        <div className="col-sm-6" style={{
+                                        <div className="col-sm-9" style={{
                                             fontSize: "x-large",
                                             color: "#856a91"
                                         }}>
@@ -79,13 +79,13 @@ const RenderBook = (props) => {
                                 </Card.Text>
                             </Card.Text>
                             <Card.Text className="text-center">
-                                <Button onClick={() => bookLove(item.id, item.name, item.chapter, item.image)}>
-                                    <AiFillHeart/>
+                                <Button variant="outline-danger" onClick={() =>bookLove(item.id,item.name,item.chapter,item.image)}>
+                                    Like
                                 </Button>
                                 <span> </span>
-                                <Button variant="outline-info"
-                                        onClick={() => props.AddCart(item)}
-
+                                <Button
+                                    variant="outline-info"
+                                    onClick={() => props.AddCart(item)}
                                 >
                                     Add Cart
                                 </Button>

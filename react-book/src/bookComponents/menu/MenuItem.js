@@ -66,8 +66,7 @@ const MenuItem = () => {
             </a>
           </div>
           <div class="cms-icon-menu-item-name">
-            Phiên Chợ <br />
-            Sách Cũ
+            Phiên Chợ Sách Cũ
           </div>
         </div>
         &emsp;&ensp;
@@ -78,8 +77,7 @@ const MenuItem = () => {
             </a>
           </div>
           <div class="cms-icon-menu-item-name">
-            Sản Phẩm <br />
-            Mới
+            Sản Phẩm Mới
           </div>
         </div>
         &emsp;&ensp;
@@ -90,8 +88,7 @@ const MenuItem = () => {
             </a>
           </div>
           <div class="cms-icon-menu-item-name">
-           Sach  <br />
-           ban chay
+           Sách bán chạy
           </div>
         </div>
         &emsp;&ensp;
@@ -132,7 +129,7 @@ const MenuItem = () => {
                 <IoMdContact class="icon-menu-item"/>
             </a>
           </div>
-          <div class="cms-icon-menu-item-name">about</div>
+          <div class="cms-icon-menu-item-name">About</div>
         </div>
       </div>
     );
