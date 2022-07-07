@@ -72,7 +72,7 @@ const RenderBook = (props) => {
                                             color: "#856a91"
                                         }}>
                                             <ThemeProvider prefixes={{btn: 'my-btn'}}>
-                                                {item.price}
+                                                {item.price} đ
                                                 {/* <CurrencyFormat value={item.price} displayType={'text'} format="#### #### #### ####" /> */}
                                             </ThemeProvider>
                                         </div>

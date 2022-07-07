@@ -45,6 +45,41 @@ const FooterBook = () => {
                               Bookstore.com nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ trợ đặt mua và
                               nhận hàng trực tiếp tại văn phòng cũng như tất cả Hệ Thống Bookstore trên toàn quốc.
                           </p>
+                          
+                        <div align="center" className="footer_icon">
+                            <a target="_blank" href="#" title="Facebook">
+                                <img alt="Facebook" src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/footer/Facebook-on.png" />
+                            </a>
+                            <a target="_blank" href="#" title="Instagram">
+                                <img alt="Instagram" src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images//footer/Insta-on.png" />
+                            </a>
+                            <a target="_blank" href="#" title="Youtube">
+                                <img alt="Youtube" src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images//footer/Youtube-on.png" />
+                            </a>
+                            <a target="_blank" href="#" title="Tumblr">
+                                <img alt="Tumblr" src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images//footer/tumblr-on.png" />
+                            </a>
+                            <a target="_blank" href="#" title="Twitter">
+                                <img alt="Twitter" src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images//footer/twitter-on.png" />
+                            </a>
+                            <a target="_blank" href="#" title="Pinterest">
+                                <img alt="Pinterest" src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images//footer/pinterest-on.png" />
+                            </a>
+                        </div>
+
+                        <div className="footer_item">
+                            <div class="col-sm-6 col-md-6 col-xs-6" className="footer_item1">
+                                <a href="#">
+                                    <img alt="FAHASA.COM" className="foorter_img" src="https://cdn0.fahasa.com/media/wysiwyg/Logo-NCC/android1.png" />
+                                </a>
+                            </div>
+                            <p/>
+                            <div class="col-sm-6 col-md-6 col-xs-6" className="footer_item2">
+                                <a href="#">
+                                    <img alt="FAHASA.COM" className="foorter_img" src="https://cdn0.fahasa.com/media/wysiwyg/Logo-NCC/appstore1.png"/>
+                                </a>
+                            </div>
+                        </div>
                       </div>
 
                       <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
