@@ -76,7 +76,7 @@ const Home = () => {
                             <Navbar>
                                 <Nav>
                                     {/*<CartTask data={likeBook}/>*/}
-                                    <CartTask/>
+                                    <CartTask />
                                 </Nav>
                             </Navbar>
                         </div>

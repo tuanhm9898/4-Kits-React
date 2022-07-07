@@ -55,11 +55,10 @@ export default function VerticalTabs() {
                 bgcolor: "background.paper",
                 display: "flex",
                 height: 224,
-                marginTop : 15,
+                marginTop : 5,
                 marginBottom : 15
             }}
         >
-            <h3 className="text-center"> Purchases </h3>
             <Tabs
                 orientation="vertical"
                 variant="scrollable"

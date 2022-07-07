@@ -98,9 +98,9 @@ const Cart = (props) => {
             <div class="row">
                 <div class="col">
                     <div class="text-center">
-                        <Link to="/order"><button class="btn btn-success m-1" type="button">
+                        <Link to="/customer/order"><button class="btn btn-outline-success m-1" type="button">
                             Checkout</button></Link>
-                        <Link to="/"><button class="btn btn-outline-danger m-1">
+                        <Link to="/customer"><button class="btn btn-outline-danger m-1">
                             Continue Shopping
                         </button></Link>
                     </div>

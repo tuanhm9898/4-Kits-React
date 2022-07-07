@@ -36,7 +36,7 @@ const NavBarsBook = (props) => {
                             </Link></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
-                    <Nav.Link><Link to="avatar" className="nav-link"> <Avatar>A</Avatar></Link></Nav.Link>
+                    <Nav.Link><Link to="/" className="nav-link"> <Avatar>A</Avatar></Link></Nav.Link>
 
                 </Container>
             </Navbar>

@@ -25,6 +25,11 @@ import EditBook from "./pages/EditBook";
 import CartTask from "./bookComponents/CartTask";
 import BookLike from "./bookComponents/Customer/bookLike";
 import HomeSelect from "./pages/HomeSelect";
+import Purchasses from "./bookComponents/Admin/Purchasses";
+
+function Purchases() {
+    return null;
+}
 
 function App() {
     return (
