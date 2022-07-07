@@ -35,7 +35,7 @@ const BookLike = () => {
     if (cart != null) {
         cart.map((c, id) => {
             return list_cart.push(
-                <Toast className="mt-3">
+                <Toast className="mt-3 col-3 me-3">
                     <Toast.Header onClick={() => deleteTask(c.id)}>
                         <Image src={c.image} style={{ height: '40px' }} />
                         <strong className="me-auto ms-3">Name : {c.name}</strong>
@@ -50,7 +50,10 @@ const BookLike = () => {
     return (
         <div className="container">
             <h3>Sách yêu thích</h3>
-            {list_cart}
+            <div className="row">
+                {list_cart}
+
+            </div>
         </div>
     );
 };

@@ -16,8 +16,7 @@ import img7 from "../../../image/banner7.jpg";
 const Coupon = () => {
     return (
         <div>
-        <h1>Coupon</h1>
-        <h1>Coupon</h1>
+
 
         <div className="Container">
             <div className="page-empty-banner col-lg-12 col-md-12 col-sm-12">

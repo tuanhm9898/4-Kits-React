@@ -34,7 +34,7 @@ const MenuItem = () => {
       <div class="row cms-icon-menu">
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="/flashSale">
+            <a href="/customer/flashSale">
                   <FcFlashOn class="icon-menu-item"/>
             </a>
           </div>
@@ -43,7 +43,7 @@ const MenuItem = () => {
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <Link to="/coupon">
+            <Link to="/customer/coupon">
                 <RiCoupon3Line class="icon-menu-item"/>
             </Link>
           </div>
@@ -52,7 +52,7 @@ const MenuItem = () => {
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="/trending">
+            <a href="/customer/trending">
                 <BiTrendingUp class="icon-menu-item"/>
             </a>
           </div>
@@ -61,7 +61,7 @@ const MenuItem = () => {
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="/marketBook">
+            <a href="/customer/marketBook">
                 <BiHomeAlt class="icon-menu-item"/>
             </a>
           </div>
@@ -72,7 +72,7 @@ const MenuItem = () => {
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="newBook">
+            <a href="/customer/newBook">
                 <MdOutlineNewLabel class="icon-menu-item"/>
             </a>
           </div>
@@ -83,7 +83,7 @@ const MenuItem = () => {
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="/bestSeller">
+            <a href="/customer/bestSeller">
                 <AiTwotoneBook class="icon-menu-item"/>
             </a>
           </div>
@@ -94,7 +94,7 @@ const MenuItem = () => {
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="/reviewBook">
+            <a href="/customer/reviewBook">
                 <BsBookHalf class="icon-menu-item"/>
             </a>
           </div>
@@ -105,7 +105,7 @@ const MenuItem = () => {
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="/bestSeller">
+            <a href="/customer/bestSeller">
                 <AiFillStar class="icon-menu-item"/>
             </a>
           </div>
@@ -114,7 +114,7 @@ const MenuItem = () => {
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="/manga">
+            <a href="/customer/manga">
                 <BiBook class="icon-menu-item"/>
             </a>
           </div>
@@ -125,7 +125,7 @@ const MenuItem = () => {
         &emsp;&ensp;
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
-            <a href="/about">
+            <a href="/customer/about">
                 <IoMdContact class="icon-menu-item"/>
             </a>
           </div>
