@@ -25,7 +25,7 @@ const NavBarAdmin = (props) => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link><Link to="/admin" className="nav-link">Home </Link></Nav.Link>
-                            <Nav.Link><Link to="account" className="nav-link">Account</Link></Nav.Link>
+                            {/*<Nav.Link><Link to="account" className="nav-link">Account</Link></Nav.Link>*/}
                             <Nav.Link><Link to="historyOrder" className="nav-link">History Order</Link></Nav.Link>
                             <Nav.Link><Link to="purchases" className="nav-link">Purchases</Link></Nav.Link>
                             <Nav.Link><Link to="/" className="nav-link">Log Out</Link></Nav.Link>

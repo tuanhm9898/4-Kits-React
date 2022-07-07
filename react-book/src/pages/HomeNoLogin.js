@@ -15,7 +15,6 @@ const HomeNoLogin = () => {
             .then((response) => response.json())
             .then((data) => {
                 setData(data);
-                console.log(":)", data);
             });
     }, []);
 
@@ -88,14 +87,14 @@ const HomeNoLogin = () => {
         <div>
             <Container>
                 <Carousel_Slideshow/>
+            </Container>
                 <MenuItem/>
-                <br></br>
+            <br></br>
                 <Container style={{    overflowX: "auto",
                    overflowY: "hidden"}}>
                     {listCategory}
                 </Container>
                 <FooterBook/>
-            </Container>
         </div>
     );
 };

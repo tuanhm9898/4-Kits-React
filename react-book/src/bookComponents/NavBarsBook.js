@@ -34,13 +34,13 @@ const NavBarsBook = (props) => {
         <div>
             <Navbar bg="light" expand="lg" fixed="top" className="m-0 p-0">
                 <Container className="my-0 p-0">
-                    <Navbar.Brand><Link to="/" className="nav-link">
+                    <Navbar.Brand><Link to="/customer" className="nav-link">
                         <img src={logo} height="65"/>
                     </Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link><Link to="/" className="nav-link">Home</Link></Nav.Link>
+                            <Nav.Link><Link to="/customer" className="nav-link">Home</Link></Nav.Link>
                             <Nav.Link><Link to="bookLike" className="nav-link">Book Like</Link></Nav.Link>
                             {/*<Nav.Link><Link to="/admin" className="nav-link">Admin</Link></Nav.Link>*/}
                             <Nav.Link><Link to="cart" className="nav-link">
