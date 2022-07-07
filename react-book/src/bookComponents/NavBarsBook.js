@@ -16,10 +16,10 @@ const NavBarsBook = (props) => {
         // console.log('props.numberCart', props.numberCart);
         setNumberCart(props.numberCart);
     }, [props.numberCart]);
-//Nav bar fixed="top"
+//Nav bar id="banner_style" fixed="top"
     return (
         <div>
-            <Navbar bg="light" expand="lg" id="banner_style">
+            <Navbar bg="light" expand="lg" fixed="top">
                 <Container>
                     <Navbar.Brand><Link to="/" className="nav-link">
                         <img src={logo} height="65"/>
@@ -36,7 +36,7 @@ const NavBarsBook = (props) => {
                             </Link></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
-                    <Nav.Link><Link to="avatar" className="nav-link"> <Avatar>A</Avatar></Link></Nav.Link>
+                    <Nav.Link><Link to="/" className="nav-link"> <Avatar>A</Avatar></Link></Nav.Link>
 
                 </Container>
             </Navbar>

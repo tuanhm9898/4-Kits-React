@@ -174,8 +174,8 @@ const Order = (props) => {
                         <div class="text-center">
                             <button class="btn btn-outline-success m-1" type="button"
                                 onClick={() => saveInfo()}>
-                                Confirm</button>
-                            <Link to="/cart"><button class="btn btn-outline-danger m-1">
+                                <Link to="/customer"> Confirm</Link></button>
+                            <Link to="/customer"><button class="btn btn-outline-danger m-1">
                                 Back to Cart
                             </button></Link>
                         </div>
