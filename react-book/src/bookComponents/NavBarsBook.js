@@ -5,19 +5,6 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from './logo-removebg.jpg'
 import {connect} from 'react-redux';
-import Badge from '@mui/material/Badge';
-import { styled } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-
-const StyledBadge = styled(Badge)(({ theme }) => ({
-    '& .MuiBadge-badge': {
-        right: -3,
-        top: 13,
-        border: `2px solid ${theme.palette.background.paper}`,
-        padding: '0 4px',
-    },
-}));
 
 
 const NavBarsBook = (props) => {
@@ -41,13 +28,10 @@ const NavBarsBook = (props) => {
                         <Nav className="me-auto">
                             <Nav.Link><Link to="/" className="nav-link">Home</Link></Nav.Link>
                             <Nav.Link><Link to="/admin" className="nav-link">Admin</Link></Nav.Link>
-                                <Nav.Link><Link to="cart" className="nav-link">
-                                    <IconButton aria-label="cart">
-                                        <StyledBadge badgeContent={numberCart} color="secondary">
-                                            <ShoppingCartIcon/>
-                                        </StyledBadge>
-                                    </IconButton>
-                                </Link></Nav.Link>
+                            <Nav.Link><Link to="cart" className="nav-link">
+                                <i className="fa fa-shopping-cart" aria-hidden="true"></i>{' '}
+                                <span class="badge bg-danger">{numberCart}</span>
+                            </Link></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
@@ -47,8 +48,13 @@ function Row(props) {
     const [open, setOpen] = React.useState(false);
 
 
+=======
+import React from 'react';
+>>>>>>> 7f17bd8ee281108c152a500a0fb73125609f1ffb
 
+const HistoryOrder = () => {
     return (
+<<<<<<< HEAD
         <React.Fragment >
             <TableRow sx={{ '& > *': { borderBottom: 'unset' } }} >
                 <TableCell>
@@ -157,3 +163,12 @@ export default function CollapsibleTable() {
         </TableContainer>
     );
 }
+=======
+        <div>
+            <h1>History order</h1>
+        </div>
+    );
+};
+
+export default HistoryOrder;
+>>>>>>> 7f17bd8ee281108c152a500a0fb73125609f1ffb

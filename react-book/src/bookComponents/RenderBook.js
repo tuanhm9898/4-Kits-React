@@ -72,7 +72,7 @@ const RenderBook = (props) => {
                                             color: "#856a91"
                                         }}>
                                             <ThemeProvider prefixes={{btn: 'my-btn'}}>
-                                                {item.price}.000 đ
+                                                {item.price}đ
                                             </ThemeProvider>
                                         </div>
                                         <p onClick={() =>categorySelect()}>
