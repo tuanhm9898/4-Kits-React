@@ -18,9 +18,9 @@ const ProductEdit = () => {
                 fetch(product_url)
                 .then((res) => res.json())
                 .then((data) => {
-                  var date = new Date(data.publishingYear);
-                  data.publishingYear = date.toISOString().slice(0, 10);
-                  setProduct(data);
+                    var date = new Date(data.publishingYear);
+                    data.publishingYear = date.toISOString().slice(0, 10);
+                    setProduct(data);
                 });
         } else {
             let initData = {};
