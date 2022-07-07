@@ -25,6 +25,11 @@ import EditBook from "./pages/EditBook";
 import CartTask from "./bookComponents/CartTask";
 import BookLike from "./bookComponents/Customer/bookLike";
 import HomeSelect from "./pages/HomeSelect";
+import Purchasses from "./bookComponents/Admin/Purchasses";
+
+function Purchases() {
+    return null;
+}
 
 function App() {
     return (
@@ -57,7 +62,7 @@ function App() {
                     <Route path="historyOrder" element={<HistoryOrder/>}/>}/>
                     <Route path="account" element={<Account/>}/>}/>
                     <Route path="" element={<Home/>}/>}/>
-                    <Route path="purchases" element={<ReChart/>}/>}/>
+                    <Route path="purchases" element={<Purchases/>}/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>

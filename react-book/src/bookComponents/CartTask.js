@@ -5,12 +5,12 @@ const CartTask = () => {
     return (
         <div>
             <h1>Trend</h1>
-            <ScrollBook/>
+            <ScrollBook />
             <div className="m-5">
 
                 <h1>Hot</h1>
             </div>
-            <ScrollBook/>
+            <ScrollBook />
         </div>
     );
 };

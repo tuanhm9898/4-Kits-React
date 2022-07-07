@@ -33,7 +33,9 @@ const NavBarAdmin = (props) => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-
+            <br></br>
+            <br></br>
+            <br></br>
         </div>
     );
 };
