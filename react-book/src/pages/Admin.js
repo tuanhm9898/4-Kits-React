@@ -4,7 +4,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {Link} from "react-router-dom";
 import ReactPaginate from "react-paginate";
-import ReChart from "../bookComponents/Admin/ReChart"
 
 
 const Admin = () => {
@@ -106,19 +105,18 @@ const Admin = () => {
     };
     return (
         <div className="container">
-            <ReChart/>
             <hr/>
             <Row>
                 <Col xs={12} md={6}>
                     <h1>SEARCH</h1>
                 </Col>
-            <Col xs={10} md={6}>
-                <Link to='/edit/new'>
-                    <Button variant="outline-info" className="mb-5">
-                        Add new
-                    </Button>
-                </Link>
-            </Col>
+                <Col xs={10} md={6}>
+                    <Link to='/edit/new'>
+                        <Button variant="outline-info" className="mb-5">
+                            Add new
+                        </Button>
+                    </Link>
+                </Col>
             </Row>
 
             <Table striped bordered hover>
