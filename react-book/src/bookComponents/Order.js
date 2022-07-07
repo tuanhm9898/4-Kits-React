@@ -6,7 +6,7 @@ const Order = (props) => {
     let navigate = useNavigate();
     const [order, setOrder] = useState(null);
     const [cartItems, setCartItems] = useState([]);
-
+  
     useEffect(() => {
         let initData = {};
         setOrder(initData);
@@ -54,9 +54,13 @@ const Order = (props) => {
         data[name] = value;
         setOrder(data);
     };
-
+    
     const saveInfo = () => {
         order['cart'] = cartItems;
+        console.log(order);
+        const current = new Date();
+        const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+        order['date']= date;
         console.log(order);
         const requestOptions = {
             method: 'POST',
@@ -70,8 +74,8 @@ const Order = (props) => {
     return (
         <div class="container">
             <div class="row">
-                <div class="col mt-5">
-                    <h2 class="text-center mt-5">Your Cart</h2>
+                <div class="col">
+                    <h2 class="text-center">Your Cart</h2>
                     <table class="table table-bordered table-striped p-2">
                         <thead>
                             <tr>
@@ -106,7 +110,7 @@ const Order = (props) => {
             </div>
 
             <div className="container mt-3 pt-5">
-                <table>
+                <table class="table table-bordered table-striped p-2">
                     <tr>
                         <td>Info here</td>
                     </tr>
@@ -168,10 +172,10 @@ const Order = (props) => {
                 <div class="row">
                     <div class="col">
                         <div class="text-center">
-                            <button class="btn btn-success m-1" type="button"
+                            <button class="btn btn-outline-success m-1" type="button"
                                 onClick={() => saveInfo()}>
-                                Confirm</button>
-                            <Link to="/cart"><button class="btn btn-danger m-1">
+                                <Link to="/customer"> Confirm</Link></button>
+                            <Link to="/customer"><button class="btn btn-outline-danger m-1">
                                 Back to Cart
                             </button></Link>
                         </div>

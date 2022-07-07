@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {Button, Card} from 'react-bootstrap';
 import ThemeProvider from 'react-bootstrap/ThemeProvider';
 import {Link} from 'react-router-dom';
-
+// import CurrencyFormat from 'react-currency-format';
 import {connect} from 'react-redux';
 import {AddCart} from '../actions';
 import axios from "axios";
@@ -72,16 +72,22 @@ const RenderBook = (props) => {
                                             color: "#856a91"
                                         }}>
                                             <ThemeProvider prefixes={{btn: 'my-btn'}}>
-                                                {item.price}.000 đ
+                                                {item.price} đ
+                                                {/* <CurrencyFormat value={item.price} displayType={'text'} format="#### #### #### ####" /> */}
                                             </ThemeProvider>
                                         </div>
+                                        <p onClick={() =>categorySelect()}>
+                                            {item.category}
+                                        </p>
                                     </div>
                                 </Card.Text>
                             </Card.Text>
                             <Card.Text className="text-center">
+
                                 <Button variant="outline-danger" onClick={() =>bookLove(item.id,item.name,item.chapter,item.image)}>
-                                    Like
+                                    <AiFillHeart/>
                                 </Button>
+
                                 <span> </span>
                                 <Button
                                     variant="outline-info"

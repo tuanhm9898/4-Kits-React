@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import {Nav} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../logo-removebg.jpg'
-import { connect } from 'react-redux';
 
 const NavBarAdmin = (props) => {
 
@@ -19,21 +18,24 @@ const NavBarAdmin = (props) => {
         <div>
             <Navbar bg="light" expand="lg" id="banner_style">
                 <Container>
-                    <Navbar.Brand><Link to="/" className="nav-link">
-                        <img src={logo} height="65" />
+                    <Navbar.Brand><Link to="/admin" className="nav-link">
+                        <img src={logo} height="65"/>
                     </Link></Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link><Link to="/" className="nav-link">Home</Link></Nav.Link>
-                            <Nav.Link><Link to="/admin" className="nav-link">Product</Link></Nav.Link>
-                            <Nav.Link><Link to="/customer" className="nav-link">Customer Contact</Link></Nav.Link>
-                            <Nav.Link><Link to="/historyOrder" className="nav-link">History Order</Link></Nav.Link>
+                            <Nav.Link><Link to="/admin" className="nav-link">Home </Link></Nav.Link>
+                            <Nav.Link><Link to="account" className="nav-link">Account</Link></Nav.Link>
+                            <Nav.Link><Link to="historyOrder" className="nav-link">History Order</Link></Nav.Link>
+                            <Nav.Link><Link to="purchases" className="nav-link">Purchases</Link></Nav.Link>
+                            <Nav.Link><Link to="/" className="nav-link">Log Out</Link></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-
+            <br></br>
+            <br></br>
+            <br></br>
         </div>
     );
 };

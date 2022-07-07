@@ -55,10 +55,10 @@ const FlashSale = () => {
                                 <div className="card__subtitle">
                                 <div class="flashsale-price">
                                     <div class="flashsale-price-special">
-                                    {item.price}$
+                                    {item.price}đ
                                     </div>
                                     <div class="flashsale-price-old">
-                                    {item.chapter}$
+                                    {item.chapter}000đ
                                     </div>
                                 </div>
                                 </div>
