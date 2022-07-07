@@ -13,7 +13,7 @@ const ScrollBook = () => {
             .then((data) => {
                 setData(data);
             });
-    },[data])
+    },[])
 
     const list = []
 

@@ -17,10 +17,10 @@ const Home = () => {
 
     const [likeBook, setLikeBook] = useState()
     useEffect(() => {
-        console.log('data home page');
         let url = 'https://62baa4fb573ca8f832881fa9.mockapi.io/book';
         if (searchBook.length > 0) {
             url = url + '?search=' + searchBook;
+            console.log('data home page', url);
         }
         fetch(url)
             .then((response) => response.json())

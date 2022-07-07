@@ -121,9 +121,11 @@ const Admin = () => {
     return (
         <div className="container">
             <hr />
+
+            <h1>Admin</h1>
             <Row>
                 <Col xs={12} md={6}>
-                    <h1>SEARCH</h1>
+
                     <div className="container">
                     <form className="form-inline">
                         <div className="input-group">
@@ -135,11 +137,9 @@ const Admin = () => {
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
-                        </div>
-                        <div className="input-group-btn">
                             <button
                                 type="button"
-                                className="btn btn-danger"
+                                className="btn btn-info"
                                 onClick={doSearch}
                             >
                                 Search
@@ -148,7 +148,7 @@ const Admin = () => {
                     </form>
                     </div>
                 </Col>
-                <Col xs={10} md={6}>
+                <Col xs={10} md={6} className="text-end">
                     <Link to='/edit/new'>
                         <Button variant="outline-info" className="mb-5">
                             Add new
