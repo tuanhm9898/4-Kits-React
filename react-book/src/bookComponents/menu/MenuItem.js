@@ -35,7 +35,7 @@ const MenuItem = () => {
         <div class="col-sms-3 col-sm-3 col-md-1">
           <div>
             <a href="/flashSale">
-                  <FcFlashOn class="icon-menu-item"/>
+                <FcFlashOn class="icon-menu-item"/>
             </a>
           </div>
           <div class="cms-icon-menu-item-name">Flash Sale</div>
