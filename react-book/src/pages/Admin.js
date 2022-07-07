@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import {Button, Table} from "react-bootstrap";
+import React, { useEffect, useState } from 'react';
+import { Button, Table } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 
 
@@ -12,6 +12,7 @@ const Admin = () => {
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
     const [page, setPage] = useState(-1);
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         let url = 'https://62baa4fb573ca8f832881fa9.mockapi.io/book/';
@@ -24,13 +25,27 @@ const Admin = () => {
             .then((data) => {
                 setData(data);
                 console.log(data, 'set data');
-            });
 
+            })
+    }, []);
+
+    const doSearch = () => {
+        console.log('searchTerm', searchTerm);
+        let url =
+            'https://62baa4fb573ca8f832881fa9.mockapi.io/book/?search=' +
+            searchTerm;
+        fetch(url)
+            .then((response) => response.json())
+            .then((data) => {
+                setSearchTerm('');
+                setCurrentItems(data);
+            });
+    };
+    useEffect(() => {
         if (data != null) {
             setPage(0);
-            console.log(page, 'set page');
+            console.log(page, 'set item offset');
         }
-        ;
     }, [data]);
 
     useEffect(() => {
@@ -51,31 +66,31 @@ const Admin = () => {
         setPage(event.selected);
     };
 
-    let listBook = []
+    let listBook = [];
     if (currentItems != null) {
         listBook = currentItems.map((item, id) => (
-                <tr key={item.id}>
-                    <td>{item.id}</td>
-                    <td>{item.name}</td>
-                    <td>{item.price}.000</td>
-                    <td>{item.category}</td>
-                    <td>{item.details_shorts}</td>
-                    <td>
-                        <img src={item.image} style={{height: "40px"}}/>
-                    </td>
-                    <td>{item.publishingYear}</td>
-                    <td>{item.chapter}</td>
-                    <td>{item.productRating}%</td>
+            <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td>{item.price}</td>
+                <td>{item.category}</td>
+                <td>{item.details_shorts}</td>
+                <td>
+                    <img src={item.image} style={{ height: "40px" }} />
+                </td>
+                <td>{item.publishingYear}</td>
+                <td>{item.amount}</td>
+                <td>{item.productRating}%</td>
 
-                    <td><Link to={'/book/' + item.id}><Button variant="outline-success">
-                        Details
-                    </Button></Link></td>
-                    <td><Link to={'/edit/' + item.id}><Button variant="outline-warning">
-                        Edit
-                    </Button></Link></td>
-                    <td><Button variant="outline-danger" onClick={() => deleteUser(item.id)}>Delete</Button></td>
-                </tr>
-            )
+                <td><Link to={'/book/' + item.id}><Button variant="outline-success">
+                    Details
+                </Button></Link></td>
+                <td><Link to={'/edit/' + item.id}><Button variant="outline-warning">
+                    Edit
+                </Button></Link></td>
+                <td><Button variant="outline-danger" onClick={() => deleteUser(item.id)}>Delete</Button></td>
+            </tr>
+        )
         )
     }
     ;
@@ -94,21 +109,44 @@ const Admin = () => {
     };
 
     const sortColumn = (field, type) => {
-        const sortData = [...data];
+        const sortData = [...currentItems];
         if (type == 'string') {
             sortData.sort((a, b) => direction * a[field].localeCompare(b[field]));
         } else if (type == 'number') {
             sortData.sort((a, b) => direction * (a[field] - b[field]));
         }
         setDirection(direction * -1);
-        setData(sortData);
+        setCurrentItems(sortData);
     };
     return (
         <div className="container">
-            <hr/>
+            <hr />
             <Row>
                 <Col xs={12} md={6}>
                     <h1>SEARCH</h1>
+                    <div className="container">
+                    <form className="form-inline">
+                        <div className="input-group">
+                            <input
+                                type="text"
+                                className="form-control"
+                                size="50"
+                                placeholder="Search"
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                            />
+                        </div>
+                        <div className="input-group-btn">
+                            <button
+                                type="button"
+                                className="btn btn-danger"
+                                onClick={doSearch}
+                            >
+                                Search
+                            </button>
+                        </div>
+                    </form>
+                    </div>
                 </Col>
                 <Col xs={10} md={6}>
                     <Link to='/edit/new'>
@@ -121,21 +159,21 @@ const Admin = () => {
 
             <Table striped bordered hover>
                 <thead>
-                <tr>
-                    <th onClick={() => sortColumn('id', 'number')}>ID</th>
-                    <th onClick={() => sortColumn('name', 'string')}>Name</th>
-                    <th onClick={() => sortColumn('price', 'number')}>Price</th>
-                    <th onClick={() => sortColumn('category', 'string')}>Category</th>
-                    <th>Details_S</th>
-                    <th>Image</th>
-                    <th>Date</th>
-                    <th onClick={() => sortColumn('chapter', 'number')}>Sales</th>
-                    <th onClick={() => sortColumn('productRating', 'number')}>Product rating</th>
-                    <th colSpan="3">More</th>
-                </tr>
+                    <tr>
+                        <th onClick={() => sortColumn('id', 'number')}>ID</th>
+                        <th onClick={() => sortColumn('name', 'string')}>Name</th>
+                        <th onClick={() => sortColumn('price', 'number')}>Price</th>
+                        <th onClick={() => sortColumn('category', 'string')}>Category</th>
+                        <th>Details_S</th>
+                        <th>Image</th>
+                        <th>Date</th>
+                        <th onClick={() => sortColumn('amount', 'number')}>Amount</th>
+                        <th onClick={() => sortColumn('productRating', 'number')}>Product rating</th>
+                        <th colSpan="3">More</th>
+                    </tr>
                 </thead>
                 <tbody>
-                {listBook}
+                    {listBook}
                 </tbody>
             </Table>
             <ReactPaginate

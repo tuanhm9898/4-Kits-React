@@ -37,7 +37,7 @@ function App() {
                 <Route path="/customer" element={<CustomerLayout/>}>
                     <Route index element={<Home/>}/>
                     <Route path="cart" element={<CartDetails/>}/>
-                    <Route path="bookLike" element={<BookLike/>}/>}/>
+                    <Route path="bookLike" element={<BookLike/>}/>
                     <Route path="test" element={<Test/>}/>
                     <Route path="order" element={<Order/>}/>
                     <Route path="flashSale" element={<FlashSale/>}/>
@@ -56,10 +56,10 @@ function App() {
 
                 <Route path="/admin" element={<AdminLayout/>}>
                     <Route index element={<Admin/>}/>
-                    <Route path="historyOrder" element={<HistoryOrder/>}/>}/>
-                    <Route path="account" element={<Account/>}/>}/>
-                    <Route path="" element={<Home/>}/>}/>
-                    <Route path="purchases" element={<Purchases/>}/>}/>
+                    <Route path="historyOrder" element={<HistoryOrder/>}/>
+                    <Route path="account" element={<Account/>}/>
+                    <Route path="" element={<Home/>}/>
+                    <Route path="purchases" element={<ReChart/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
