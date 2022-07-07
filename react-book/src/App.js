@@ -24,6 +24,7 @@ import EditBook from "./pages/EditBook";
 import BookLike from "./bookComponents/Customer/bookLike";
 import HomeSelect from "./pages/HomeSelect";
 import Purchases from "./bookComponents/Admin/Purchases";
+import NoPage from "./pages/page404/NoPage";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<HomeSelect/>}/>
+                <Route path="*" element={<NoPage />} />
 
                 <Route path="/customer" element={<CustomerLayout/>}>
                     <Route index element={<Home/>}/>
