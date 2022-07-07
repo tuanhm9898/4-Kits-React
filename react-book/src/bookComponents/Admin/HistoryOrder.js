@@ -166,6 +166,9 @@ export default function CollapsibleTable() {
 =======
         <div>
             <h1>History order</h1>
+            <h1>History order</h1>
+            <h1>History order</h1>
+            <h1>History order</h1>
         </div>
     );
 };
