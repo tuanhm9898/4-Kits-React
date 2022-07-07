@@ -18,7 +18,7 @@ const DetailBook = (props) => {
     const [book, setBook] = useState(null);
     useEffect(() => {
         let url = "https://62baa4fb573ca8f832881fa9.mockapi.io/book/" + params.id;
-
+        console.log(url,'url here')
         fetch(url)
         .then((response) => response.json())
         .then((data) => {

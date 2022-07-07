@@ -19,7 +19,7 @@ const NavBarsBook = (props) => {
 //Nav bar fixed="top"
     return (
         <div>
-            <Navbar bg="light" expand="lg" id="banner_style">
+            <Navbar bg="light" expand="lg" id="banner_style" >
                 <Container>
                     <Navbar.Brand><Link to="/" className="nav-link">
                         <img src={logo} height="65"/>

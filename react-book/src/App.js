@@ -55,6 +55,7 @@ function App() {
                     <Route path="book/:id" element={<DetailBook/>}/>
                     <Route path="edit/:id" element={<EditBook/>}/>
                     <Route path="edit/new" element={<EditBook/>}/>
+                    
                 </Route>
 
                 <Route path="/admin" element={<AdminLayout/>}>
