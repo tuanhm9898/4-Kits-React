@@ -19,7 +19,7 @@ const FlashSale = () => {
             setData(data);
             console.log(":)", data);
         });
-    }, [data]);
+    }, []);
 
     const listCategory = [];
     if (data != null) {
