@@ -7,14 +7,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {Button, Nav, Navbar} from 'react-bootstrap';
-import CartTask from '../bookComponents/CartTask';
 import Carousel_Slideshow from "../bookComponents/Carousel_Slideshow";
-import Card_Slideshow from "../bookComponents/Card_Slideshow";
-import {AddCart} from "../actions";
 import MenuItem from ".././bookComponents/menu/MenuItem";
-import FlashSale from "../bookComponents/flashSale";
-import TopBook from "../bookComponents/TopBook";
-import Contact from "../bookComponents/Contact";
+import CartTask from "../bookComponents/CartTask";
 
 const Home = () => {
     const [data, setData] = useState([]);
@@ -24,7 +19,6 @@ const Home = () => {
     useEffect(() => {
         console.log('data home page');
         let url = 'https://62baa4fb573ca8f832881fa9.mockapi.io/book';
-        let likeBook = 'https://62baa4fb573ca8f832881fa9.mockapi.io/cart'
         if (searchBook.length > 0) {
             url = url + '?search=' + searchBook;
         }
@@ -34,12 +28,13 @@ const Home = () => {
                 setData(data);
             });
 
-        console.log("data task home page")
-        fetch(likeBook)
-            .then((reponse) => reponse.json())
-            .then((data) => {
-                setLikeBook(data)
-            })
+        // let likeBook = 'https://62baa4fb573ca8f832881fa9.mockapi.io/cart'
+        // console.log("data task home page")
+        // fetch(likeBook)
+        //     .then((reponse) => reponse.json())
+        //     .then((data) => {
+        //         setLikeBook(data)
+        //     })
     }, [searchBook]);
 
     const sort_price = () => {
@@ -50,9 +45,6 @@ const Home = () => {
         <div>
             <Container>
                 <Carousel_Slideshow/>
-                <br></br>
-                <Card_Slideshow/>
-                <br></br>
                 <MenuItem/>
                 <br></br>
                 <Row>
@@ -83,7 +75,8 @@ const Home = () => {
                             <br/> <br/>
                             <Navbar>
                                 <Nav>
-                                    <CartTask data={likeBook}/>
+                                    {/*<CartTask data={likeBook}/>*/}
+                                    <CartTask/>
                                 </Nav>
                             </Navbar>
                         </div>

@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from './logo-removebg.jpg'
 import {connect} from 'react-redux';
+import {Avatar} from "@mui/material";
 
 
 const NavBarsBook = (props) => {
@@ -27,13 +28,16 @@ const NavBarsBook = (props) => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link><Link to="/" className="nav-link">Home</Link></Nav.Link>
-                            <Nav.Link><Link to="/admin" className="nav-link">Admin</Link></Nav.Link>
+                            <Nav.Link><Link to="bookLike" className="nav-link">Book Like</Link></Nav.Link>
+                            {/*<Nav.Link><Link to="/admin" className="nav-link">Admin</Link></Nav.Link>*/}
                             <Nav.Link><Link to="cart" className="nav-link">
                                 <i className="fa fa-shopping-cart" aria-hidden="true"></i>{' '}
                                 <span class="badge bg-danger">{numberCart}</span>
                             </Link></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
+                    <Nav.Link><Link to="avatar" className="nav-link"> <Avatar>A</Avatar></Link></Nav.Link>
+
                 </Container>
             </Navbar>
             <br></br>
