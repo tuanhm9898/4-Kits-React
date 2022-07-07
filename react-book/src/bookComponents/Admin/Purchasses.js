@@ -1,11 +1,13 @@
 import React from 'react';
+import ReChart from "./ReChart"
 
-const Purchasses = () => {
+const Purchases = () => {
     return (
         <div>
-            
+            <h1>Purchases</h1>
+            <ReChart/>
         </div>
     );
 };
 
-export default Purchasses;
+export default Purchases;

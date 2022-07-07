@@ -20,12 +20,9 @@ import AdminLayout from "./layout/AdminLayout";
 import Admin from "./pages/Admin";
 import HistoryOrder from "./bookComponents/Admin/HistoryOrder";
 import Account from "./bookComponents/Admin/Account";
-import ReChart from "./bookComponents/Admin/ReChart";
 import EditBook from "./pages/EditBook";
-import CartTask from "./bookComponents/CartTask";
 import BookLike from "./bookComponents/Customer/bookLike";
 import HomeSelect from "./pages/HomeSelect";
-import Purchasses from "./bookComponents/Admin/Purchasses";
 
 function Purchases() {
     return null;
@@ -35,7 +32,7 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<HomeSelect/>} />
+                <Route path="/" element={<HomeSelect/>}/>
 
                 <Route path="/customer" element={<CustomerLayout/>}>
                     <Route index element={<Home/>}/>
