@@ -14,7 +14,7 @@ function CarouselSlideshow() {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src={img2}
+                    src={"https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2042508-jpeg.jpg"}
                     alt="First slide"
                     height="400"
                 />

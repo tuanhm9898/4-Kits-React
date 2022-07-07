@@ -111,7 +111,6 @@ const Trending = () => {
 
     return (
         <div className="container">
-
             <div>
                 <div className="flashsale-header">
                 <img

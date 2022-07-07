@@ -71,7 +71,7 @@ const About = () => {
                                     </InputGroup>
                                 </div>
                                 <div>
-									<button class="btn btn-outline-primary m-3"> Gửi </button>
+									<button class="btn btn-outline-primary m-3" style={{width:'100px'}}> Gửi </button>
 								</div>
                             </div>
             
@@ -83,20 +83,14 @@ const About = () => {
                                     <div class="col-md-12">
                                         <ul class="list-unstyled mb-0">
                                             <li>
-                                                <FaMapMarkerAlt/>
-                                                <p>Nhóm 4</p>
+                                            <p><i class="fa-solid fa-location-dot"></i> Nhóm 4</p>
                                             </li>
-
                                             <li>
-                                                <AiFillPhone/>
-                                                <p>+ 01 234 567 89</p>
+                                                <p><i class="fa-solid fa-phone"></i> + 01 234 567 89</p>
                                             </li>
-
                                             <li>
-                                                <FiMail/>
-                                                <p>contact@gmail.com</p>
+                                                <p><i class="fa-solid fa-envelope"></i> contact@gmail.com</p>
                                             </li>
-
                                             <li>
                                             <iframe id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4699.069072252874!2d105.822185!3d21.0190946!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abb4623fb1d3%3A0x10291e8bc5361d64!2sPeakview%20Tower!5e1!3m2!1svi!2s!4v1657076325026!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                                             </iframe>

@@ -1,11 +1,11 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React, {useEffect, useState} from 'react';
-import {Button, Card} from 'react-bootstrap';
-import ThemeProvider from 'react-bootstrap/ThemeProvider';
-import {Link} from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useEffect, useState } from "react";
+import { Button, Card } from "react-bootstrap";
+import ThemeProvider from "react-bootstrap/ThemeProvider";
+import { Link } from "react-router-dom";
 // import CurrencyFormat from 'react-currency-format';
-import {connect} from 'react-redux';
-import {AddCart} from '../actions';
+import { connect } from "react-redux";
+import { AddCart } from "../actions";
 import axios from "axios";
 import {AiFillHeart} from "react-icons/ai";
 import {BsFillArrowRightCircleFill} from "react-icons/bs";
@@ -19,11 +19,10 @@ const RenderBook = (props) => {
     };
 
     const bookLove = async (id, name, chapter, image) => {
-
         const requestOptions = {
-            method: 'PUT',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(data),
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
         };
 
         // fetch(
@@ -35,21 +34,22 @@ const RenderBook = (props) => {
         //     });
 
         try {
-            const res = await axios.post('https://62baa4fb573ca8f832881fa9.mockapi.io/cart', {
-                "name": name,
-                "chapter": chapter,
-                "image": image,
-            })
+        const res = await axios.post(
+            "https://62baa4fb573ca8f832881fa9.mockapi.io/cart",
+            {
+            name: name,
+            chapter: chapter,
+            image: image,
+            }
+        );
         } catch (e) {
-            console.log("error axios")
+        console.log("error axios");
         }
-    }
+    };
 
     useEffect(() => {
-        console.log('render book : ')
-
+        console.log("render book : ");
         setData(props.data);
-
     }, [props.data]);
 
     var listBook = [];
@@ -104,13 +104,12 @@ const RenderBook = (props) => {
     }
     return (
         <div>
-            <div className="row">{listBook}</div>
+        <div className="row">{listBook}</div>
         </div>
     );
+    };
 
-};
-
-function mapDispatchToProps(dispatch) {
+    function mapDispatchToProps(dispatch) {
     return {
         AddCart: (item) => dispatch(AddCart(item)),
     };
