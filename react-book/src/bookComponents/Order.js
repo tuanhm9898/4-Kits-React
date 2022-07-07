@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { IncreaseQuantity, DecreaseQuantity, DeleteCart } from '../actions';
+import { IncreaseQuantity, DecreaseQuantity, DeleteCart, ClearCart } from '../actions';
 const Order = (props) => {
     let navigate = useNavigate();
     const [order, setOrder] = useState(null);
@@ -32,7 +32,7 @@ const Order = (props) => {
             <tr>
                 <td>{item.name}</td>
                 <td>{item.quantity}</td>
-                <td class="text-right">{item.price * item.quantity}.000 đ</td>
+                <td class="text-right">{item.price * item.quantity} đ</td>
                 <td class="text-center">
                     <button
                         class="btn btn-sm btn-danger"
@@ -55,12 +55,15 @@ const Order = (props) => {
         setOrder(data);
     };
     
+
     const saveInfo = () => {
+        props.ClearCart();
+        alert('dat hang thanh cong');
         order['cart'] = cartItems;
-        console.log(order);
         const current = new Date();
         const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
         order['date']= date;
+        order['total']=getTotal();
         console.log(order);
         const requestOptions = {
             method: 'POST',
@@ -102,7 +105,7 @@ const Order = (props) => {
                                 <td colspan="2" class="text-right">
                                     Total:
                                 </td>
-                                <td class="text-right">{getTotal()}.000 đ</td>
+                                <td class="text-right">{getTotal()} đ</td>
                             </tr>
                         </tfoot>
                     </table>
@@ -112,7 +115,7 @@ const Order = (props) => {
             <div className="container mt-3 pt-5">
                 <table class="table table-bordered table-striped p-2">
                     <tr>
-                        <td>Info here</td>
+                        <td><h2>Please input your info</h2></td>
                     </tr>
                     <tr>
                         <td>
@@ -172,10 +175,11 @@ const Order = (props) => {
                 <div class="row">
                     <div class="col">
                         <div class="text-center">
-                            <button class="btn btn-outline-success m-1" type="button"
+                        <button class="btn btn-outline-success m-1" type="button"
                                 onClick={() => saveInfo()}>
-                                <Link to="/customer"> Confirm</Link></button>
-                            <Link to="/customer"><button class="btn btn-outline-danger m-1">
+                                 Confirm</button>
+                                 <Link to="/customer"></Link>
+                            <Link to="/customer/cart"><button class="btn btn-outline-danger m-1">
                                 Back to Cart
                             </button></Link>
                         </div>
@@ -197,4 +201,5 @@ export default connect(mapStateToProps, {
     IncreaseQuantity,
     DecreaseQuantity,
     DeleteCart,
+    ClearCart
 })(Order);

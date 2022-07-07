@@ -1,3 +1,4 @@
+import { MdStarRate } from 'react-icons/md';
 import { combineReducers } from 'redux';
 import {
     GET_ALL_PRODUCT,
@@ -6,12 +7,13 @@ import {
     DECREASE_QUANTITY,
     INCREASE_QUANTITY,
     DELETE_CART,
+    CLEAR_CART
 } from '../actions';
 
 const initProduct = {
     numberCart: 0,
     Carts: [],
-    _products: [],
+    _products: []
 };
 
 function todoProduct(state = initProduct, action) {
@@ -93,6 +95,14 @@ function todoProduct(state = initProduct, action) {
                     return item.id !== state.Carts[action.payload].id;
                 }),
             };
+        case CLEAR_CART:
+            console.log('redux');
+            return {
+                numberCart: 0,
+                Carts: [],
+                _products: []
+            };
+
         default:
             return state;
     }
