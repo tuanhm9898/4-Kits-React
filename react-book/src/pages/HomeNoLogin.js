@@ -14,7 +14,7 @@ const HomeNoLogin = () => {
             .then((data) => {
                 setData(data);
             });
-    }, [data]);
+    }, []);
 
     const listCategory = [];
     if (data != null) {

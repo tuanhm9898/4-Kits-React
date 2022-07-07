@@ -15,7 +15,7 @@ const BookLike = () => {
             .then((data) => {
                 setCart(data)
             })
-    }, [cart]);
+    }, []);
 
     var list_cart = [];
 
