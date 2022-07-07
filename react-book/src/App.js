@@ -33,6 +33,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<HomeSelect/>}/>
                 <Route path="*" element={<NoPage />} />
+                <Route path="/test" element={<Test />} />
 
                 <Route path="/customer" element={<CustomerLayout/>}>
                     <Route index element={<Home/>}/>
@@ -49,6 +50,7 @@ function App() {
                     <Route path="reviewBook" element={<ReviewBook/>}/>
                     <Route path="manga" element={<Manga/>}/>
                     <Route path="about" element={<About/>}/>
+
                 </Route>
 
                 <Route path="/book/:id" element={<DetailBook/>}/>

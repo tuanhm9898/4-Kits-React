@@ -49,7 +49,7 @@ const BookLike = () => {
 
     return (
         <div className="container">
-            <h3>Sách yêu thích</h3>
+            <h1>Sách yêu thích</h1>
             <div className="row">
                 {list_cart}
 

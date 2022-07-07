@@ -20,7 +20,7 @@ function CarouselSlideshow() {
                 />
                 <Carousel.Caption>
                     <h1>Store Book </h1>
-                    <h3>Hè về săn ưu đãi cực chất</h3>
+                    <h1>Hè về săn ưu đãi cực chất</h1>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -33,7 +33,7 @@ function CarouselSlideshow() {
 
                 <Carousel.Caption>
                     <h1>Free Ship</h1>
-                    <h3>cho hóa đơn từ 200k</h3>
+                    <h1>cho hóa đơn từ 200k</h1>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -46,51 +46,12 @@ function CarouselSlideshow() {
 
                 <Carousel.Caption>
                     <h1>Thanh toán Shoppe Pay</h1>
-                    <h3>
+                    <h1>
                         Giảm 20% mỗi hóa đơn
-                    </h3>
+                    </h1>
                 </Carousel.Caption>
             </Carousel.Item>
-            {/*<Carousel.Item>*/}
-            {/*    <img*/}
-            {/*        className="d-block w-100"*/}
-            {/*        src={img5}*/}
-            {/*        alt="Third slide"*/}
-            {/*        height="400"*/}
-            {/*    />*/}
-            {/*</Carousel.Item>*/}
-            {/*<Carousel.Item>*/}
-            {/*    <img*/}
-            {/*        className="d-block w-100"*/}
-            {/*        src={img6}*/}
-            {/*        alt="Third slide"*/}
-            {/*        height="400"*/}
-            {/*    />*/}
-            {/*</Carousel.Item>*/}
-            {/*<Carousel.Item>*/}
-            {/*    <img*/}
-            {/*        className="d-block w-100"*/}
-            {/*        src={img7}*/}
-            {/*        alt="Third slide"*/}
-            {/*        height="400"*/}
-            {/*    />*/}
-            {/*</Carousel.Item>*/}
-            {/*<Carousel.Item>*/}
-            {/*    <img*/}
-            {/*        className="d-block w-100"*/}
-            {/*        src={img8}*/}
-            {/*        alt="Third slide"*/}
-            {/*        height="400"*/}
-            {/*    />*/}
-            {/*</Carousel.Item>*/}
-            {/*<Carousel.Item>*/}
-            {/*    <img*/}
-            {/*        className="d-block w-100"*/}
-            {/*        src={img9}*/}
-            {/*        alt="Third slide"*/}
-            {/*        height="400"*/}
-            {/*    />*/}
-            {/*</Carousel.Item>*/}
+
         </Carousel>
     );
 }

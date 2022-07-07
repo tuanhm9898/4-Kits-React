@@ -55,7 +55,7 @@ const HistoryOrder = () => {
                     </TableRow>
                     <TableRow>
                         <TableCell style={{paddingBottom: 0, paddingTop: 0}} colSpan={6}>
-                            <Collapse in={open} timeout="auto" unmountOnExit>
+                            <Collapse style={{background:"#D6EFED"}} in={open} timeout="auto" unmountOnExit >
                                 <Box sx={{margin: 1}}>
                                     <Typography variant="h6" gutterBottom component="div">
                                         Cart
@@ -99,6 +99,7 @@ const HistoryOrder = () => {
 
     return (
         <TableContainer component={Paper}>
+            <h1>History Order</h1>
             <Table aria-label="collapsible table">
                 <TableHead>
                     <TableRow>
