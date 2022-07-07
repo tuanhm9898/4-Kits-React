@@ -45,6 +45,7 @@ const Home = () => {
         <div>
             <Container>
                 <Carousel_Slideshow/>
+                <br></br>
                 <MenuItem/>
                 <br></br>
                 <Row>

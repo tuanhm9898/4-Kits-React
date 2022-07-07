@@ -1,5 +1,5 @@
 #gmap_canvas{
-    width: 750px;
+    width: 600px;
     height: 350px;
 }
 #basic-addon3{
@@ -7,4 +7,10 @@
 }
 #basic-addon1{
     width: 40px;
+}
+.about_item1{
+    padding-right: 25px;
+}
+.about_item2{
+    padding-left: 25px;
 }
