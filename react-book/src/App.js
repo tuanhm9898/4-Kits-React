@@ -20,22 +20,17 @@ import AdminLayout from "./layout/AdminLayout";
 import Admin from "./pages/Admin";
 import HistoryOrder from "./bookComponents/Admin/HistoryOrder";
 import Account from "./bookComponents/Admin/Account";
-import ReChart from "./bookComponents/Admin/ReChart";
 import EditBook from "./pages/EditBook";
-import CartTask from "./bookComponents/CartTask";
 import BookLike from "./bookComponents/Customer/bookLike";
 import HomeSelect from "./pages/HomeSelect";
-import Purchasses from "./bookComponents/Admin/Purchasses";
+import Purchases from "./bookComponents/Admin/Purchases";
 
-function Purchases() {
-    return null;
-}
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<HomeSelect/>} />
+                <Route path="/" element={<HomeSelect/>}/>
 
                 <Route path="/customer" element={<CustomerLayout/>}>
                     <Route index element={<Home/>}/>
@@ -52,18 +47,20 @@ function App() {
                     <Route path="reviewBook" element={<ReviewBook/>}/>
                     <Route path="manga" element={<Manga/>}/>
                     <Route path="about" element={<About/>}/>
-                    <Route path="book/:id" element={<DetailBook/>}/>
-                    <Route path="edit/:id" element={<EditBook/>}/>
-                    <Route path="edit/new" element={<EditBook/>}/>
                 </Route>
+
+                <Route path="/book/:id" element={<DetailBook/>}/>
+                <Route path="/edit/:id" element={<EditBook/>}/>
+                <Route path="/edit/new" element={<EditBook/>}/>
 
                 <Route path="/admin" element={<AdminLayout/>}>
                     <Route index element={<Admin/>}/>
                     <Route path="historyOrder" element={<HistoryOrder/>}/>
                     <Route path="account" element={<Account/>}/>
                     <Route path="" element={<Home/>}/>
-                    <Route path="purchases" element={<ReChart/>}/>
+                    <Route path="purchases" element={<Purchases/>}/>
                 </Route>
+
             </Routes>
         </BrowserRouter>
     );
