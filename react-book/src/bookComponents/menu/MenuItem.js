@@ -21,7 +21,7 @@ const MenuItem = () => {
             .then((item) => {
                 setData(item);
             });
-    }, [data]);
+    }, []);
     const listCategory = []
     if (data != null) {
         data.map((c, id) => {

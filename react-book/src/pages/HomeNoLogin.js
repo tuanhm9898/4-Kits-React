@@ -7,8 +7,10 @@ import {Link} from "react-router-dom";
 
 const HomeNoLogin = () => {
     const [data, setData] = useState(null);
-    let url = "https://62baa4fb573ca8f832881fa9.mockapi.io/book";
+
     useEffect(() => {
+        let url = "https://62baa4fb573ca8f832881fa9.mockapi.io/book";
+        console.log('url here',url);
         fetch(url)
             .then((response) => response.json())
             .then((data) => {
