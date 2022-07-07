@@ -24,12 +24,15 @@ import ReChart from "./bookComponents/Admin/ReChart";
 import EditBook from "./pages/EditBook";
 import CartTask from "./bookComponents/CartTask";
 import BookLike from "./bookComponents/Customer/bookLike";
+import HomeSelect from "./pages/HomeSelect";
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<CustomerLayout/>}>
+                <Route path="/" element={<HomeSelect/>} />
+
+                <Route path="/customer" element={<CustomerLayout/>}>
                     <Route index element={<Home/>}/>
                     <Route path="cart" element={<CartDetails/>}/>
                     <Route path="bookLike" element={<BookLike/>}/>}/>
