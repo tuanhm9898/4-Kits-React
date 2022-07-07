@@ -168,10 +168,10 @@ const Order = (props) => {
                 <div class="row">
                     <div class="col">
                         <div class="text-center">
-                            <button class="btn btn-success m-1" type="button"
+                            <button class="btn btn-outline-success m-1" type="button"
                                 onClick={() => saveInfo()}>
                                 Confirm</button>
-                            <Link to="/cart"><button class="btn btn-danger m-1">
+                            <Link to="/cart"><button class="btn btn-outline-danger m-1">
                                 Back to Cart
                             </button></Link>
                         </div>
