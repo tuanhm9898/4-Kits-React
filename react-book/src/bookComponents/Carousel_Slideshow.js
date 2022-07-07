@@ -51,46 +51,46 @@ function CarouselSlideshow() {
                     </h3>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src={img5}
-                    alt="Third slide"
-                    height="400"
-                />
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src={img6}
-                    alt="Third slide"
-                    height="400"
-                />
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src={img7}
-                    alt="Third slide"
-                    height="400"
-                />
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src={img8}
-                    alt="Third slide"
-                    height="400"
-                />
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src={img9}
-                    alt="Third slide"
-                    height="400"
-                />
-            </Carousel.Item>
+            {/*<Carousel.Item>*/}
+            {/*    <img*/}
+            {/*        className="d-block w-100"*/}
+            {/*        src={img5}*/}
+            {/*        alt="Third slide"*/}
+            {/*        height="400"*/}
+            {/*    />*/}
+            {/*</Carousel.Item>*/}
+            {/*<Carousel.Item>*/}
+            {/*    <img*/}
+            {/*        className="d-block w-100"*/}
+            {/*        src={img6}*/}
+            {/*        alt="Third slide"*/}
+            {/*        height="400"*/}
+            {/*    />*/}
+            {/*</Carousel.Item>*/}
+            {/*<Carousel.Item>*/}
+            {/*    <img*/}
+            {/*        className="d-block w-100"*/}
+            {/*        src={img7}*/}
+            {/*        alt="Third slide"*/}
+            {/*        height="400"*/}
+            {/*    />*/}
+            {/*</Carousel.Item>*/}
+            {/*<Carousel.Item>*/}
+            {/*    <img*/}
+            {/*        className="d-block w-100"*/}
+            {/*        src={img8}*/}
+            {/*        alt="Third slide"*/}
+            {/*        height="400"*/}
+            {/*    />*/}
+            {/*</Carousel.Item>*/}
+            {/*<Carousel.Item>*/}
+            {/*    <img*/}
+            {/*        className="d-block w-100"*/}
+            {/*        src={img9}*/}
+            {/*        alt="Third slide"*/}
+            {/*        height="400"*/}
+            {/*    />*/}
+            {/*</Carousel.Item>*/}
         </Carousel>
     );
 }

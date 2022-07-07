@@ -23,10 +23,8 @@ import Account from "./bookComponents/Admin/Account";
 import EditBook from "./pages/EditBook";
 import BookLike from "./bookComponents/Customer/bookLike";
 import HomeSelect from "./pages/HomeSelect";
+import Purchases from "./bookComponents/Admin/Purchases";
 
-function Purchases() {
-    return null;
-}
 
 function App() {
     return (
@@ -49,18 +47,20 @@ function App() {
                     <Route path="reviewBook" element={<ReviewBook/>}/>
                     <Route path="manga" element={<Manga/>}/>
                     <Route path="about" element={<About/>}/>
-                    <Route path="book/:id" element={<DetailBook/>}/>
-                    <Route path="edit/:id" element={<EditBook/>}/>
-                    <Route path="edit/new" element={<EditBook/>}/>
                 </Route>
+
+                <Route path="/book/:id" element={<DetailBook/>}/>
+                <Route path="/edit/:id" element={<EditBook/>}/>
+                <Route path="/edit/new" element={<EditBook/>}/>
 
                 <Route path="/admin" element={<AdminLayout/>}>
                     <Route index element={<Admin/>}/>
                     <Route path="historyOrder" element={<HistoryOrder/>}/>
                     <Route path="account" element={<Account/>}/>
                     <Route path="" element={<Home/>}/>
-                    <Route path="purchases" element={<ReChart/>}/>
+                    <Route path="purchases" element={<Purchases/>}/>
                 </Route>
+
             </Routes>
         </BrowserRouter>
     );
