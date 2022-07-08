@@ -19,6 +19,7 @@ const MenuItem = () => {
         fetch(url)
             .then((response) => response.json())
             .then((item) => {
+                console.log(item,'item');
                 setData(item);
             });
     }, []);

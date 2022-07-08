@@ -8,14 +8,27 @@ export const DELETE_CART = "DELETE_CART";
 
 export const CLEAR_CART = "CLEAR_CART"
 
-
-export function ClearCart(){
+/*FETCH DATA*/
+function fetchPostsRequest(){
     return {
-        type: "CLEAR_CART",
-    };
-}
-
-/*GET NUMBER CART*/
+      type: "FETCH_REQUEST"
+    }
+  }
+  
+  function fetchPostsSuccess(payload) {
+    return {
+      type: "FETCH_SUCCESS",
+      payload
+    }
+  }
+  
+  function fetchPostsError() {
+    return {
+      type: "FETCH_ERROR"
+    }
+  }
+  
+/*CART*/
 export function GetNumberCart() {
     return {
         type: "GET_NUMBER_CART"
@@ -53,6 +66,10 @@ export function DecreaseQuantity(payload) {
         payload
     };
 }
-
+export function ClearCart(){
+    return {
+        type: "CLEAR_CART",
+    };
+}
 export class GET_ALL_PRODUCT {
 }

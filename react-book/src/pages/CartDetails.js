@@ -9,6 +9,10 @@ const Cart = (props) => {
     useEffect(() => {
         console.log('product list useEffect!!');
         setCartItems(props.store_state.Carts);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
     }, [props.store_state]);
 
     const getTotal = () => {

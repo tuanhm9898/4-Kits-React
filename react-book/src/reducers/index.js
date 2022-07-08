@@ -18,6 +18,10 @@ const initProduct = {
 
 function todoProduct(state = initProduct, action) {
     switch (action.type) {
+        case "FETCH_REQUEST":
+            return state;
+        case "FETCH_SUCCESS":
+            return { ...state, posts: action.payload };
         case GET_ALL_PRODUCT:
             return {
                 ...state,

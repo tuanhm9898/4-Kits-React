@@ -35,11 +35,19 @@ const Home = () => {
         //     .then((data) => {
         //         setLikeBook(data)
         //     })
+        window.scrollTo({
+            top: 500,
+            behavior: 'smooth',
+        });
     }, [searchBook]);
 
     const sort_price = () => {
         // console.log([...data].sort((o1,o2) => o1.price-o2.price))
         setData([...data].sort((o1, o2) => o1.price - o2.price));
+        window.scrollTo({
+            top: 600,
+            behavior: 'smooth',
+        });
     };
     return (
         <div>
