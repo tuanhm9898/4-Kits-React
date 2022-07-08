@@ -36,7 +36,7 @@ const Home = () => {
         //         setLikeBook(data)
         //     })
         window.scrollTo({
-            top: 430,
+            top: 200,
             behavior: 'smooth',
         });
     }, [searchBook]);
