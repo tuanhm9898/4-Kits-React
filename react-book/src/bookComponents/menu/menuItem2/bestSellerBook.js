@@ -15,9 +15,9 @@ const BestSellerBook = () => {
         .then((response) => response.json())
         .then((data) => {
             setData(data);
-            console.log(":)", data);
+            console.log("best seller ");
         });
-    }, [data]);
+    }, []);
 
     const listCategory = [];
     if (data != null) {

@@ -14,10 +14,8 @@ const Purchases = () => {
                     <h3 className="card-title">Book</h3>
                     <div className="card-tools">
                         <a href="#" className="btn btn-tool btn-sm">
-                            <i className="fas fa-download"></i>
                         </a>
                         <a href="#" className="btn btn-tool btn-sm">
-                            <i className="fas fa-bars"></i>
                         </a>
                     </div>
                 </div>
