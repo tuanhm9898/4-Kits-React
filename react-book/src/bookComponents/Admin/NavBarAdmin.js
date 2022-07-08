@@ -28,9 +28,10 @@ const NavBarAdmin = (props) => {
                             {/*<Nav.Link><Link to="account" className="nav-link">Account</Link></Nav.Link>*/}
                             <Nav.Link><Link to="historyOrder" className="nav-link">History Order</Link></Nav.Link>
                             <Nav.Link><Link to="purchases" className="nav-link">Purchases</Link></Nav.Link>
-                            <Nav.Link><Link to="/" className="nav-link">Log Out</Link></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
+                    <Nav.Link><Link to="/" className="nav-link" style={{color : "black"}} >Log Out</Link></Nav.Link>
+
                 </Container>
             </Navbar>
             <br></br>

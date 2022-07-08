@@ -201,11 +201,14 @@ import {
                     style={{ margin: "2px", textDecoration: "none" }}
                 >
                     <button
-                    className="btn btn-outline-success m-1 trigger-btn"
+                    className="btn btn-outline-success m-1 trigger-btn" style={{padding: '0px'}}
                     type="button"
                     onClick={() => saveInfo()}
                     >
-                    Confirm
+                        <button className="btn btn-outline-success m-1 trigger-btn" style={{border:'none',padding: '2px'}}
+                            onClick={handleShow}>
+                            Confirm
+                        </button>
                     </button>
                 </a>
                 <Link to="/customer"></Link>
@@ -243,9 +246,7 @@ import {
                         </div> */}
 
         <>
-            <Button variant="primary" onClick={handleShow}>
-            Launch demo modal
-            </Button>
+
 
             <Modal
             show={show}
