@@ -12,11 +12,12 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import PropTypes from 'prop-types';
 
 
 const HistoryOrder = () => {
 
-    const [open, setOpen] = useState();
+    const [open, setOpen] = useState(false);
     const [row, setRow] = useState();
     const list = []
 
@@ -43,7 +44,7 @@ const HistoryOrder = () => {
                                 {open ? <KeyboardArrowUpIcon/> : <KeyboardArrowDownIcon/>}
                             </IconButton>
                         </TableCell>
-                        <TableCell align="right">{row.id}</TableCell>
+                        <TableCell >{row.id}</TableCell>
 
                         <TableCell component="th" scope="row">
                             {row.name}
@@ -63,11 +64,11 @@ const HistoryOrder = () => {
                                     <Table size="small" aria-label="purchases">
                                         <TableHead>
                                             <TableRow>
-                                                <TableCell><b>id cart</b></TableCell>
+                                                <TableCell><b>Stt</b></TableCell>
                                                 <TableCell><b>name</b></TableCell>
                                                 <TableCell><b>quantity</b></TableCell>
                                                 <TableCell><b>price</b></TableCell>
-                                                <TableCell><b>Total price (VNĐ)</b></TableCell>
+                                                <TableCell align="right"><b>Total price (VNĐ)</b></TableCell>
 
                                             </TableRow>
                                         </TableHead>
@@ -96,6 +97,26 @@ const HistoryOrder = () => {
             )
         })
     }
+
+    list.propTypes = {
+        row: PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            name: PropTypes.string.isRequired,
+            phone: PropTypes.number.isRequired,
+            cart: PropTypes.arrayOf(
+                PropTypes.shape({
+                    quantity: PropTypes.number.isRequired,
+                    name: PropTypes.string.isRequired,
+                    price: PropTypes.number.isRequired,
+                    total: PropTypes.number.isRequired,
+
+                }),
+            ).isRequired,
+            total: PropTypes.number.isRequired,
+            date: PropTypes.number.isRequired,
+            address: PropTypes.number.isRequired,
+        }).isRequired,
+    };
 
     return (
         <TableContainer component={Paper}>
