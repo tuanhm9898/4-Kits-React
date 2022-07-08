@@ -16,7 +16,6 @@ const ReviewBook = () => {
     }, []);
 
 
-const ReviewBook = () => {
     return (
         <div className="col-main" style={{ backgroundColor: "#254171" }}>
             <div className="page-banner">
@@ -33,6 +32,6 @@ const ReviewBook = () => {
             </div>
         </div>
     );
-};
+
 }
 export default ReviewBook;
