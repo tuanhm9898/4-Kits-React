@@ -16,9 +16,9 @@ const Manga = () => {
         .then((response) => response.json())
         .then((data) => {
             setData(data);
-            console.log(":)", data);
+            console.log("manga ");
         });
-    }, [data]);
+    }, []);
 
     const listCategory = [];
     if (data != null) {

@@ -15,9 +15,9 @@ const ReviewBook = () => {
         .then((response) => response.json())
         .then((data) => {
             setData(data);
-            console.log(":)", data);
+            console.log("review book ");
         });
-    }, [data]);
+    }, []);
 
     const listCategory = [];
     if (data != null) {

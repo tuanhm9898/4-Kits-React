@@ -16,9 +16,9 @@ const NewBook = () => {
         .then((response) => response.json())
         .then((data) => {
             setData(data);
-            console.log(":)", data);
+            console.log("new book ");
         });
-    }, [data]);
+    }, []);
 
     const listCategory = [];
     if (data != null) {
