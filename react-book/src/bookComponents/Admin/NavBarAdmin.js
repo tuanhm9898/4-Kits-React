@@ -30,7 +30,7 @@ const NavBarAdmin = (props) => {
                             <Nav.Link><Link to="purchases" className="nav-link">Purchases</Link></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
-                    <Nav.Link><Link to="/" className="nav-link" style={{ color: "black" }} >Log Out</Link></Nav.Link>
+                    <Nav.Link><Link to="/" className="nav-link" style={{ color: "black" }}>Log Out</Link></Nav.Link>
 
                 </Container>
             </Navbar>
