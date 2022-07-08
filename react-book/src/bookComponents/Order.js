@@ -68,9 +68,11 @@ const Order = (props) => {
 
         // alert('dat hang thanh cong');
         order['cart'] = cartItems;
+        order['total']=getTotal();
         const current = new Date();
         const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
         order['date']= date;
+        console.log(order);
         order['total']=getTotal();
         const requestOptions = {
             method: 'POST',
