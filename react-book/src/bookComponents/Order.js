@@ -200,12 +200,15 @@ import {AiOutlineCheck} from 'react-icons/ai'
                     data-toggle="modal"
                     style={{ margin: "2px", textDecoration: "none" }}
                 >
-                    <button 
-                    className="btn btn-outline-success m-1 trigger-btn"
-                    type="button"
+                    <button
+                        className="btn btn-outline-success m-1 trigger-btn"
+                        type="button"
                     onClick={() => saveInfo()}
                     >
-                    Confirm
+                        <button   className="btn btn-outline-success m-1 trigger-btn"
+                            onClick={handleShow}>
+                            Confirm
+                        </button>
                     </button>
                 </a>
                 <Link to="/customer"></Link>
@@ -243,9 +246,7 @@ import {AiOutlineCheck} from 'react-icons/ai'
                 </div> */}
 
         <>
-            <Button variant="primary" onClick={handleShow}>
-            Launch demo modal
-            </Button>
+
 
             <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton className="modal-header">
