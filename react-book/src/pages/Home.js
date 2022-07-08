@@ -20,7 +20,7 @@ const Home = () => {
         let url = 'https://62baa4fb573ca8f832881fa9.mockapi.io/book';
         if (searchBook.length > 0) {
             url = url + '?search=' + searchBook;
-            console.log('data home page', url);
+            console.log('data home page');
         }
         fetch(url)
             .then((response) => response.json())
@@ -36,7 +36,7 @@ const Home = () => {
         //         setLikeBook(data)
         //     })
         window.scrollTo({
-            top: 500,
+            top: 430,
             behavior: 'smooth',
         });
     }, [searchBook]);

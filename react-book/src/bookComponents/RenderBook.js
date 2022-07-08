@@ -170,7 +170,7 @@ const RenderBook = (props) => {
     };
 
     useEffect(() => {
-        console.log("render book : ");
+        console.log("render book  ");
         setData(props.data);
     }, [props.data]);
 

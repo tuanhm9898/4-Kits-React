@@ -16,9 +16,9 @@ const MarketBook = () => {
         .then((response) => response.json())
         .then((data) => {
             setData(data);
-            console.log(":)", data);
+            console.log("market book");
         });
-    }, [data]);
+    }, []);
 
     const listCategory = [];
     if (data != null) {

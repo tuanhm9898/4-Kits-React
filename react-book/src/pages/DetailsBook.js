@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import "../App.css";
 import { Button, Card } from "react-bootstrap";
 import ThemeProvider from "react-bootstrap/ThemeProvider";
@@ -13,6 +13,8 @@ import mgg1 from "../image/mgg1.png";
 import mgg2 from "../image/mgg2.png";
 import FooterBook from "../bookComponents/menu/FooterBook";
 import NavBarsBook from "../bookComponents/NavBarsBook";
+import {MdClose} from "react-icons/md";
+
 
 const DetailBook = (props) => {
     const params = useParams();
@@ -56,10 +58,18 @@ const DetailBook = (props) => {
     //         console.log("error axios")
     //     }
     // }
-
+    let navigate = useNavigate();
     return (
         <>
-            <NavBarsBook/>
+            <>
+                <Button variant="outline-danger" onClick={() => navigate(-1)}
+                style={{position: "fixed",
+                    right: "10px",
+                    top: "10px"}}
+                >
+                    <MdClose/>
+                </Button>
+            </>
             {book != null ? (
                 <div className="container bootstrap snippets bootdey">
                     <div className="panel-body inf-content">

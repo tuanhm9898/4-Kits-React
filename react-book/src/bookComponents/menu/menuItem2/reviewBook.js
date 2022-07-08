@@ -3,6 +3,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import "../../../App.css";
 
+const ReviewBook = () => {
+    const [data, setData] = useState(null);
+    let url = "https://62baa4fb573ca8f832881fa9.mockapi.io/book";
+    useEffect(() => {
+        fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+            setData(data);
+            console.log("review book ");
+        });
+    }, []);
 
 
 const ReviewBook = () => {
@@ -23,5 +34,5 @@ const ReviewBook = () => {
         </div>
     );
 };
-
+}
 export default ReviewBook;

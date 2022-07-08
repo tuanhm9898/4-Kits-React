@@ -15,9 +15,9 @@ const Trending = () => {
         .then((response) => response.json())
         .then((data) => {
             setData(data);
-            console.log(":)2", data);
+            console.log("trending");
         });
-    }, [data]);
+    }, []);
 
     const listCategory = [];
     if (data != null) {
