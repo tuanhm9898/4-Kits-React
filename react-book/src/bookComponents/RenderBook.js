@@ -142,6 +142,10 @@ const RenderBook = (props) => {
 
     const categorySelect = (category) => {
         setData(data.filter((a) => a.category === category));
+        window.scrollTo({
+            top: 600,
+            behavior: 'smooth',
+        });
     };
 
     const bookLove = async (id, name, chapter, image) => {

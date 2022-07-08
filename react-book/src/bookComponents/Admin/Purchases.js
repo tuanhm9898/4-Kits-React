@@ -105,7 +105,7 @@ const Purchases = () => {
                 <div className="row">
                     <div className="col-lg-3 col-6">
 
-                        <div className="small-box bg-info p-2 ">
+                        <div className="small-box p-2 " style={{background: "aquamarine"}}>
                             <div className="inner">
                                 <h3>150</h3>
                                 <p>Đơn hàng mới</p>
@@ -119,7 +119,7 @@ const Purchases = () => {
 
                     <div className="col-lg-3 col-6">
 
-                        <div className="small-box bg-success p-2">
+                        <div className="small-box p-2" style={{background: "#81c7c7"}}>
                             <div className="inner">
                                 <h3>300</h3>
                                 <p>Mgười dùng mới</p>
@@ -133,7 +133,7 @@ const Purchases = () => {
 
                     <div className="col-lg-3 col-6">
 
-                        <div className="small-box bg-warning p-2">
+                        <div className="small-box p-2" style={{background: "#ffdcae"}}>
                             <div className="inner">
                                 <h3>1000</h3>
                                 <p>Số lượng khách truy cập</p>

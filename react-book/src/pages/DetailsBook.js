@@ -28,6 +28,10 @@ const DetailBook = (props) => {
                 console.log("publishingYear", data.publishingYear);
                 setBook(data);
             });
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
     }, []);
 
     const formatDate = (date) => {

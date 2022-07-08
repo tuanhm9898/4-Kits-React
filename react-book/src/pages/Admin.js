@@ -4,6 +4,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 import ReactPaginate from "react-paginate";
+import Typography from "@mui/material/Typography";
+import {Rating} from "@mui/material";
 
 
 const Admin = () => {
@@ -59,6 +61,10 @@ const Admin = () => {
             }
             setCurrentItems(data.slice(starOffset, endOffset));
             setPageCount(Math.ceil(data.length / itemsPerPage));
+            window.scrollTo({
+                top: 100,
+                behavior: 'smooth',
+            });
         }
     }, [page]);
 
@@ -80,7 +86,12 @@ const Admin = () => {
                 </td>
                 <td>{item.publishingYear}</td>
                 <td>{item.amount}</td>
-                <td>{item.productRating}%</td>
+                <td>
+                    <Rating
+                        name="simple-controlled"
+                        value={item.productRating}
+                    />
+                </td>
 
                 {/*<td><Link to={'/book/' + item.id}><Button variant="outline-success">*/}
                 {/*    Details*/}
@@ -164,7 +175,7 @@ const Admin = () => {
                         <th onClick={() => sortColumn('name', 'string')}>Name</th>
                         <th onClick={() => sortColumn('price', 'number')}>Price</th>
                         <th onClick={() => sortColumn('category', 'string')}>Category</th>
-                        <th>Details_S</th>
+                        <th>Details</th>
                         <th>Image</th>
                         <th>Date</th>
                         <th onClick={() => sortColumn('amount', 'number')}>Amount</th>
