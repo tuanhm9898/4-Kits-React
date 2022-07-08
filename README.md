@@ -3,7 +3,7 @@
 `admin@gmail.com` pass: `admin`  
 `nhom4@gmail.com` pass : `nhom4`
 ![image](https://user-images.githubusercontent.com/96046778/177948269-84dff2f9-45fe-4719-80e4-21791b2019f3.png)
-
+# Admin
 - home admin
 ![image](https://user-images.githubusercontent.com/96046778/177947282-ef892975-ed6d-4be7-9a67-b4069aa5d099.png)
 - history order
