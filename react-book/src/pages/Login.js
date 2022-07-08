@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Button, Card, Form} from "react-bootstrap";
 
 
-const HomeLogin = () => {
+const Login = () => {
     // Pssst, I've created a github package - https://github.com/brookesb91/dismissible
 
 const showBanner = (selector) => {
@@ -20,9 +20,6 @@ const showBanner = (selector) => {
         .forEach((b) => b.classList.remove("visible"));
     };
     
-
-
-
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
 
@@ -51,7 +48,7 @@ const showBanner = (selector) => {
         );
     return (
         <div className="container">
-            <h1>Login</h1>
+            <h1 style={{fontSize: "1.5rem"}}> &nbsp; Login to experience all of functions</h1>
             <Form style={{ width: '50rem',marginLeft:"auto",marginRight:"auto" }}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -69,12 +66,12 @@ const showBanner = (selector) => {
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Button variant="outline-info" onClick={setParam}>
-                    Submit
+                ༼ つ ◕_◕ ༽つ
                 </Button>
             </Form>
-
+           
         </div>
     );
 };
 
-export default HomeLogin;
+export default Login;

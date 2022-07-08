@@ -7,9 +7,9 @@ const HomeSelect = () => {
     return (
 
         <div className="container">
-            <Button variant="outline-info">
-                <Link to="/loginHome">Login</Link>
-            </Button>
+            
+                <Link to="/loginHome" style={{position: "fixed", right: 200}}><Button variant="outline-info">Login</Button></Link>
+            
             <HomeNoLogin/>
         </div>
     );

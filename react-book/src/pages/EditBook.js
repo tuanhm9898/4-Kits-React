@@ -285,7 +285,8 @@ const ProductEdit = () => {
                                                                 />
                                                                 <Form.Check
                                                                     inline
-                                                                    label="New"
+                                                                    label="Available"
+                                                                    checked
                                                                     name="group1"
                                                                     type={type}
                                                                     id={`inline-${type}-2`}
@@ -295,26 +296,9 @@ const ProductEdit = () => {
                                                     </Form>
                                                 </td>
                                             </tr>
-
-
-
                                             <tr>
                                                 <td>
-                                                    <strong>Chapter</strong>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        type="text"
-                                                        className="form-control"
-                                                        value={product.chapter}
-                                                        name="chapter"
-                                                        onChange={(e) => handleChange(e)}
-                                                    ></input>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <strong>Origin</strong>
+                                                    <strong></strong>
                                                 </td>
                                                 <td>
                                                     <div className="select-container">
@@ -335,10 +319,10 @@ const ProductEdit = () => {
                                                                             {item.country}
                                                                         </option>
                                                                     ))
-                                                                    : <div><h1>'loading'</h1></div>}
+                                                                    : <div><h1>''</h1></div>}
                                                             </select>
                                                         ) : (
-                                                            <div><h1>'loading'</h1></div>
+                                                            <div><h1>(❁´◡`❁)</h1></div>
                                                         )}
                                                     </div>
                                                 </td>
@@ -367,7 +351,7 @@ const ProductEdit = () => {
                     </div>
                 </div>
             ) : (
-                <div><h1>'loading'</h1></div>
+                <div><h1>(❁´◡`❁)&nbsp;Loading&nbsp;(❁´◡`❁)</h1></div>
             )}
         </>
     );

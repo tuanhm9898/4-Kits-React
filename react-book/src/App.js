@@ -25,7 +25,7 @@ import BookLike from "./bookComponents/Customer/bookLike";
 import HomeSelect from "./pages/HomeSelect";
 import Purchases from "./bookComponents/Admin/Purchases";
 import NoPage from "./pages/page404/NoPage";
-import HomeLogin from "./pages/HomeLogin";
+import Login from "./pages/Login";
 
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
                 <Route path="*" element={<NoPage />} />
                 <Route path="/test" element={<Test />} />
 
-                <Route path="/loginHome" element={<HomeLogin/>}></Route>
+                <Route path="/login" element={<Login/>}></Route>
 
                 <Route path="/customer" element={<CustomerLayout/>}>
                     <Route index element={<Home/>}/>

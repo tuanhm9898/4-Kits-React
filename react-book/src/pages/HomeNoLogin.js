@@ -1,23 +1,28 @@
-import React,{useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Container from "react-bootstrap/Container";
 import Carousel_Slideshow from "../bookComponents/Carousel_Slideshow";
 import MenuItem from "../bookComponents/menu/MenuItem";
 import FooterBook from "../bookComponents/menu/FooterBook";
-import {Link} from "react-router-dom";
-import {Button} from "@mui/material";
-import {Card, ThemeProvider} from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
+import { Card, ThemeProvider } from "react-bootstrap";
+import NavBarsGuest from "../bookComponents/NavBarsGuest";
 
-const HomeNoLogin = () => {
+const HomeGuest = () => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
         let url = "https://62baa4fb573ca8f832881fa9.mockapi.io/book";
-        console.log('url here',url);
+        console.log('url here', url);
         fetch(url)
             .then((response) => response.json())
             .then((data) => {
                 setData(data);
             });
+        window.scrollTo({
+            top: 15,
+            behavior: 'smooth',
+        });
     }, []);
 
     const listCategory = [];
@@ -57,7 +62,7 @@ const HomeNoLogin = () => {
                                                                     {item.price}đ
                                                                 </div>
                                                                 <div class="flashsale-price-old">
-                                                                    {item.chapter}000đ
+                                                                    {item.chapter}đ
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -85,13 +90,13 @@ const HomeNoLogin = () => {
             );
         });
     }
-    const listBook=[]
-    if(data!=null){
+    const listBook = []
+    if (data != null) {
         data.map((item, id) => {
             return listBook.push(
                 <div className="col-md-4 col-sm-6 mt-4">
-                    <Card style={{width: '18rem'}}>
-                        <Card.Img variant="top" src={item.image}/>
+                    <Card style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src={item.image} />
                         <Card.Body>
                             <Link to={'/book/' + item.id}>
                                 <Card.Title>{item.name}</Card.Title>
@@ -104,7 +109,7 @@ const HomeNoLogin = () => {
                                             fontSize: "x-large",
                                             color: "#856a91"
                                         }}>
-                                            <ThemeProvider prefixes={{btn: 'my-btn'}}>
+                                            <ThemeProvider prefixes={{ btn: 'my-btn' }}>
                                                 {item.price} đ
                                                 {/* <CurrencyFormat value={item.price} displayType={'text'} format="#### #### #### ####" /> */}
                                             </ThemeProvider>
@@ -124,22 +129,25 @@ const HomeNoLogin = () => {
     }
     return (
         <div>
+            <NavBarsGuest />
             <Container>
-                <Carousel_Slideshow/>
+                <Carousel_Slideshow />
             </Container>
-                <MenuItem/>
+            <MenuItem />
             <br></br>
-                <Container style={{    overflowX: "auto",
-                   overflowY: "hidden"}}>
-                    {listCategory}
+            <Container style={{
+                overflowX: "auto",
+                overflowY: "hidden"
+            }}>
+                {listCategory}
 
-                </Container>
+            </Container>
             <div>
                 <div className="row">{listBook}</div>
             </div>
-                <FooterBook/>
+            <FooterBook />
         </div>
     );
 };
 
-export default HomeNoLogin;
+export default HomeGuest;
