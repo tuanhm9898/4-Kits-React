@@ -45,6 +45,10 @@ const ProductEdit = () => {
         //         console.log('country api ');
         //         setCountries(data);
         //     });
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
     }, []);
 
     const saveProduct = () => {
