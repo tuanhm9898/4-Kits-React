@@ -11,6 +11,8 @@ import axios from "axios";
 import { AiFillHeart } from "react-icons/ai";
 import mgg1 from "../image/mgg1.png";
 import mgg2 from "../image/mgg2.png";
+import FooterBook from "../bookComponents/menu/FooterBook";
+import NavBarsBook from "../bookComponents/NavBarsBook";
 
 const DetailBook = (props) => {
     const params = useParams();
@@ -53,6 +55,7 @@ const DetailBook = (props) => {
 
     return (
         <>
+            <NavBarsBook/>
         {book != null ? (
             <div className="container bootstrap snippets bootdey">
             <div className="panel-body inf-content">
@@ -337,6 +340,7 @@ const DetailBook = (props) => {
         ) : (
             "loading details book ....  (:"
         )}
+            <FooterBook/>
         </>
     );
     };

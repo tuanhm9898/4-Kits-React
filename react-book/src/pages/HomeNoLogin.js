@@ -4,6 +4,8 @@ import Carousel_Slideshow from "../bookComponents/Carousel_Slideshow";
 import MenuItem from "../bookComponents/menu/MenuItem";
 import FooterBook from "../bookComponents/menu/FooterBook";
 import {Link} from "react-router-dom";
+import {Button} from "@mui/material";
+import {Card, ThemeProvider} from "react-bootstrap";
 
 const HomeNoLogin = () => {
     const [data, setData] = useState(null);
@@ -83,6 +85,43 @@ const HomeNoLogin = () => {
             );
         });
     }
+    const listBook=[]
+    if(data!=null){
+        data.map((item, id) => {
+            return listBook.push(
+                <div className="col-md-4 col-sm-6 mt-4">
+                    <Card style={{width: '18rem'}}>
+                        <Card.Img variant="top" src={item.image}/>
+                        <Card.Body>
+                            <Link to={'/book/' + item.id}>
+                                <Card.Title>{item.name}</Card.Title>
+                            </Link>
+                            <Card.Text>
+
+                                <Card.Text>
+                                    <div className="row">
+                                        <div className="col-sm-9" style={{
+                                            fontSize: "x-large",
+                                            color: "#856a91"
+                                        }}>
+                                            <ThemeProvider prefixes={{btn: 'my-btn'}}>
+                                                {item.price} đ
+                                                {/* <CurrencyFormat value={item.price} displayType={'text'} format="#### #### #### ####" /> */}
+                                            </ThemeProvider>
+                                        </div>
+
+                                    </div>
+                                </Card.Text>
+                            </Card.Text>
+                            <Card.Text className="text-center">
+                                <span> </span>
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </div>
+            )
+        });
+    }
     return (
         <div>
             <Container>
@@ -93,7 +132,11 @@ const HomeNoLogin = () => {
                 <Container style={{    overflowX: "auto",
                    overflowY: "hidden"}}>
                     {listCategory}
+
                 </Container>
+            <div>
+                <div className="row">{listBook}</div>
+            </div>
                 <FooterBook/>
         </div>
     );

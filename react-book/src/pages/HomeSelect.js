@@ -7,13 +7,9 @@ const HomeSelect = () => {
     return (
 
         <div className="container">
-            <Button variant="outline-primary" className="me-5">
-                <Link to="/customer">customer</Link>
-            </Button>
             <Button variant="outline-info">
-                <Link to="/admin">admin</Link>
+                <Link to="/loginHome">Login</Link>
             </Button>
-
             <HomeNoLogin/>
         </div>
     );
