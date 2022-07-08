@@ -1,13 +1,18 @@
-import React, {useEffect, useState} from "react";
-import {useHistory, useParams} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import "../App.css";
-import {Button, Card} from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
+import ThemeProvider from "react-bootstrap/ThemeProvider";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {connect} from "react-redux";
-import {AddCart} from "../actions";
+import { connect } from "react-redux";
+import { AddCart } from "../actions";
+import axios from "axios";
+import { AiFillHeart } from "react-icons/ai";
 import mgg1 from "../image/mgg1.png";
 import mgg2 from "../image/mgg2.png";
-
+import FooterBook from "../bookComponents/menu/FooterBook";
+import NavBarsBook from "../bookComponents/NavBarsBook";
 
 const DetailBook = (props) => {
     const params = useParams();
@@ -15,7 +20,7 @@ const DetailBook = (props) => {
     const [book, setBook] = useState(null);
     useEffect(() => {
         let url = "https://62baa4fb573ca8f832881fa9.mockapi.io/book/" + params.id;
-        console.log(url, 'url here')
+        console.log(url,'url here')
         fetch(url)
             .then((response) => response.json())
             .then((data) => {
@@ -47,32 +52,34 @@ const DetailBook = (props) => {
     //         console.log("error axios")
     //     }
     // }
+
     return (
         <>
+            <NavBarsBook/>
             {book != null ? (
                 <div className="container bootstrap snippets bootdey">
                     <div className="panel-body inf-content">
                         <div className="">
                             <h1>Book</h1>
-                            <br/>
+                            <br />
                             <div className="carddt card-body2 shadow-xl mx-3 mx-md-4 mt-n6">
                                 <div className="container">
                                     <div className="section text-center row">
                                         <div className="col-5">
-                                            <Card style={{border: "none"}}>
-                                                <Card.Img variant="top" src={book.image}/>
+                                            <Card style={{ border: "none" }}>
+                                                <Card.Img variant="top" src={book.image} />
                                                 <Card.Body>
                                                     <Card.Text className="text-center">
                                                         {/* <Button style={{width:'150px'}} variant="outline-info" onClick={() =>bookLove(book.id,book.name,book.chapter,book.image)}> */}
                                                         <Button
-                                                            style={{width: "150px"}}
+                                                            style={{ width: "150px" }}
                                                             variant="outline-info"
                                                         >
                                                             Like
                                                         </Button>
                                                         <span> </span>
                                                         <Button
-                                                            style={{width: "150px"}}
+                                                            style={{ width: "150px" }}
                                                             variant="outline-danger"
                                                             onClick={() => props.AddCart(book)}
                                                         >
@@ -84,11 +91,11 @@ const DetailBook = (props) => {
                                         </div>
 
                                         <div className="col-7">
-                                            <h3 style={{textAlign: "left"}}>
+                                            <h3 style={{ textAlign: "left" }}>
                                                 <div className="fhs_event_delivery_label_icon"></div>
                                                 {book.name}
                                             </h3>
-                                            <br/>
+                                            <br />
                                             <table className="table table-user-information">
                                                 <tbody>
                                                 <tr>
@@ -121,22 +128,22 @@ const DetailBook = (props) => {
                                                     <br></br>
                                                 </div>
                                             </div>
-                                            <div className="row gia" style={{display: "flex"}}>
+                                            <div className="row gia" style={{ display: "flex" }}>
                                                 <div className="col-2 giamoi">{book.price} đ</div>
                                                 <div className="col-2 giacu">{book.chapter} đ</div>
-                                                <div className="col-8" style={{textAlign: "left"}}>
+                                                <div className="col-8" style={{ textAlign: "left" }}>
                                                     <span class="discount-percent">-15%</span>
                                                 </div>
                                             </div>
-                                            <br/>
-                                            <div className="row cochu" style={{display: "flex"}}>
+                                            <br />
+                                            <div className="row cochu" style={{ display: "flex" }}>
                                                 <div className="col-3">Chính sách đổi trả</div>
                                                 <div className="col-5">
                                                     Đổi trả sản phẩm trong 30 ngày
                                                 </div>
                                                 <div className="col"></div>
                                             </div>
-                                            <br/>
+                                            <br />
                                             <div className="flashsale-header">
                                                 <img
                                                     className="fs_img"
@@ -152,15 +159,15 @@ const DetailBook = (props) => {
                                             <div className="row">
                                                 <p></p>
                                                 <div className="col">
-                                                    <img style={{width: "100%"}} src={mgg1}></img>
+                                                    <img style={{ width: "100%" }} src={mgg1}></img>
                                                 </div>
                                                 <div className="col">
-                                                    <img style={{width: "100%"}} src={mgg2}></img>
+                                                    <img style={{ width: "100%" }} src={mgg2}></img>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <br/>
+                                    <br />
                                     <div className="sanphamlienquan">
                                         <div className="flashsale-header">
                                             <img
@@ -175,12 +182,11 @@ const DetailBook = (props) => {
                         </span>
                                         </div>
                                         <div className="thongtinsp">
-                                            <table className="table table-user-information"
-                                                   style={{bordeColor: '#eceef1'}}>
+                                            <table className="table table-user-information" style={{bordeColor: '#eceef1'}}>
                                                 <tbody>
                                                 <tr>
-                                                    <td style={{width: '333px'}}>
-                                                        <strong>Mã hàng</strong>
+                                                    <td style={{width:'333px'}}>
+                                                        <strong >Mã hàng</strong>
                                                     </td>
                                                     <td className="text-primary">{book.id}</td>
                                                 </tr>
@@ -254,18 +260,9 @@ const DetailBook = (props) => {
                                             </table>
                                             <br/>
                                             <p>“Một trải nghiệm văn chương giàu hình ảnh.” —The New York Times.</p>
-                                            <p>“Bản đồ Các Ngày cho thấy Ransom Riggs đang đạt đỉnh cao phong độ, làm
-                                                người hâm mộ trung thành háo hức mong chờ tập tiếp theo.” — NY Journal
-                                                of Books.</p>
+                                            <p>“Bản đồ Các Ngày cho thấy Ransom Riggs đang đạt đỉnh cao phong độ, làm người hâm mộ trung thành háo hức mong chờ tập tiếp theo.” — NY Journal of Books.</p>
                                             <b>GIỚI THIỆU SÁCH:</b>
-                                            <p style={{textAlign: 'justify'}}>Sau trận chiến vang dội ở Đồng Ma, giúp
-                                                cộng đồng người đặc biệt ở châu u thoát khỏi sự đe dọa của hồn rỗng,
-                                                Jacob Portman quyết định trở về Florida để sống tiếp cuộc đời một học
-                                                sinh trung học với gia đình. Thế nhưng sự xuất hiện của cô Peregrine và
-                                                đám trẻ đặc biệt, cùng việc phát hiện ra một hầm ngầm chứa nhiều bí mật
-                                                trong căn nhà cũ của ông nội Abe đã lại đưa họ bước vào một cuộc phiêu
-                                                lưu mới, không kém phần ly kỳ và nguy hiểm, để khám phá thế giới người
-                                                đặc biệt ở quê hương nước Mỹ.</p>
+                                            <p style={{textAlign: 'justify'}}>Sau trận chiến vang dội ở Đồng Ma, giúp cộng đồng người đặc biệt ở châu u thoát khỏi sự đe dọa của hồn rỗng, Jacob Portman quyết định trở về Florida để sống tiếp cuộc đời một học sinh trung học với gia đình. Thế nhưng sự xuất hiện của cô Peregrine và đám trẻ đặc biệt, cùng việc phát hiện ra một hầm ngầm chứa nhiều bí mật trong căn nhà cũ của ông nội Abe đã lại đưa họ bước vào một cuộc phiêu lưu mới, không kém phần ly kỳ và nguy hiểm, để khám phá thế giới người đặc biệt ở quê hương nước Mỹ.</p>
                                             <p>Trọn bộ Trại trẻ đặc biệt của cô Peregrine do Nhã Nam phát hành:<br/>
                                                 TRẠI TRẺ ĐẶC BIỆT CỦA CÔ PEREGRINE (2015)<br/>
                                                 THÀNH PHỐ HỒN RỖNG (2016)<br/>
@@ -343,6 +340,7 @@ const DetailBook = (props) => {
             ) : (
                 "loading details book ....  (:"
             )}
+            <FooterBook/>
         </>
     );
 };

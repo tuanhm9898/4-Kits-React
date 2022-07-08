@@ -82,9 +82,9 @@ const Admin = () => {
                 <td>{item.amount}</td>
                 <td>{item.productRating}%</td>
 
-                <td><Link to={'/book/' + item.id}><Button variant="outline-success">
-                    Details
-                </Button></Link></td>
+                {/*<td><Link to={'/book/' + item.id}><Button variant="outline-success">*/}
+                {/*    Details*/}
+                {/*</Button></Link></td>*/}
                 <td><Link to={'/edit/' + item.id}><Button variant="outline-warning">
                     Edit
                 </Button></Link></td>

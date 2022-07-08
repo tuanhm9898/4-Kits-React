@@ -40,27 +40,27 @@ const ChartMonth = () => {
         },
         {
             "name": " 8",
-            "purchases": 300,
+            "purchases": 0,
             "amt": 2210
         },
         {
             "name": " 9",
-            "purchases": 250,
+            "purchases":0,
             "amt": 2290
         },
         {
             "name": " 10",
-            "purchases": 270,
+            "purchases":0,
             "amt": 2000
         },
         {
             "name": " 11",
-            "purchases": 270,
+            "purchases": 0,
             "amt": 2181
         },
         {
             "name": " 12",
-            "purchases": 350,
+            "purchases":0,
             "amt": 2500
         },
     ]

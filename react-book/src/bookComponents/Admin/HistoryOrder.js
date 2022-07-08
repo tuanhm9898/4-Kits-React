@@ -27,7 +27,7 @@ const HistoryOrder = () => {
             .then((data) => {
                 setRow(data);
             });
-    }, [row])
+    }, [])
 
     if (row != null) {
         row.map((row) => {
