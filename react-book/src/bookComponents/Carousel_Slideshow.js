@@ -11,7 +11,7 @@ import img9 from '../image/banner9.jpg'
 function CarouselSlideshow() {
     return (
         <Carousel>
-            <Carousel.Item>
+            <Carousel.Item interval={2000}>
                 <img
                     className="d-block w-100"
                     src={"https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2042508-jpeg.jpg"}
@@ -25,7 +25,7 @@ function CarouselSlideshow() {
                     </div>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            <Carousel.Item interval={2000}>
                 <img
                     className="d-block w-100"
                     src={img3}
@@ -40,7 +40,7 @@ function CarouselSlideshow() {
                     </div>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            <Carousel.Item interval={2000}>
                 <img
                     className="d-block w-100"
                     src={img4}
