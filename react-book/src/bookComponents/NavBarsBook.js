@@ -39,7 +39,7 @@ const NavBarsBook = (props) => {
                     </Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
+                        <Nav className="me-auto"  style={{display:'flex',alignItems: 'center'}}>
                             <Nav.Link><Link to="/customer" className="nav-link">Home</Link></Nav.Link>
                             <Nav.Link><Link to="bookLike" className="nav-link">Book Like</Link></Nav.Link>
                             {/*<Nav.Link><Link to="/admin" className="nav-link">Admin</Link></Nav.Link>*/}

@@ -23,7 +23,7 @@ const NavBarAdmin = (props) => {
                     </Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
+                        <Nav className="me-auto" style={{display:'flex',alignItems: 'center'}}>
                             <Nav.Link><Link to="/admin" className="nav-link">Home </Link></Nav.Link>
                             {/*<Nav.Link><Link to="account" className="nav-link">Account</Link></Nav.Link>*/}
                             <Nav.Link><Link to="historyOrder" className="nav-link">History Order</Link></Nav.Link>

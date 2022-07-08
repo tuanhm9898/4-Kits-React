@@ -6,7 +6,7 @@ const Order = (props) => {
     let navigate = useNavigate();
     const [order, setOrder] = useState(null);
     const [cartItems, setCartItems] = useState([]);
-  
+
     useEffect(() => {
         let initData = {};
         setOrder(initData);
