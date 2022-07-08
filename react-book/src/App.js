@@ -50,10 +50,9 @@ function App() {
                     <Route path="reviewBook" element={<ReviewBook/>}/>
                     <Route path="manga" element={<Manga/>}/>
                     <Route path="about" element={<About/>}/>
-
+                    <Route path="book/:id" element={<DetailBook/>}/>
                 </Route>
 
-                <Route path="/book/:id" element={<DetailBook/>}/>
                 <Route path="/edit/:id" element={<EditBook/>}/>
                 <Route path="/edit/new" element={<EditBook/>}/>
 
