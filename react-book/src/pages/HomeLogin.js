@@ -1,7 +1,28 @@
 import React, {useState} from 'react';
 import {Button, Card, Form} from "react-bootstrap";
 
+
 const HomeLogin = () => {
+    // Pssst, I've created a github package - https://github.com/brookesb91/dismissible
+
+const showBanner = (selector) => {
+    hideBanners();
+    // Ensure animation plays even if the same alert type is triggered.
+    requestAnimationFrame(() => {
+        const banner = document.querySelector(selector);
+        banner.classList.add("visible");
+        });
+    };
+    
+    const hideBanners = (e) => {
+        document
+        .querySelectorAll(".banner.visible")
+        .forEach((b) => b.classList.remove("visible"));
+    };
+    
+
+
+
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
 
@@ -29,15 +50,6 @@ const HomeLogin = () => {
             <div className="error">{errorMessages.message}</div>
         );
     return (
-        // <div>
-        //     <input type="email"
-        //            onChange={handleChangeEmail}
-        //            />
-        //     <input type="password"
-        //            onChange={handleChangePass}
-        //            />
-        //     <button onClick={setParam}>login</button>
-        // </div>
         <div className="container">
             <h1>Login</h1>
             <Form style={{ width: '50rem',marginLeft:"auto",marginRight:"auto" }}>

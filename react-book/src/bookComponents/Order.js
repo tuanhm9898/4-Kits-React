@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { IncreaseQuantity, DecreaseQuantity, DeleteCart, ClearCart } from '../actions';
+import '../App.css'
+
+
+
 const Order = (props) => {
+    
     let navigate = useNavigate();
     const [order, setOrder] = useState(null);
     const [cartItems, setCartItems] = useState([]);
@@ -13,7 +18,6 @@ const Order = (props) => {
     }, []);
 
     useEffect(() => {
-        console.log('order list useEffect!!');
         setCartItems(props.store_state.Carts);
     }, [props.store_state]);
 
@@ -58,13 +62,16 @@ const Order = (props) => {
 
     const saveInfo = () => {
         props.ClearCart();
-        alert('dat hang thanh cong');
+        
+
+
+
+        // alert('dat hang thanh cong');
         order['cart'] = cartItems;
         const current = new Date();
         const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
         order['date']= date;
         order['total']=getTotal();
-        console.log(order);
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -175,10 +182,11 @@ const Order = (props) => {
                 <div class="row">
                     <div class="col">
                         <div class="text-center">
-                        <button class="btn btn-outline-success m-1" type="button"
+                        <button className="btn btn-outline-success m-1 trigger-btn" type="button" 
                                 onClick={() => saveInfo()}>
-                                 Confirm</button>
-                                 <Link to="/customer"></Link>
+                                    Confirm</button>
+                                    <a href="#myModal" class="trigger-btn" data-toggle="modal">Click to Open Confirm Modal</a>
+                                    <Link to="/customer"></Link>
                             <Link to="/customer/cart"><button class="btn btn-outline-danger m-1">
                                 Back to Cart
                             </button></Link>
@@ -186,13 +194,34 @@ const Order = (props) => {
                     </div>
                 </div>
             </div>
+
+
+            <div id="myModal" class="modal fade">
+            <div class="modal-dialog modal-confirm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="icon-box">
+                            <i class="material-icons">&#xE876;</i>
+                        </div>				
+                        <h4 class="modal-title w-100">Awesome!</h4>	
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center">Your booking has been confirmed. Check your email for detials.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
         </div>);
 };
 
 const mapStateToProps = (state) => {
-    //  console.log(state)
     return {
-        //items: state._todoProduct.Carts,
         store_state: state._todoProduct,
     };
 };
