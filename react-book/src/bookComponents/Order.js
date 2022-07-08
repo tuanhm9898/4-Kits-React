@@ -11,7 +11,7 @@ import {
     import "bootstrap/dist/css/bootstrap.css";
     import Modal from "react-bootstrap/Modal";
     import Button from "react-bootstrap/Button";
-import {AiOutlineCheck} from 'react-icons/ai'
+    import { AiOutlineCheck } from "react-icons/ai";
 
     const Order = (props) => {
     const [show, setShow] = useState(false);
@@ -200,7 +200,7 @@ import {AiOutlineCheck} from 'react-icons/ai'
                     data-toggle="modal"
                     style={{ margin: "2px", textDecoration: "none" }}
                 >
-                    <button 
+                    <button
                     className="btn btn-outline-success m-1 trigger-btn"
                     type="button"
                     onClick={() => saveInfo()}
@@ -220,39 +220,49 @@ import {AiOutlineCheck} from 'react-icons/ai'
         </div>
 
         {/* <div id="myModal" className="modal fade">
-                    <div className="modal-dialog modal-confirm">
-                        <div className="modal-content ">
-                            <div className="modal-header">
-                                <div className="icon-box">
-                                    <i className="material-icons">&#xE876;</i>
-                                </div>				
-                                <h4 className="modal-title w-100">Awesome!</h4>	
+                            <div className="modal-dialog modal-confirm">
+                                <div className="modal-content ">
+                                    <div className="modal-header">
+                                        <div className="icon-box">
+                                            <i className="material-icons">&#xE876;</i>
+                                        </div>				
+                                        <h4 className="modal-title w-100">Awesome!</h4>	
+                                    </div>
+                                    <div className="modal-body">
+                                        <p className="text-center">Your booking has been confirmed. Check your email for details.</p>
+                                    </div>
+                                    <div className="modal-footer">
+                                        <Link to="/customer">
+                                        <button type="button" className="btn btn-success btn-block" data-bs-toggle="modal">
+                                            OK
+                                        </button>
+                                        </Link>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="modal-body">
-                                <p className="text-center">Your booking has been confirmed. Check your email for details.</p>
-                            </div>
-                            <div className="modal-footer">
-                                <Link to="/customer">
-                                <button type="button" className="btn btn-success btn-block" data-bs-toggle="modal">
-                                    OK
-                                </button>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
+                        </div> */}
 
         <>
             <Button variant="primary" onClick={handleShow}>
             Launch demo modal
             </Button>
 
-            <Modal show={show} onHide={handleClose}>
+            <Modal
+            show={show}
+            onHide={handleClose}
+            style={{
+                color: "#636363",
+                width: "555px",
+                fontSize: "14px",
+                marginTop: "200px",
+                marginLeft:'700px',
+            }}
+            >
             <Modal.Header closeButton className="modal-header">
-                <Modal.Title className="modal-confirm" >
-                {" "}
-                <AiOutlineCheck  className="icon-box" style={{textAlign: 'center'}}/>
-                <h4 className="modal-title" style={{textAlign:'left'}}>Awesome!</h4>
+                <Modal.Title className="modal-confirm">
+                <h4 className="modal-title" style={{ textAlign: "left" }}>
+                    Awesome!
+                </h4>
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body className="modal-body">
@@ -263,13 +273,16 @@ import {AiOutlineCheck} from 'react-icons/ai'
             </Modal.Body>
             <Modal.Footer className="modal-footer">
                 <Link to="/customer">
-                    <button
+                <button
                     type="button"
                     className="btn btn-success btn-block"
                     data-bs-toggle="modal"
-                    > <Button variant="success" onClick={handleClose}>
-                    OK </Button>
-                    </button>
+                >
+                    {" "}
+                    <Button variant="success" onClick={handleClose}>
+                    OK{" "}
+                    </Button>
+                </button>
                 </Link>
             </Modal.Footer>
             </Modal>
