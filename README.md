@@ -1,4 +1,9 @@
 # Book store
+- Login 
+`admin@gmail.com` pass: `admin`  
+`nhom4@gmail.com` pass : `nhom4`
+![image](https://user-images.githubusercontent.com/96046778/177948269-84dff2f9-45fe-4719-80e4-21791b2019f3.png)
+
 - home admin
 ![image](https://user-images.githubusercontent.com/96046778/177947282-ef892975-ed6d-4be7-9a67-b4069aa5d099.png)
 - history order
@@ -13,9 +18,5 @@
 ![image](https://user-images.githubusercontent.com/96046778/177947913-133f8ed8-6db7-4a6c-91e5-d0710b4e2c98.png)
 - cart
 ![image](https://user-images.githubusercontent.com/96046778/177948154-ab07893a-5384-4676-a0e0-85d6d3e19668.png)
-- Login 
-`admin@gmail.com` pass: `admin`
-`nhom4@gmail.com` pass : `nhom4`
-![image](https://user-images.githubusercontent.com/96046778/177948269-84dff2f9-45fe-4719-80e4-21791b2019f3.png)
 
 
