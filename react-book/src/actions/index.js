@@ -5,9 +5,11 @@ export const GET_NUMBER_CART = "GET_NUMBER_CART";
 export const ADD_CART = "ADD_CART";
 export const UPDATE_CART = "UPDATE_CART";
 export const DELETE_CART = "DELETE_CART";
-
 export const CLEAR_CART = "CLEAR_CART"
 
+export const FETCH_REQUEST = "FETCH_REQUEST"
+export const FETCH_ERROR = "FETCH_ERROR"
+export const FETCH_SUCCESS = "FETCH_SUCCESS"
 /*FETCH DATA*/
 function fetchPostsRequest(){
     return {

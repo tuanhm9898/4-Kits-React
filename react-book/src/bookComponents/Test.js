@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
@@ -12,29 +12,27 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-
-const Test = () => {
-
-    const [row, setRow] = useState();
-
-
+const HistoryOrder = () => {
+    const [rows, setRows] = useState(null);
     const url = 'https://62baa4fb573ca8f832881fa9.mockapi.io/info'
     useEffect(() => {
         fetch(url)
             .then((response) => response.json())
             .then((data) => {
-                setRow(data);
+                setRows(data);
+                console.log("listdata:", rows);
             });
     }, [])
-    function Row(row) {
 
-        const [open, setOpen] = React.useState(false);
+    function Row(props) {
+        const { row } = props;
+        const [open, setOpen] = useState(false);
 
         return (
             <React.Fragment>
-                <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
+                <TableRow sx={{ '& > *': { borderBottom: 'unset' } }} >
                     <TableCell>
                         <IconButton
                             aria-label="expand row"
@@ -44,40 +42,44 @@ const Test = () => {
                             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                         </IconButton>
                     </TableCell>
+                    <TableCell >{row.id}</TableCell>
                     <TableCell component="th" scope="row">
-                        {row.id}
+                        {row.name}
                     </TableCell>
-                    <TableCell align="right">{row.name}</TableCell>
-                    <TableCell align="right">{row.phone}</TableCell>
-                    <TableCell align="right">{row.address}</TableCell>
-                    <TableCell align="right">{row.date}</TableCell>
+                    <TableCell>{row.phone}</TableCell>
+                    <TableCell>{row.address}</TableCell>
+                    <TableCell>{row.date}</TableCell>
+                    <TableCell>{row.total}</TableCell>
                 </TableRow>
                 <TableRow>
                     <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-                        <Collapse in={open} timeout="auto" unmountOnExit>
+                        <Collapse style={{ background: "#D6EFED" }} in={open} timeout="auto" unmountOnExit >
                             <Box sx={{ margin: 1 }}>
                                 <Typography variant="h6" gutterBottom component="div">
-                                    cart
+                                    Cart
                                 </Typography>
                                 <Table size="small" aria-label="purchases">
                                     <TableHead>
                                         <TableRow>
-                                            <TableCell>Date</TableCell>
-                                            <TableCell>Customer</TableCell>
-                                            <TableCell align="right">Amount</TableCell>
-                                            <TableCell align="right">Total total ($)</TableCell>
+                                            <TableCell><b>Stt</b></TableCell>
+                                            <TableCell><b>name</b></TableCell>
+                                            <TableCell><b>quantity</b></TableCell>
+                                            <TableCell><b>price</b></TableCell>
+                                            <TableCell align="right"><b>Total price (VNĐ)</b></TableCell>
+
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
-                                        {row.cart.map((cartRow) => (
-                                            <TableRow key={cartRow.id}>
+                                        {row.cart.map((historyCart) => (
+                                            <TableRow key={historyCart.id}>
                                                 <TableCell component="th" scope="row">
-                                                    {cartRow.name}
+                                                    {historyCart.id}
                                                 </TableCell>
-                                                <TableCell>{cartRow.price}</TableCell>
-                                                <TableCell align="right">{cartRow.quantity}</TableCell>
+                                                <TableCell>{historyCart.name}</TableCell>
+                                                <TableCell>{historyCart.quantity}</TableCell>
+                                                <TableCell>{historyCart.price}</TableCell>
                                                 <TableCell align="right">
-                                                    {Math.round(cartRow.quantity *cartRow.price)}
+                                                    {Math.round(historyCart.quantity * historyCart.price)}
                                                 </TableCell>
                                             </TableRow>
                                         ))}
@@ -89,52 +91,51 @@ const Test = () => {
                 </TableRow>
             </React.Fragment>
         );
-    }
-
-    const list = row.map((row) => (
-            <Row key={row.id} row={row} />
-        ))
+    };
 
     Row.propTypes = {
         row: PropTypes.shape({
+            id: PropTypes.number.isRequired,
             name: PropTypes.string.isRequired,
-            address: PropTypes.string.isRequired,
             phone: PropTypes.number.isRequired,
             cart: PropTypes.arrayOf(
                 PropTypes.shape({
+                    quantity: PropTypes.number.isRequired,
                     name: PropTypes.string.isRequired,
                     price: PropTypes.number.isRequired,
-                    quantity: PropTypes.number.isRequired,
+                    total: PropTypes.number.isRequired,
+
                 }),
             ).isRequired,
-            id: PropTypes.string.isRequired,
             total: PropTypes.number.isRequired,
-            date: PropTypes.string.isRequired,
+            date: PropTypes.number.isRequired,
+            address: PropTypes.number.isRequired,
         }).isRequired,
     };
 
-
-
-        return (
-            <TableContainer component={Paper}>
-                <Table aria-label="collapsible table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell />
-                            <TableCell>Dessert (100g serving)</TableCell>
-                            <TableCell align="right">name</TableCell>
-                            <TableCell align="right">phone&nbsp;(g)</TableCell>
-                            <TableCell align="right">address&nbsp;(g)</TableCell>
-                            <TableCell align="right">date&nbsp;(g)</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {list}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        );
-
+    return (
+        <TableContainer component={Paper}>
+            <h1>History Order</h1>
+            <Table aria-label="collapsible table">
+                <TableHead>
+                    <TableRow>
+                        <TableCell />
+                        <TableCell><b>id</b></TableCell>
+                        <TableCell><b>name</b></TableCell>
+                        <TableCell><b>phone</b></TableCell>
+                        <TableCell><b>address</b></TableCell>
+                        <TableCell><b>date</b></TableCell>
+                        <TableCell><b>Total</b></TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {rows.map((row) => (
+                        <Row key={row.name} row={row} />
+                    ))}
+                </TableBody>
+            </Table>
+        </TableContainer>
+    );
 };
 
-export default Test;
+export default HistoryOrder;

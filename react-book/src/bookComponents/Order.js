@@ -7,7 +7,7 @@ import '../App.css'
 
 
 const Order = (props) => {
-    
+
     let navigate = useNavigate();
     const [order, setOrder] = useState(null);
     const [cartItems, setCartItems] = useState([]);
@@ -58,22 +58,22 @@ const Order = (props) => {
         data[name] = value;
         setOrder(data);
     };
-    
+
 
     const saveInfo = () => {
         props.ClearCart();
-        
+
 
 
 
         // alert('dat hang thanh cong');
         order['cart'] = cartItems;
-        order['total']=getTotal();
+        order['total'] = getTotal();
         const current = new Date();
-        const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
-        order['date']= date;
+        const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
+        order['date'] = date;
         console.log(order);
-        order['total']=getTotal();
+        order['total'] = getTotal();
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -185,12 +185,12 @@ const Order = (props) => {
                     <div class="col">
                         <div class="text-center">
 
-                                    <a href="#myModal" class="trigger-btn" data-toggle="modal" style={{margin:"2px",textDecoration:"none"}}>
-                                        <button className="btn btn-outline-success m-1 trigger-btn" type="button"
-                                                onClick={() => saveInfo()}>
-                                        Confirm
-                                        </button>
-                                    </a>
+                            <a href="#myModal" class="trigger-btn" data-toggle="modal" style={{ margin: "2px", textDecoration: "none" }}>
+                                <button className="btn btn-outline-success m-1 trigger-btn" type="button"
+                                    onClick={() => saveInfo()}>
+                                    Confirm
+                                </button>
+                            </a>
 
                             <Link to="/customer"></Link>
                             <Link to="/customer/cart"><button class="btn btn-outline-danger m-1">
@@ -203,30 +203,33 @@ const Order = (props) => {
 
 
             <div id="myModal" class="modal fade">
-            <div class="modal-dialog modal-confirm">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div class="icon-box">
-                            <i class="material-icons">&#xE876;</i>
-                        </div>				
-                        <h4 class="modal-title w-100">Awesome!</h4>	
-                    </div>
-                    <div class="modal-body">
-                        <p class="text-center">Your booking has been confirmed. Check your email for details.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <Link to="/customer">
-                        <button class="btn btn-success btn-block" data-dismiss="modal">
-                           OK
-                        </button>
-                        </Link>
+                <div class="modal-dialog modal-confirm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="icon-box">
+                                <i class="material-icons">&#xE876;</i>
+                            </div>
+                            <h4 class="modal-title w-100">Awesome!</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p class="text-center">Your booking has been confirmed. Check your email for details.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <Link to="/customer">
+                                <button class="btn btn-success btn-block" data-dismiss="modal">
+                                    OK
+                                </button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
-        
+
+
+
+
         </div>);
 };
 

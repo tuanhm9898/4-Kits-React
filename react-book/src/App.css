@@ -13,6 +13,9 @@ body {
 li {
   list-style: none;
 }
+a{
+  text-decoration: none;
+}
 
 .fs_img {
   width: 25px;

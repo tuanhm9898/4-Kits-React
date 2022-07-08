@@ -7,7 +7,10 @@ import {
     DECREASE_QUANTITY,
     INCREASE_QUANTITY,
     DELETE_CART,
-    CLEAR_CART
+    CLEAR_CART,
+    FETCH_REQUEST,
+    FETCH_SUCCESS,
+    FETCH_ERROR
 } from '../actions';
 
 const initProduct = {
@@ -16,12 +19,19 @@ const initProduct = {
     _products: []
 };
 
+const reducer = (state = {}, action) => {
+    switch (action.type) {
+      case "FETCH_REQUEST":
+        return state;
+      case "FETCH_SUCCESS": 
+        return {...state, posts: action.payload};
+      default:
+        return state;
+    }
+} 
+  
 function todoProduct(state = initProduct, action) {
     switch (action.type) {
-        case "FETCH_REQUEST":
-            return state;
-        case "FETCH_SUCCESS":
-            return { ...state, posts: action.payload };
         case GET_ALL_PRODUCT:
             return {
                 ...state,

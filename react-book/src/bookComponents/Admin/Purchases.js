@@ -2,6 +2,7 @@ import React from 'react';
 import ReChart from "./ReChart"
 import {Avatar} from "@mui/material";
 import {BsFillArrowRightCircleFill, BsFillBagCheckFill} from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Purchases = () => {
     return (
@@ -34,7 +35,7 @@ const Purchases = () => {
                         </thead>
                         <tbody>
                         <tr>
-                            <td>ICHI KAIJUU</td>
+                            <td><Link to ="/book/18" style={{color:"#000", textDecoration: "none"}}>ICHI KAIJUU</Link></td>
                             <td>
                                 <Avatar src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_227509.jpg"></Avatar>
                             </td>
@@ -49,7 +50,7 @@ const Purchases = () => {
 
                         </tr>
                         <tr>
-                            <td>Kimetsu</td>
+                            <td><Link to ="/book/19" style={{color:"#000", textDecoration: "none"}}>Kimetsu</Link></td>
                             <td>
                                 <Avatar src="https://cdn0.fahasa.com/media/catalog/product/9/7/9784088828886.jpg"></Avatar>
                             </td>
@@ -64,7 +65,7 @@ const Purchases = () => {
 
                         </tr>
                         <tr>
-                            <td>One Piece</td>
+                            <td><Link to ="/book/20" style={{color:"#000", textDecoration: "none"}}>One Piece</Link></td>
                             <td>
                                 <Avatar src="https://cdn0.fahasa.com/media/catalog/product/8/9/8935244872712.jpg">A</Avatar>
                             </td>
@@ -79,7 +80,7 @@ const Purchases = () => {
 
                         </tr>
                         <tr>
-                            <td>Chú Thuật Hồi Chiến <span className="badge bg-danger">NEW</span>
+                            <td><Link to ="/book/21" style={{color:"#000", textDecoration: "none"}}>Chú Thuật Hồi Chiến</Link> <span className="badge bg-danger">NEW</span>
                             </td>
                             <td>
                                 <Avatar src="https://cdn0.fahasa.com/media/catalog/product/c/h/chu-thuat-hoi-chien---tap-1---ban-thuong-_the-qua-tang_-2.jpg">A</Avatar>
@@ -122,7 +123,7 @@ const Purchases = () => {
                         <div className="small-box p-2" style={{background: "#81c7c7"}}>
                             <div className="inner">
                                 <h3>300</h3>
-                                <p>Mgười dùng mới</p>
+                                <p>Người dùng mới</p>
                             </div>
                             <div className="icon">
 
