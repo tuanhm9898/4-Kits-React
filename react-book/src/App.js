@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes, useNavigate} from "react-router-dom";
 import './App.css'
 import Home from "./pages/Home";
 import CartDetails from "./pages/CartDetails";
@@ -25,6 +25,7 @@ import BookLike from "./bookComponents/Customer/bookLike";
 import HomeSelect from "./pages/HomeSelect";
 import Purchases from "./bookComponents/Admin/Purchases";
 import NoPage from "./pages/page404/NoPage";
+import HomeLogin from "./pages/HomeLogin";
 
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
                 <Route path="/" element={<HomeSelect/>}/>
                 <Route path="*" element={<NoPage />} />
                 <Route path="/test" element={<Test />} />
+
+                <Route path="/loginHome" element={<HomeLogin/>}></Route>
 
                 <Route path="/customer" element={<CustomerLayout/>}>
                     <Route index element={<Home/>}/>
@@ -50,10 +53,9 @@ function App() {
                     <Route path="reviewBook" element={<ReviewBook/>}/>
                     <Route path="manga" element={<Manga/>}/>
                     <Route path="about" element={<About/>}/>
-
+                    <Route path="book/:id" element={<DetailBook/>}/>
                 </Route>
 
-                <Route path="/book/:id" element={<DetailBook/>}/>
                 <Route path="/edit/:id" element={<EditBook/>}/>
                 <Route path="/edit/new" element={<EditBook/>}/>
 
@@ -69,5 +71,6 @@ function App() {
         </BrowserRouter>
     );
 }
+
 
 export default App;

@@ -34,58 +34,58 @@ const Purchases = () => {
                         </thead>
                         <tbody>
                         <tr>
-                            <td>name</td>
+                            <td>ICHI KAIJUU</td>
                             <td>
-                                <Avatar>A</Avatar>
+                                <Avatar src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_227509.jpg"></Avatar>
                             </td>
-                            <td>25.000.000</td>
+                            <td>145.000.000</td>
                             <td>
                                 <small className="text-success mr-1">
                                     <i className="fas fa-arrow-up"></i>
                                     12%
                                 </small>
-                                12,000 Sold
+                                120 Sold
                             </td>
 
                         </tr>
                         <tr>
-                            <td>name</td>
+                            <td>Kimetsu</td>
                             <td>
-                                <Avatar>A</Avatar>
+                                <Avatar src="https://cdn0.fahasa.com/media/catalog/product/9/7/9784088828886.jpg"></Avatar>
                             </td>
-                            <td>29.000.000</td>
+                            <td>149.000.000</td>
                             <td>
                                 <small className="text-warning mr-1">
                                     <i className="fas fa-arrow-down"></i>
                                     0.5%
                                 </small>
-                                123,234 Sold
+                                12 Sold
                             </td>
 
                         </tr>
                         <tr>
-                            <td>name</td>
+                            <td>One Piece</td>
                             <td>
-                                <Avatar>A</Avatar>
+                                <Avatar src="https://cdn0.fahasa.com/media/catalog/product/8/9/8935244872712.jpg">A</Avatar>
                             </td>
-                            <td>30.000.000</td>
+                            <td>55.000.000</td>
                             <td>
                                 <small className="text-danger mr-1">
                                     <i className="fas fa-arrow-down"></i>
                                     3%
                                 </small>
-                                198 Sold
+                                8 Sold
                             </td>
 
                         </tr>
                         <tr>
-                            <td>name <span className="badge bg-danger">NEW</span>
+                            <td>Chú Thuật Hồi Chiến <span className="badge bg-danger">NEW</span>
                             </td>
                             <td>
-                                <Avatar>A</Avatar>
+                                <Avatar src="https://cdn0.fahasa.com/media/catalog/product/c/h/chu-thuat-hoi-chien---tap-1---ban-thuong-_the-qua-tang_-2.jpg">A</Avatar>
 
                             </td>
-                            <td>60.000.000</td>
+                            <td>30.000.000</td>
                             <td>
                                 <small className="text-success mr-1">
                                     <i className="fas fa-arrow-up"></i>
@@ -108,7 +108,7 @@ const Purchases = () => {
                         <div className="small-box bg-info p-2 ">
                             <div className="inner">
                                 <h3>150</h3>
-                                <p>New Orders</p>
+                                <p>Đơn hàng mới</p>
                             </div>
                             <div className="icon">
 
@@ -121,8 +121,8 @@ const Purchases = () => {
 
                         <div className="small-box bg-success p-2">
                             <div className="inner">
-                                <h3>53<sup style={{fontSize: "20px"}}>%</sup></h3>
-                                <p>Bounce Rate</p>
+                                <h3>300</h3>
+                                <p>Mgười dùng mới</p>
                             </div>
                             <div className="icon">
 
@@ -135,8 +135,8 @@ const Purchases = () => {
 
                         <div className="small-box bg-warning p-2">
                             <div className="inner">
-                                <h3>44</h3>
-                                <p>User Registrations</p>
+                                <h3>1000</h3>
+                                <p>Số lượng khách truy cập</p>
                             </div>
                             <div className="icon">
 
@@ -149,8 +149,8 @@ const Purchases = () => {
 
                         <div className="small-box bg-danger p-2">
                             <div className="inner">
-                                <h3>65</h3>
-                                <p>Unique Visitors</p>
+                                <h3>5<sup style={{fontSize: "20px"}}>%</sup></h3>
+                                <p>Tỷ lệ hoàn </p>
                             </div>
                             <div className="icon">
 
