@@ -19,8 +19,10 @@ function CarouselSlideshow() {
                     height="400"
                 />
                 <Carousel.Caption>
-                    <h1>Store Book </h1>
-                    <h1>Hè về săn ưu đãi cực chất</h1>
+                    <div className="conten_item" style={{color: "#212529"}}>
+                        <h1>Store Book </h1>
+                        <h1>Hè về săn ưu đãi cực chất</h1>
+                    </div>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -32,8 +34,10 @@ function CarouselSlideshow() {
                 />
 
                 <Carousel.Caption>
-                    <h1>Free Ship</h1>
-                    <h1>cho hóa đơn từ 200k</h1>
+                    <div className="conten_item"  style={{color: "#212529"}}>
+                        <h1>Free Ship</h1>
+                        <h1>cho hóa đơn từ 200k</h1>
+                    </div>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -45,10 +49,12 @@ function CarouselSlideshow() {
                 />
 
                 <Carousel.Caption>
-                    <h1>Thanh toán Shoppe Pay</h1>
-                    <h1>
-                        Giảm 20% mỗi hóa đơn
-                    </h1>
+                    <div className="conten_item"  style={{color: "#212529"}}>
+                        <h1>Thanh toán Shoppe Pay</h1>
+                        <h1>
+                            Giảm 20% mỗi hóa đơn
+                        </h1>
+                    </div>
                 </Carousel.Caption>
             </Carousel.Item>
 

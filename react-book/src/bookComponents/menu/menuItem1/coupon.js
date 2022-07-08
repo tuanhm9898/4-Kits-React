@@ -230,7 +230,7 @@ const Coupon = () => {
                             <div className="col">
                                 <img
                                 className="d-block w-100"
-                                src={img2}
+                                src={img1}
                                 alt="First slide"
                                 height="350px"
                                 />
@@ -242,7 +242,7 @@ const Coupon = () => {
                             <div className="col">
                                 <img
                                 className="d-block w-100"
-                                src={img3}
+                                src={img7}
                                 alt="First slide"
                                 height="350px"
                                 />
@@ -250,7 +250,7 @@ const Coupon = () => {
                             <div className="col">
                                 <img
                                 className="d-block w-100"
-                                src={img4}
+                                src={img6}
                                 alt="First slide"
                                 height="350px"
                                 />
